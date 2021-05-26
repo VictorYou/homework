@@ -59,7 +59,7 @@ build_app_docker()
     local registry_repo="fastpass-testing-docker-local.esisoj70.emea.nsn-net.net"
     local image_with_tag="$registry_repo/$image_name:$new_version"
     sudo docker rmi -f ubuntu:latest
-    sudo docker build -t "$image_with_tag" $folder
+    sudo docker build -t "$image_with_tag" --build-arg=http_proxy="http://10.144.1.10:8080/" --build-arg=https_proxy="http://10.144.1.10:8080/" $folder
     push_docker_image "$image_with_tag" "$registry_credential"
     sudo docker rmi "$image_with_tag"
     git tag "$image_name.$new_version" HEAD
