@@ -104,8 +104,6 @@ spec:
           successThreshold: {{ .Values.readinessProbe.successThreshold }}
           failureThreshold: {{ .Values.readinessProbe.failureThreshold }}
         volumeMounts:
-        - name: "{{ .Release.Name }}-secrets"
-          mountPath: /etc/secrets
         - name: "{{ .Release.Name }}-log"
           mountPath: /tmp/logs
         - name: "{{ .Release.Name }}-ta"
