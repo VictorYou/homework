@@ -61,6 +61,8 @@ build_app_docker()
     sudo docker build -t "$image_with_tag" --build-arg=http_proxy="http://10.144.1.10:8080/" --build-arg=https_proxy="http://10.144.1.10:8080/" $folder
     push_docker_image "$image_with_tag" "$registry_credential"
     sudo docker rmi "$image_with_tag"
+    git tag "$image_name.$new_version" HEAD
+    expect "$CURRENTDIR"/push_code
   else
     echo "no need to build, exiting"
     exit 1
