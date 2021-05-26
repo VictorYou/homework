@@ -39,3 +39,4 @@ RUN ls -la /home/testvnf/
 
 ENTRYPOINT ["/bin/sh", "-c"] 
 CMD ["env | grep NDAP_CA_FILE"]
+
