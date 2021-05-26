@@ -76,23 +76,11 @@ spec:
           value: {{ .Release.Namespace }}
         - name: TA_IMAGE
           value: {{ .Values.taImage }}
-        - name: DIR_TVNF_PARENT
-          value: /tmp
-        - name: TVNF_VERSION
+        - name: VNF_VERSION
           valueFrom:
             configMapKeyRef:
               name: "{{ .Release.Name }}-config"
-              key: tvnf_version
-        - name: LONG_LIVED_JWT
-          valueFrom: 
-            configMapKeyRef:
-              name: "{{ .Release.Name }}-config"
-              key: long_lived_jwt
-        - name: NDAP_PASSWORD
-          valueFrom: 
-            configMapKeyRef:
-              name: "{{ .Release.Name }}-config"
-              key: ndap_password
+              key: app_version
         livenessProbe:
           exec:
             command:
