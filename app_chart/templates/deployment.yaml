@@ -127,7 +127,3 @@ spec:
           claimName: "{{ .Release.Name }}-ta"
       nodeSelector:
         role: testvnf
-      hostAliases:
-      - ip: {{ .Values.ndapIp }}
-        hostnames:
-        - "ndap-reverse-proxy-service.default.svc.cluster.local"
