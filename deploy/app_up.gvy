@@ -132,7 +132,7 @@ $helmcmd install ${app_name} --set certificate=${certificate} --set private_key=
 """
 //    command = "timeout 900 bash -c 'until curl -f --cacert ${chart_folder}/ndap_ca -X POST https://${app_host}:${app_port}/testvnf/v1/connectTests/123456; do echo waiting for certificate to be effective; sleep 10; done'"
     sh """
-timeout 900 bash -c 'until curl --noproxy '*' -f -k -X POST https://${app_host}:${app_port}/testvnf/v1/connectTests/123456; do echo waiting for certificate to be effective; sleep 10; done'
+timeout 900 bash -c "until curl --noproxy '*' -f -k -X POST https://${app_host}:${app_port}/testvnf/v1/connectTests/123456; do echo waiting for certificate to be effective; sleep 10; done"
 """
   }
 }
