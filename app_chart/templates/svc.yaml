@@ -4,7 +4,7 @@ metadata:
   name: "{{ .Release.Name }}-rest"
   namespace: {{ .Release.Namespace }}
   labels:
-    app: {{ template "apprest.fullname" . }}
+    app: {{ template "tvnfrest.fullname" . }}
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
@@ -15,4 +15,4 @@ spec:
     port: {{ .Values.service.port }}
     targetPort: {{ .Values.service.port }}
   selector:
-    app: {{ template "apprest.fullname" . }}
+    app: {{ template "tvnfrest.fullname" . }}

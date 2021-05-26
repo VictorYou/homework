@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ template "apprest.fullname" . }}
+  name: {{ template "tvnfrest.fullname" . }}
   namespace: {{ .Release.Namespace }}
   labels:
-    app: {{ template "apprest.fullname" . }}
+    app: {{ template "tvnfrest.fullname" . }}
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
@@ -17,12 +17,12 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: {{ template "apprest.fullname" . }}
+      app: {{ template "tvnfrest.fullname" . }}
       release: {{ .Release.Name }}
   template:
     metadata:
       labels:
-        app: {{ template "apprest.fullname" . }}
+        app: {{ template "tvnfrest.fullname" . }}
         release: {{ .Release.Name }}
 {{- with .Values.podLabels }}
 {{ toYaml . | indent 8 }}
@@ -39,7 +39,7 @@ spec:
       {{- end }}
       initContainers:
       - name: wait-for-mysql
-        image: "{{ .Values.appImage }}"
+        image: "{{ .Values.tvnfImage }}"
         imagePullPolicy: {{ .Values.imagePullPolicy | quote }}
         resources:
 {{ toYaml .Values.initContainer.resources | indent 10 }}
@@ -58,31 +58,31 @@ spec:
         args:
         - -c
         - $(COMMAND_SCRIPT)
-      serviceAccountName: app
+      serviceAccountName: tvnf
       containers:
-      - name: tesapp-rest
-        image: "{{ .Values.appImage }}"
+      - name: testvnf-rest
+        image: "{{ .Values.tvnfImage }}"
         imagePullPolicy: {{ .Values.imagePullPolicy | quote }}
         command: [ "/bin/bash", "-c", "--" ]
-        args: [ "bash -x /home/app/app_init.sh $svc_mysql" ]
+        args: [ "bash -x /home/testvnf/testvnf_init.sh $svc_mysql" ]
         resources:
 {{ toYaml .Values.resources | indent 10 }}
         env:
         - name: svc_mysql
           value: "{{ .Release.Name }}-mysql"
-        - name: APP_NAME
+        - name: TVNF_NAME
           value: {{ .Release.Name }}
         - name: NAMESPACE
           value: {{ .Release.Namespace }}
         - name: TA_IMAGE
           value: {{ .Values.taImage }}
-        - name: DIR_app_PARENT
+        - name: DIR_TVNF_PARENT
           value: /tmp
-        - name: app_VERSION
+        - name: TVNF_VERSION
           valueFrom:
             configMapKeyRef:
               name: "{{ .Release.Name }}-config"
-              key: app_version
+              key: tvnf_version
         - name: LONG_LIVED_JWT
           valueFrom: 
             configMapKeyRef:
@@ -98,7 +98,7 @@ spec:
             command:
             - sh
             - -c
-            - "python3 /home/app/tesapp_rest/manage.py check"
+            - "python3 /home/testvnf/testvnf_rest/manage.py check"
           initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds }}
           periodSeconds: {{ .Values.livenessProbe.periodSeconds }}
           timeoutSeconds: {{ .Values.livenessProbe.timeoutSeconds }}
@@ -109,7 +109,7 @@ spec:
             command:
             - sh
             - -c
-            - "python3 /home/app/tesapp_rest/manage.py check"
+            - "python3 /home/testvnf/testvnf_rest/manage.py check"
           initialDelaySeconds: {{ .Values.readinessProbe.initialDelaySeconds }}
           periodSeconds: {{ .Values.readinessProbe.periodSeconds }}
           timeoutSeconds: {{ .Values.readinessProbe.timeoutSeconds }}
@@ -138,7 +138,7 @@ spec:
         persistentVolumeClaim:
           claimName: "{{ .Release.Name }}-ta"
       nodeSelector:
-        role: tesapp
+        role: testvnf
       hostAliases:
       - ip: {{ .Values.ndapIp }}
         hostnames:
