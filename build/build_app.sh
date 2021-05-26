@@ -12,7 +12,6 @@ push_or_pull_docker_image()
   local image_with_tag=$1             # fastpass-testing-docker-local.esisoj70.emea.nsn-net.net/busybox:1.0
   local registry_credential=$2        # viyou:APAPFXPBRnGcf7VoCk4x3AZXsJH 
   local action=$3                     # push # pull
-  local registry_repo=${image_with_tag%%/*}     # fastpass-testing-docker-local.esisoj70.emea.nsn-net.net
 
   if [[ "$registry_credential" =~ ([a-zA-Z0-9]+):([a-zA-Z0-9]+) ]]; then
     local registry_user=${BASH_REMATCH[1]}
@@ -22,7 +21,7 @@ push_or_pull_docker_image()
     exit 1
   fi
 
-  echo "$registry_token" | sudo docker login -u "$registry_user" --password-stdin "$registry_repo" \
+  echo "$registry_token" | sudo docker login -u "$registry_user" --password-stdin \
   && sudo docker "$action" "$image_with_tag" \
   && sudo docker logout "$registry_repo"
 }
