@@ -34,7 +34,7 @@ node('agent_host') {
   stage ('tag & push to origin') {
     sshagent(['github-viyou']) {
       sh "git tag homework.${NEW_VERSION} HEAD"
-      sh "git push origin HEAD:${branch} --tags"
+      sh "expect build/push_code"
     }
   }
   stage ('cleanup workspace') {
