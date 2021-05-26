@@ -1,0 +1,16 @@
+#!/usr/bin/expect
+set timeout 600
+spawn git push origin HEAD:master --tags
+expect {
+   "Username for 'https://github.com': " {send "victoryou29@gmail.com\n";}
+}
+expect {
+   "Password for 'https://victoryou29@gmail.com@github.com': " {send "Yh593267\n"}
+}
+expect {
+   "Total 0 (delta 0), reused 0 (delta 0)"
+}
+expect {
+   "To https://github.com/VictorYou/homework.git"
+}
+
