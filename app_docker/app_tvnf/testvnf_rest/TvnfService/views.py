@@ -11,7 +11,6 @@ from rest_framework.response import Response
 from MySQLdb._exceptions import OperationalError
 
 from .TestVnfActions import TestVnfActions
-from .TestcaseActions import TestcaseActions, TestcaseList, TestcaseListFiltered
 from .NdapCommunicator import NdapCommunicator
 
 import threading
@@ -44,7 +43,6 @@ class AbortTestExecutionReq(GenericAPIView):
 
   def abort(self, sessionId):
     log.debug('in AbortTestExecutionReq().abort')
-    TestcaseActions().stop_test(sessionId)
 
 
 class SetupEnvReq(GenericAPIView):
@@ -121,63 +119,6 @@ class RunTestcaseReq(GenericAPIView):
 
   def run_testcases(self, testcases, sutId, sessionId):
     log.debug('in RunTestcaseReq().run_testcases')
-    try:
-      names = TestVnfActions.get_lab_ne_name(sutId)
-      lab_name, ne_name = names[0], names[1]
-      log.debug(f'sessionId: {sessionId}, sutId: {sutId}')
-      log.debug(f'testcases: {testcases}')
-      result_queue = Queue(self.MAX_RESULT_COUNT)
-      result_list_all, threads, summary, summary_abort = [], [], '', ''
-      cases_by_suite = TestcaseActions().get_cases_by_suite(testcases)
-      session, created = TestSession.objects.get_or_create(sessionId=sessionId, status='A')
-      folders = [v['folder'] for k, v in cases_by_suite.items()]
-      if 'level3' in folders or 'level6' in folders:
-        TestcaseActions().create_tauser(sessionId, lab_name, ne_name)
-      for suite in sorted(cases_by_suite.keys()):
-        session = TestSession.objects.get(sessionId=sessionId)
-        if session is not None and session.status != 'A':
-          summary_abort = 'test execution is aborted'
-          break
-        t = threading.Thread(target=self.run_suite_testcases, args=(suite, cases_by_suite[suite]['ids'], cases_by_suite[suite]['folder'], sessionId, lab_name, ne_name, result_queue))
-        t.start()
-        threads.append(t)
-      for thread in threads:
-        thread.join()
-      for i in range(result_queue.qsize()):
-        result_list_all += result_queue.get(1)
-      log.debug(f'result_list_all: {result_list_all}')
-      summary_test = TestcaseActions().test_result_summary(result_list_all)
-      summary = f'{summary_test}. {summary_abort}'
-    except Exception as e:
-      log.debug(f'error in RunTestcaseReq().run_testcases: {type(e)}, {e}, {e.__doc__}')
-      summary = "fail to run testcases"
-    finally:
-      NdapCommunicator().test_execution_finished_req(sessionId, summary)
-
-  def run_suite_testcases(self, suite, ids, folder, sessionId, lab_name, ne_name, result_queue):
-    log.debug('in RunTestcaseReq().run_suite_testcases')
-    result_list_suite = []
-    for id in ids.split(','):
-      tc_result_queue = Queue(2)    # for log file and result list
-      try:
-        if len(TestSession.objects.filter(sessionId=sessionId)) == 0 or TestSession.objects.get(sessionId=sessionId).status != 'A':
-          log.debug(f'session: {sessionId}, suite {suite} is aborted, exiting')
-          break
-
-        t = threading.Thread(target=TestcaseActions().run_testcase, args=(suite, id, folder, sessionId, lab_name, ne_name, tc_result_queue))
-        t.start()
-        t.join()
-        log_file = tc_result_queue.get(block=False)
-        tc_result_list = tc_result_queue.get(block=False)
-        result_list_suite += tc_result_list
-        log.debug(f'log_file: {log_file}, tc_result_list: {tc_result_list}')
-        NdapCommunicator().report_test_result_req(sessionId, log_file, tc_result_list)
-        os.remove(log_file)
-      except queue.Empty as e:
-        log.debug('no test result, maybe test is aborted.')
-      except Exception as e:
-        log.debug(f'error in RunTestcaseReq().run_suite_testcases: {type(e)}, {e.args}, {e}, {e.__doc__}')
-    result_queue.put(result_list_suite, 1)
 
 
 class ResetReq(GenericAPIView):
