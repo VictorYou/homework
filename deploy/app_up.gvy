@@ -111,7 +111,7 @@ node('agent_host') {
     cleanWs()
   }
   stage ('check out codebase and get version') {
-    git(credentialsId: 'github-viyou', branch: branch, url: 'https://github.com/VictorYou/homework.git')
+    git(credentialsId: 'github-viyou', branch: 'master', url: 'https://github.com/VictorYou/homework.git')
     dir('build') {
       NEW_VERSION = sh returnStdout: true, script: "bash get_new_version.sh"
     }
