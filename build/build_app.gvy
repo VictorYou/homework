@@ -16,15 +16,15 @@ node('agent_host') {
   }
   stage ('check out codebase and get version') {
     git(credentialsId: 'github-viyou', branch: branch, url: 'https://github.com/VictorYou/homework.git')
-    dir('tvnf') {
-      NEW_VERSION = sh returnStdout: true, script: "bash build/get_new_version.sh"
+    dir('build') {
+      NEW_VERSION = sh returnStdout: true, script: "bash get_new_version.sh"
     } 
   }
   if (NEW_VERSION) {
     stage ('build apps') {
-      dir('tvnf') {
+      dir('build') {
         sshagent(['gitlab-viyou', 'gerrite-viyou']) {
-          sh "bash build/build_app.sh ${NEW_VERSION} ${REGISTRY_CREDENTIAL}"
+          sh "bash build_app.sh ${NEW_VERSION} ${REGISTRY_CREDENTIAL}"
         }
       }
     }
