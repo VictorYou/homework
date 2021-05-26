@@ -6,10 +6,10 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
 spec:
-  tls:
-  - hosts:
-    - {{ .Values.appHost }}
-    secretName: "tls-{{ .Release.Name }}"
+#  tls:
+#  - hosts:
+#    - {{ .Values.appHost }}
+#    secretName: "tls-{{ .Release.Name }}"
   rules:
   - host: {{ .Values.tvnfHost }}
     http:

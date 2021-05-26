@@ -102,6 +102,7 @@ add something like:
 properties([parameters([
   string(defaultValue: 'app', description: '', name: 'app_name'),
   string(defaultValue: 'fastpass-tvnf2.tvnf.ndap.local', description: '', name: 'app_host'),
+  string(defaultValue: '31832', description: '', name: 'app_port'),
   string(defaultValue: 'viyou/app_docker:latest', description: '', name: 'app_docker_image'),
   string(defaultValue: '0.0.1', description: '', name: 'app_version'),
   string(defaultValue: 'https://10.131.73.190:12567', description: '', name: 'k8s_endpoint'),
@@ -129,11 +130,12 @@ node('agent_host') {
     sh """
 $helmcmd install ${app_name} --set certificate=${certificate} --set private_key=${private_key} --set appImage=${app_docker_image} --set appVersion=${app_version} --set appHost=${app_host} app_chart
 """
-//    command = "timeout 900 bash -c 'until curl -f --cacert ${chart_folder}/ndap_ca -X POST https://${tvnf_host}:${tvnf_port}/testvnf/v1/connectTests/123456; do echo waiting for certificate to be effective; sleep 10; done'"
-//    println("command: ${command}")
-//    sh """
-//"${command}"
-//"""
+//    command = "timeout 900 bash -c 'until curl -f --cacert ${chart_folder}/ndap_ca -X POST https://${app_host}:${app_port}/testvnf/v1/connectTests/123456; do echo waiting for certificate to be effective; sleep 10; done'"
+    command = "timeout 900 bash -c 'until curl -f -k -X POST https://${app_host}:${app_port}/testvnf/v1/connectTests/123456; do echo waiting for certificate to be effective; sleep 10; done'"
+    println("command: ${command}")
+    sh """
+"${command}"
+"""
   }
 }
 
