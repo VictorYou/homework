@@ -1,0 +1,27 @@
+
+MRBTS:
+wget http://10.131.1.248/build/SBTS17A/SBTS17A_FSM3_0000_000704_000000_release_BTSSM_downloadable_A50.zip
+10.131.1.248 lterel.es-ka-s3-dhn-14.eecloud.nsn-net.net
+http://lterel.es-ka-s3-dhn-14.eecloud.nsn-net.net/build/SBTS17A/SBTS17A_ENB_1000_000407_000000_release_BTSSM_downloadable_A50.zip
+
+echo 10.131.1.248 lterel.es-ka-s3-dhn-14.eecloud.nsn-net.net >> /etc/hosts
+https://wft.int.net.nokia.com/SBTS/secure_download/url?deliverer=CI_ENB&url=http%3A%2F%2Flterel.es-ka-s3-dhn-14.eecloud.nsn-net.net%2Fbuild%2FSBTS17A%2FSBTS17A_ENB_1000_000407_000000_release_BTSSM_downloadable_A50.zip
+
+/d/oss/global/swmanager/swm_temp/
+
+BTSMED:
+wget http://10.159.215.254/job/IMP_SBTS17A_P7_RPM_PACKAGE/166/artifact/IMP/installation/target/rpm/nokia-imp/RPMS/noarch/nokia-imp-17a.2.20180207.108c27-1.noarch.rpm
+http://10.159.215.254/job/IMP_17A_RPM_PACKAGE/1177//artifact/IMP/installation/target/rpm/nokia-imp/RPMS/noarch/nokia-imp-17amp.1.20180221102827.82e0e1-1.noarch.rpm
+http://hztdci01.china.nsn-net.net/job/IMP_SBTS17A_P7_RPM_PACKAGE/170//artifact/IMP/installation/target/rpm/nokia-imp/RPMS/noarch/nokia-imp-17a.2.20180212.1115b6-1.noarch.rpm
+
+echo 10.159.215.254 hztdci01.china.nsn-net.net >> /etc/hosts
+
+
+http://hztdci01.china.nsn-net.net/job/IMP_xL18_RPM_PACKAGE/171//artifact/IMP/installation/target/rpm/nokia-imp/RPMS/noarch/nokia-imp-18.1.20180301133746.f4be9c-1.noarch.rpm
+http://hztdci01.china.nsn-net.net/job/IMP_17A_RPM_PACKAGE/1198//artifact/IMP/installation/target/rpm/nokia-imp/RPMS/noarch/nokia-imp-17amp.1.20180228220629.2f1357-1.noarch.rpm
+
+
+
+/opt/oss/NSN-common_mediations/smx/mf-conf/mf-ne3soap.properties
+com.nsn.mediation.ne3sws.swm.tls.enable.network.element
+sed -i '/com.nsn.mediation.ne3sws.swm.tls.enable.network.element/s/BTSMED//g' test.properties

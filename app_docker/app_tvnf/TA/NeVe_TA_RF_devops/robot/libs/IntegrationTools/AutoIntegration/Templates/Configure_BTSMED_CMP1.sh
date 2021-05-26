@@ -1,0 +1,32 @@
+#!/bin/bash
+echo "==========Configuring BTSMED CMP=========="
+/usr/bin/expect <<-EOF
+spawn sudo -u Nemuadmin /opt/imp/`rpm -qa | grep nokia | cut -d "-" -f 3`/cli/bin/imp-cli-control.sh start
+expect "btsmed>"
+send "config set --dn /BTSMED-1/CERTH-1/CMP-1\r"
+expect "*caCertificateUpdateTime:"
+send "15\r"
+expect "*caSubjectName:"
+send "C=CN, O=NOKIA, CN=CA_NETACT_TEST_TLS\r"
+expect "*cmpPreSharedKey:"
+send "6kA8-4nD7-bzVB-Qq8s\r"
+expect "*cmpRefNum:"
+send "9558\r"
+expect "*eeSubjectName:"
+send "O=Nokia,CN=BTSMED\r"
+expect "*neCertificateUpdateTime:"
+send "15\r"
+expect "*serverHost:"
+send "10.91.83.136\r"
+expect "*serverPath:"
+send "pkix\r"
+expect "*serverPort:"
+send "8081\r"
+expect "btsmed>"
+send "config commit\r"
+expect "btsmed>"
+send "cmp initialize\r"
+expect "*btsmed>"
+send "exit\r"
+expect eof
+EOF

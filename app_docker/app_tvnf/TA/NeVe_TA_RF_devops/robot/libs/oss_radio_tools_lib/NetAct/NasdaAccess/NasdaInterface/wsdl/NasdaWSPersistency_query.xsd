@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+Copyright (C) 2011 Nokia Siemens Networks
+
+Permission to use, copy, modify, and distribute this software and its
+documentation for any purpose, without fee, and without a written agreement
+is hereby granted, provided that the above copyright notice and this
+paragraph and the following two paragraphs appear in all copies.
+
+IN NO EVENT SHALL COPYRIGHT HOLDERS BE LIABLE TO ANY PARTY FOR DIRECT,
+INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, INCLUDING LOST
+PROFITS, ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN
+IF COPYRIGHT HOLDERS HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+COPYRIGHT HOLDERS SPECIFICALLY DISCLAIM ANY WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+PARTICULAR PURPOSE. THE SOFTWARE PROVIDED HEREUNDER IS ON AN "AS IS" BASIS,
+AND COPYRIGHT HOLDERS HAVE NO OBLIGATIONS TO PROVIDE MAINTENANCE, SUPPORT,
+UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
+
+-->
+<xs:schema 
+    targetNamespace="http://www.nsn.com/schemas/public/oss/nasda/ws-api/persistency/query" 
+    elementFormDefault="qualified" 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    xmlns:tns="http://www.nsn.com/schemas/public/oss/nasda/ws-api/persistency/query">
+
+    <xs:annotation>
+    	<xs:documentation>This schema defines datatypes for query functionality.</xs:documentation></xs:annotation>
+    <xs:simpleType name="QueryType">
+        <xs:annotation>
+        	<xs:documentation>Identifies the type of the query presented in query string.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+    		<xs:enumeration value="MOPath"></xs:enumeration>
+    	</xs:restriction>
+    </xs:simpleType>
+
+
+
+    <xs:element name="query" type="tns:Query"></xs:element>
+    
+    <xs:complexType name="VariableBinding">
+        <xs:annotation>
+        	<xs:documentation>Queries may contain variables. The values of variables are assigned through variable binding.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+    		<xs:extension base="xs:string">
+    			<xs:attribute name="name" type="xs:string" use="required">
+    				<xs:annotation>
+    					<xs:documentation>Name of the variable.</xs:documentation>
+    				</xs:annotation></xs:attribute>
+    		</xs:extension>
+    	</xs:simpleContent>
+    </xs:complexType>
+
+    <xs:element name="variableBinding" type="tns:VariableBinding"></xs:element>
+
+    <xs:complexType name="VariableBindings">
+        <xs:annotation>
+        	<xs:documentation>Collection of variable bindings.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+    		<xs:element ref="tns:variableBinding" maxOccurs="unbounded" minOccurs="0"></xs:element>
+    	</xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="variableBindings" type="tns:VariableBindings"></xs:element>
+
+    <xs:simpleType name="Query">
+    	<xs:restriction base="xs:string"></xs:restriction>
+    </xs:simpleType>
+</xs:schema>

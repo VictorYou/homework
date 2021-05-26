@@ -1,0 +1,4550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NetworkElements>
+<!-- for test automation -->
+<!-- SMM DRAFT VERSION -->
+	<SMM_110>
+		<ne_class value="SMM" />
+		<ne_ip value="2a00:8a00:4000:20c:0:0:1c:16" />
+		<ne_instance value="110" />
+		<ne_sw value="1805" />
+	</SMM_110>
+	<SMM_115>
+		<ne_class value="SMM" />
+		<ne_ip value="10.93.245.55" />
+		<ne_instance value="115" />
+		<ne_sw value="1805" />
+	</SMM_115>
+	<SMM_120>
+		<ne_class value="SMM" />
+		<ne_ip value="10.42.64.37" />
+		<ne_instance value="120" />
+		<ne_sw value="1805" />
+		<ne_admin_username value="admin" />
+		<ne_admin_password value="z4fave3H#mepHu" />
+	</SMM_120>
+
+<!-- 5G MRBTS -->
+	<MRBTS121>
+		<ne_class value="MRBTS" />
+		<ne_subclass value="NRBTS" />
+		<ne_subclass_instance value="1" />
+		<ne_ip value="10.44.207.5" />
+		<ne_instance value="121" />
+		<ne_sw value="5G19" />
+		<ne_cell_instance value="1" />
+		<ne_admin_username value="robot" />
+		<ne_admin_password value="rastre1" />
+	</MRBTS121>
+ 
+ <MRBTS1967>
+  <ne_class value="MRBTS" />
+  <ne_subclass value="NRBTS" />
+  <ne_subclass_instance value="1" />
+  <ne_ip value="10.57.237.10" />
+  <ne_instance value="1967" />
+  <ne_sw value="5G19CLA" />
+  <ne_cell_instance value="1" />
+ </MRBTS1967>
+
+	<MRBTS1900>
+		<ne_class value="MRBTS" />
+		<ne_subclass value="NRBTS" />
+		<ne_subclass_instance value="1" />
+		<ne_ip value="10.44.204.50" />
+		<ne_instance value="1900" />
+		<ne_sw value="5G19" />
+		<ne_cell_instance value="1" />
+	</MRBTS1900>
+	
+	<MRBTS5002>
+		<ne_class value="MRBTS" />
+		<ne_subclass value="NRBTS" />
+		<ne_subclass_instance value="5002" />
+		<ne_ip value="10.16.6.11" />
+		<ne_instance value="5002" />
+		<ne_sw value="5G19CLA" />
+		<ne_cell_instance value="1" />
+	</MRBTS5002>
+	
+	<MRBTS1901>
+		<ne_class value="MRBTS" />
+		<ne_subclass value="NRBTS" />
+		<ne_subclass_instance value="1" />
+		<ne_ip value="10.57.231.208" />
+		<ne_instance value="1901" />
+		<ne_sw value="5G19CLA" />
+		<ne_cell_instance value="1" />
+		<ne_admin_password value="Asdfgh_12" />
+	</MRBTS1901>
+	
+	<MRBTS1910>
+		<ne_class value="MRBTS" />
+		<ne_subclass value="NRBTS" />
+		<ne_subclass_instance value="1" />
+		<ne_ip value="10.44.181.10" />
+		<ne_instance value="1910" />
+		<ne_sw value="5G19" />
+		<ne_cell_instance value="1" />
+	</MRBTS1910>
+	
+	<MRBTS1555>
+		<ne_class value="MRBTS" />
+		<ne_subclass value="NRBTS" />
+		<ne_subclass_instance value="1" />
+		<ne_ip value="10.44.149.19" />
+		<ne_instance value="1555" />
+		<ne_sw value="5G19CLA" />
+		<ne_cell_instance value="1" />
+	</MRBTS1555>
+	
+	<MRBTS1969>
+		<ne_class value="MRBTS" />
+		<ne_subclass value="NRBTS" />
+		<ne_subclass_instance value="1" />
+		<ne_ip value="10.57.229.11" />
+		<ne_instance value="1969" />
+		<ne_sw value="5G19CLA" />
+		<ne_cell_instance value="1" />
+	</MRBTS1969>
+
+<!-- Radio elements -->
+<!-- GSM -->
+<!-- BSC - BCF - BTS -->
+	<BSC_TA>
+		<ne_class value="BSC" />
+		<ne_ip value="10.9.232.170" />
+		<ne_instance value="97001" />
+		<ne_sw value="S16.11" />
+	</BSC_TA>
+
+	<ANGELINA>
+		<ne_class value="BSC"/>
+		<ne_ip value="10.8.56.7"/>
+		<ne_instance value="700737"/>
+		<ne_sw value="BSC17"/>
+	</ANGELINA>
+
+	<IKUNIAK bsc="ANGELINA">
+		<ne_class value="BCF" />
+		<ne_ip value="10.8.56.7" />
+		<ne_instance value="273" />
+		<ne_sw value="S16_3" />
+	</IKUNIAK>
+	
+	<ANNA>
+		<ne_class value="BSC" />
+		<ne_ip value="10.41.117.108" />
+		<ne_instance value="380287" />
+		<ne_sw value="BSC17" />
+	</ANNA>
+
+	<ANNA_BCF2 bsc="ANNA">
+		<ne_class value="BCF" />
+		<ne_ip value="10.41.117.108" />
+		<ne_instance value="2" />
+		<ne_sw value="S16_2" />
+		<site_type value="FLEXIMULTI" />
+	</ANNA_BCF2>
+
+	<ANNA_BTS4 bcf="ANNA_BCF2">
+		<ne_class value="BTS" />
+		<ne_ip value="10.41.117.108" />
+		<ne_instance value="4" />
+		<ne_sw value="S16_2" />
+		<trx_instance value="1" />
+	</ANNA_BTS4>
+
+	<ATHENSMMENEV2 bsc="ANNA">
+		<ne_class value="BCF" />
+		<ne_ip value="10.41.117.108" />
+		<ne_instance value="203" />
+		<ne_sw value="S16_2" />
+		<site_type value="FLEXIMULTI" />
+	</ATHENSMMENEV2>
+
+	<BSC20>
+		<ne_class value="BSC" />
+		<ne_ip value="10.58.248.36" />
+		<ne_instance value="12345" />
+		<ne_sw value="S16_3" />
+	</BSC20>
+
+	<BABE>
+		<ne_class value="BSC" />
+		<ne_ip value="10.8.235.10" />
+		<ne_instance value="53973" />
+		<ne_sw value="S16.13" />
+		<ne_admin_username value="SYSTEM" />
+		<ne_admin_password value="SYSTEM" />
+	</BABE>
+	
+	<VENLA>
+		<ne_class value="BSC" />
+		<ne_ip value="10.8.86.40" />
+		<ne_instance value="240275" />
+		<ne_sw value="BSC18" />
+	</VENLA>
+
+	<ANSAKORPI bsc="BABE">
+		<ne_class value="BCF" />
+		<ne_ip value="10.8.235.10" />
+		<ne_instance value="20" />
+		<ne_sw value="S16_3" />
+		<site_type value="ULTRAISITE" />
+	</ANSAKORPI>
+
+	<ANSAKORPI1 bcf="ANSAKORPI">
+		<ne_class value="BTS" />
+		<ne_ip value="10.8.235.10" />
+		<ne_instance value="21" />
+		<ne_sw value="S16_3" />
+		<trx_instance value="1" />
+	</ANSAKORPI1>
+
+	<SRNBSC>
+		<ne_class value="BSC" />
+		<ne_ip value="10.63.28.37" />
+		<ne_instance value="535535" />
+		<ne_sw value="S16_3" />
+		<ne_admin_username value="SYSTEM" />
+		<ne_admin_password value="SRNFBSC2" />
+	</SRNBSC>
+
+	<FANTOM>
+		<ne_class value="BSC" />
+		<ne_ip value="10.8.231.39" />
+		<ne_instance value="56735" />
+		<ne_sw value="S16.12" />
+		<ne_admin_username value="SYSTEM" />
+		<ne_admin_password value="SYSTEM" />
+	</FANTOM>
+
+	<LONNROT>
+		<ne_class value="BSC" />
+		<ne_ip value="10.8.231.51" />
+		<ne_instance value="86393" />
+		<ne_sw value="S15" />
+		<ne_admin_username value="SYSTEM" />
+		<ne_admin_password value="SYSTEM" />
+	</LONNROT>
+
+	<ESSO>
+		<ne_class value="BSC" />
+		<ne_ip value="10.8.218.132" />
+		<ne_instance value="397961" />
+		<ne_sw value="S16_2" />
+	</ESSO>
+
+	<LOLATEST>
+		<ne_class value="BSC" />
+		<ne_ip value="10.8.231.49" />
+		<ne_instance value="1" />
+		<ne_sw value="S15" />
+	</LOLATEST>
+
+	<BACCARA>
+		<ne_class value="BSC" />
+		<ne_ip value="10.8.83.32" />
+		<ne_instance value="300333" />
+		<ne_sw value="BSC17" />
+	</BACCARA>
+
+	<BIATHLON>
+		<ne_class value="BSC"/>
+		<ne_ip value="10.92.200.108"/>
+		<ne_instance value="375408"/>
+		<ne_sw value="BSC19"/>
+		<ne_admin_username value="SYSTEM" />
+		<ne_admin_password value="SYSTEM" />
+	</BIATHLON>
+	
+	<BIATHLON1>
+		<ne_class value="BSC"/>
+		<ne_ip value="2A00:8A00:4000:020C:0000:0000:007f:0007"/>
+		<ne_instance value="375408"/>
+		<ne_sw value="BSC19"/>
+	</BIATHLON1>
+
+	<FMR100ETPE bsc="BIATHLON">
+		<ne_class value="BCF" />
+		<ne_ip value="10.92.200.108" />
+		<ne_instance value="120" />
+		<ne_sw value="BSC19" />
+		<site_type value="FLEXI" />
+	</FMR100ETPE>
+
+	<FMR100ETPE1 bcf="FMR100ETPE">
+		<ne_class value="BTS" />
+		<ne_ip value="10.92.200.108" />
+		<ne_instance value="122" />
+		<ne_sw value="BSC19" />
+		<trx_instance value="1" />
+	</FMR100ETPE1>
+
+	<FMR100ETPE2 bcf="FMR100ETPE">
+		<ne_class value="BTS" />
+		<ne_ip value="10.92.200.108" />
+		<ne_instance value="123" />
+		<ne_sw value="BSC19" />
+		<trx_instance value="1" />
+	</FMR100ETPE2>
+	
+	<FMR100ETPE3 bcf="FMR100ETPE">
+		<ne_class value="BTS" />
+		<ne_ip value="10.92.200.108" />
+		<ne_instance value="770" />
+		<ne_sw value="BSC19" />
+		<trx_instance value="1" />
+	 </FMR100ETPE3>
+	 
+	 <FMR100ETPE4 bcf="FMR100ETPE">
+		<ne_class value="BTS" />
+		<ne_ip value="10.92.200.108" />
+		<ne_instance value="401" />
+		<ne_sw value="BSC19" />
+		<trx_instance value="1" />
+	 </FMR100ETPE4>
+	 
+	<MILJA>
+		<ne_class value="BSC"/>
+		<ne_ip value="10.92.213.108"/>
+		<ne_instance value="116715"/>
+		<ne_sw value="BSC18"/>
+	</MILJA>
+
+	<BUSTER>
+		<ne_class value="BSC"/>
+		<ne_ip value="2A00:8A00:4000:020C:0000:0000:007f:0009"/>
+		<ne_instance value="375478"/>
+		<ne_sw value="BSC19"/>
+	</BUSTER>
+
+	<MCAVENSIS>
+		<ne_class value="BSC" />
+		<ne_ip value="10.41.80.236" />
+		<ne_instance value="12345" />
+		<ne_sw value="S16_3" />
+	</MCAVENSIS>
+
+	<CURIE>
+		<ne_class value="BSC" />
+		<ne_ip value="10.8.219.104" />
+		<ne_instance value="944636" />
+		<ne_sw value="BSC18" />
+		<ne_admin_password value="TIBJA_321" />
+	</CURIE>
+
+	<WERA bsc="CURIE">
+		<ne_class value="BCF" />
+		<ne_ip value="10.8.219.104" />
+		<ne_instance value="500" />
+		<ne_sw value="BSC18" />
+		<site_type value="FLEXIMULTI" />
+		<ne_admin_password value="TIBJA_321" />
+	</WERA>
+
+	<WERA2 bcf="WERA">
+		<ne_class value="BTS" />
+		<ne_ip value="10.8.219.104" />
+		<ne_instance value="502" />
+		<ne_sw value="BSC18" />
+		<trx_instance value="1" />
+	</WERA2>
+
+	<CRANE>
+		<ne_class value="BSC" />
+		<ne_ip value="10.8.214.4" />
+		<ne_instance value="437092" />
+		<ne_sw value="BSC18" />
+	</CRANE>
+
+	<CADDINGTON bsc="CRANE">
+		<ne_class value="BCF" />
+		<ne_ip value="10.8.214.4" />
+		<ne_instance value="1000" />
+		<ne_sw value="S16_3" />
+		<site_type value="ULTRAISITE" />
+	</CADDINGTON>
+
+	<ANSAKORPI1 bcf="CADDINGTON">
+		<ne_class value="BTS" />
+		<ne_ip value="10.8.214.4" />
+		<ne_instance value="1001" />
+		<ne_sw value="S16_3" />
+		<trx_instance value="1" />
+	</ANSAKORPI1>
+
+	<ENGINE>
+		<ne_class value="BSC" />
+		<ne_ip value="10.8.235.13" />
+		<ne_instance value="87754" />
+		<ne_sw value="S16" />
+	</ENGINE>
+
+	<BARNEY>
+		<ne_class value="BSC" />
+		<ne_ip value="10.8.231.32" />
+		<ne_instance value="56270" />
+		<ne_sw value="S16.12" />
+	</BARNEY>
+	
+	<TAMDHONIASBSC>
+		<ne_class value="BSC" />
+		<ne_ip value="10.91.242.74" />
+		<ne_instance value="778850"/>
+		<ne_sw value="ASBSC19FP3" />
+		<ne_subclass value="ASBSC"/>
+	</TAMDHONIASBSC>
+	
+	<DHONIASBCF bsc="TAMDHONIASBSC">
+		<ne_class value="BCF" />
+		<ne_instance value="767" />
+		<site_type value="METROSITE" />
+	</DHONIASBCF>
+
+	<DHONIASBTS bcf="DHONIASBCF">
+		<ne_class value="BTS" />
+		<ne_instance value="769" />
+		<trx_instance value="5" />
+	</DHONIASBTS>
+
+	<TAMRAMAN>
+		<ne_class value="BSC"/>
+		<ne_ip value="10.92.176.8"/>
+		<ne_instance value="778851"/>
+		<ne_sw value="ASBSC19FP3"/>
+		<ne_subclass value="ASBSC"/>
+	</TAMRAMAN>
+
+	<DIANA>
+		<ne_class value="BSC" />
+		<ne_ip value="10.8.231.36" />
+		<ne_instance value="38994" />
+		<ne_sw value="S16.12" />
+		<ne_admin_username value="SYSTEM" />
+		<ne_admin_password value="NUPADM" />
+	</DIANA>
+
+	<GRETZKY>
+		<ne_class value="BSC" />
+		<ne_ip value="10.8.231.41" />
+		<ne_instance value="85703" />
+		<ne_sw value="S16.13" />
+		<ne_admin_username value="SYSTEM" />
+		<ne_admin_password value="PASSWORD" />
+	</GRETZKY>
+
+	<LOLA>
+		<ne_class value="BSC" />
+		<ne_ip value="10.8.231.49" />
+		<ne_instance value="54040" />
+		<ne_sw value="S15" />
+	</LOLA>
+
+	<NOMAD>
+		<ne_class value="BSC" />
+		<ne_ip value="10.8.231.139" />
+		<ne_instance value="724212" />
+		<ne_sw value="S16_3" />
+	</NOMAD>
+
+	<HALME bsc="NOMAD">
+		<ne_class value="BCF" />
+		<ne_ip value="10.8.231.139" />
+		<ne_instance value="40" />
+		<ne_sw value="S16_3" />
+		<site_type value="METROSITE" />
+	</HALME>
+
+	<HALME1 bcf="HALME">
+		<ne_class value="BTS" />
+		<ne_ip value="10.8.231.139" />
+		<ne_instance value="41" />
+		<ne_sw value="S16_3" />
+		<trx_instance value="1" />
+	</HALME1>
+
+	 <HUYNDAI bsc="NOMAD">
+		<ne_class value="BCF" />
+		<ne_ip value="10.8.231.139" />
+		<ne_instance value="10" />
+		<ne_sw value="S16_3" />
+		<site_type value="METROSITE" />
+	</HUYNDAI>
+
+	<HUYNDAI1 bcf="HALME">
+		<ne_class value="BTS" />
+		<ne_ip value="10.8.231.139" />
+		<ne_instance value="11" />
+		<ne_sw value="S16_3" />
+		<trx_instance value="1" />
+	</HUYNDAI1>
+	
+	<HALME20 bsc="NOMAD">
+		<ne_class value="BCF" />
+		<ne_ip value="10.8.231.139" />
+		<ne_instance value="20" />
+		<ne_sw value="S16_3" />
+		<site_type value="METROSITE" />
+	</HALME20>
+
+	<MYLLYLA>
+		<ne_class value="BSC" />
+		<ne_ip value="10.8.231.54" />
+		<ne_instance value="85704" />
+		<ne_sw value="S16.11" />
+	</MYLLYLA>
+
+	<MAZDA bsc="MYLLYLA">
+		<ne_class value="BCF" />
+		<ne_ip value="10.8.231.54" />
+		<ne_instance value="30" />
+		<ne_sw value="S16.11" />
+		<site_type value="METROSITE" />
+	</MAZDA>
+
+	<MAZDA1 bcf="MAZDA">
+		<ne_class value="BTS" />
+		<ne_ip value="10.8.231.54" />
+		<ne_instance value="31" />
+		<ne_sw value="S16.11" />
+		<trx_instance value="1" />
+	</MAZDA1>
+
+	<SPLIT2>
+		<ne_class value="BSC" />
+		<ne_ip value="10.8.86.72" />
+		<ne_instance value="944708" />
+		<ne_sw value="BSC17" />
+	</SPLIT2>
+
+	<LEHTINEN bsc="SPLIT2">
+		<ne_class value="BCF" />
+		<ne_ip value="10.8.86.72" />
+		<ne_instance value="70" />
+		<ne_sw value="S16.12" />
+		<site_type value="ULTRASITE" />
+	</LEHTINEN>
+
+	<LEHTINEN1 bcf="LEHTINEN">
+		<ne_class value="BTS" />
+		<ne_ip value="10.8.86.72" />
+		<ne_instance value="71" />
+		<ne_sw value="S16.12" />
+		<trx_instance value="1" />
+	</LEHTINEN1>
+
+	<SPLIT3>
+		<ne_class value="BSC" />
+		<ne_ip value="10.8.86.92" />
+		<ne_instance value="345276" />
+		<ne_sw value="S16_3" />
+	</SPLIT3>
+
+	<HEMI>
+		<ne_class value="BSC" />
+		<ne_ip value="10.8.231.184" />
+		<ne_instance value="884287" />
+		<ne_sw value="S16_2" />
+	</HEMI>
+
+	<TERHI>
+		<ne_class value="BSC" />
+		<ne_ip value="10.91.206.108" />
+		<ne_instance value="397848" />
+		<ne_sw value="BSC17" />
+	</TERHI>
+
+	<PIOTREK>
+		<ne_class value="BSC" />
+		<ne_ip value="10.58.248.36" />
+		<ne_instance value="12345" />
+		<ne_sw value="S16" />
+	</PIOTREK>
+
+	 <VANTAGE>
+		<ne_class value="BSC" />
+		<ne_ip value="10.8.67.132" />
+		<ne_instance value="226594" />
+		<ne_sw value="BSC18" />
+	 </VANTAGE>
+
+	<WOIKOSKII bsc="VANTAGE">
+		<ne_class value="BCF" />
+		<ne_instance value="440" />
+		<site_type value="FLEXI" />
+	</WOIKOSKII>
+
+	<WOIKOSKII1 bcf="WOIKOSKII">
+		<ne_class value="BTS" />
+		<ne_instance value="441" />
+		<trx_instance value="1" />
+	</WOIKOSKII1>
+
+	<WOIKOSKII2 bcf="WOIKOSKII">
+		<ne_class value="BTS" />
+		<ne_instance value="442" />
+		<trx_instance value="3" />
+	</WOIKOSKII2>
+
+
+	<OIKARI>
+		<ne_class value="BSC" />
+		<ne_ip value="10.92.251.4" />
+		<ne_instance value="902254" />
+		<ne_sw value="BSC17" />
+	</OIKARI>
+
+	<VALIANT>
+		<ne_class value="BSC" />
+		<ne_ip value="10.8.219.4" />
+		<ne_instance value="397114" />
+		<ne_sw value="SR40" />
+	</VALIANT>
+
+	<MILLER bsc="VALIANT">
+		<ne_class value="BCF" />
+		<ne_ip value="10.8.219.4" />
+		<ne_instance value="690" />
+		<ne_sw value="SR40" />
+		<site_type value="FLEXIEDGE" />
+	</MILLER>
+
+	<MILLER1 bcf="MILLER">
+		<ne_class value="BTS" />
+		<ne_ip value="10.8.219.4" />
+		<ne_instance value="691" />
+		<ne_sw value="SR40" />
+		<trx_instance value="1" />
+	</MILLER1>
+
+	<JULES>
+		<ne_class value="BSC" />
+		<ne_ip value="10.8.235.15" />
+		<ne_instance value="56170" />
+		<ne_sw value="S16" />
+		<ne_admin_username value="NEIMAT" />
+		<ne_admin_password value="SYSTEM" />
+	</JULES>
+
+	<VINCENT>
+		<ne_class value="BSC" />
+		<ne_ip value="10.8.235.17" />
+		<ne_instance value="56277" />
+		<ne_sw value="S16" />
+	</VINCENT>
+
+	<TOYOTA bsc="VINCENT">
+		<ne_class value="BCF" />
+		<ne_ip value="10.8.235.17" />
+		<ne_instance value="350" />
+		<ne_sw value="S16" />
+		<site_type value="METROSITE" />
+	</TOYOTA>
+
+	<TOYOTA1 bcf="TOYOTA">
+		<ne_class value="BTS" />
+		<ne_ip value="10.8.235.17" />
+		<ne_instance value="351" />
+		<ne_sw value="S16" />
+		<trx_instance value="1" />
+	</TOYOTA1>
+
+	<ZIL>
+		<ne_class value="BSC" />
+		<ne_ip value="10.8.86.143" />
+		<ne_instance value="56524" />
+		<ne_sw value="S16.12" />
+		<ne_admin_username value="BSCADM" />
+		<ne_admin_password value="PASSWORD" />
+	</ZIL>
+
+	<OBAN>
+		<ne_class value="BSC" />
+		<ne_ip value="10.8.231.56" />
+		<ne_instance value="56269 " />
+		<ne_sw value="S15" />
+	</OBAN>
+
+	<SCHUMACHER bsc="OBAN">
+		<ne_class value="BCF" />
+		<ne_ip value="10.8.231.56" />
+		<ne_instance value="40" />
+		<ne_sw value="S15" />
+		<site_type value="TALKFAMILY" />
+	</SCHUMACHER>
+
+	<SCHUMACHER1 bcf="SCHUMACHER">
+		<ne_class value="BTS" />
+		<ne_ip value="10.8.231.56" />
+		<ne_instance value="41" />
+		<ne_sw value="S15" />
+		<trx_instance value="1" />
+	</SCHUMACHER1>
+
+	<KLAARA>
+		<ne_class value="BSC" />
+		<ne_ip value="10.8.86.59" />
+		<ne_instance value="942207" />
+		<ne_sw value="BSC18" />
+		<ne_admin_username value="NEIMAT" />
+		<ne_admin_password value="SYSTEM" />
+	</KLAARA>
+	
+	<AGA bsc="KLAARA">
+		<ne_class value="BCF" />
+		<ne_ip value="10.8.86.59" />
+		<ne_instance value="100" />
+		<ne_sw value="BSC18" />
+		<site_type value="FLEXIEDGE" />
+	</AGA>
+
+	<AGA1 bcf="AGA">
+		<ne_class value="BTS" />
+		<ne_ip value="10.8.86.59" />
+		<ne_instance value="101" />
+		<ne_sw value="BSC18" />
+		<trx_instance value="1" />
+	</AGA1>						
+
+	<AGA2 bcf="AGA">
+		<ne_class value="BTS" />
+		<ne_ip value="10.8.86.59" />
+		<ne_instance value="102" />
+		<ne_sw value="BSC18" />
+		<trx_instance value="3" />
+	</AGA2>		
+				
+	<MAHTAVA bsc="KLAARA">
+		<ne_class value="BCF" />
+		<ne_ip value="10.8.86.59" />
+		<ne_instance value="273" />
+		<ne_sw value="BSC18" />
+		<site_type value="FLEXIMULTI" />
+	</MAHTAVA>
+	
+	<MAHTAVA1 bcf="MAHTAVA">
+		<ne_class value="BTS" />
+		<ne_ip value="10.8.86.59" />
+		<ne_instance value="500" />
+		<ne_sw value="BSC18" />
+		<trx_instance value="1" />
+	</MAHTAVA1>
+	
+	<STAN bsc="KLAARA">
+		<ne_class value="BCF" />
+		<ne_ip value="10.8.86.59" />
+		<ne_instance value="444" />
+		<ne_sw value="BSC18" />
+		<site_type value="INSITE" />
+	</STAN>
+				
+	<STAN1 bcf="STAN">
+		<ne_class value="BTS" />
+		<ne_ip value="10.8.86.59" />
+		<ne_instance value="444" />
+		<ne_sw value="BSC18" />
+		<trx_instance value="1" />
+	</STAN1>
+				
+	<PUKKA bsc="KLAARA">
+		<ne_class value="BCF" />
+		<ne_ip value="10.8.86.59" />
+		<ne_instance value="1800" />
+		<ne_sw value="BSC18" />
+		<site_type value="ULTRAISITE" />
+	</PUKKA>
+
+	<PUKKA1 bcf="PUKKA">
+		<ne_class value="BTS" />
+		<ne_ip value="10.8.86.59" />
+		<ne_instance value="1801" />
+		<ne_sw value="BSC18" />
+		<trx_instance value="1" />
+	</PUKKA1>
+
+	<PUKKA2 bcf="PUKKA">
+		<ne_class value="BTS" />
+		<ne_ip value="10.8.86.59" />
+		<ne_instance value="1802" />
+		<ne_sw value="BSC18" />
+		<trx_instance value="3" />
+	</PUKKA2>
+
+	
+	<BELLE>
+		<ne_class value="BSC" />
+		<ne_ip value="10.93.248.108" />
+		<ne_instance value="402128" />
+		<ne_sw value="BSC17" />
+	</BELLE>
+
+<!-- WCDMA -->
+<!-- OMS - RNC - WBTS -->
+	<CHILI_OMS>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.142.135" />
+		<ne_instance value="812" />
+		<ne_sw value="WOMS16" />
+	</CHILI_OMS>
+
+	<CHILI oms="CHILI_OMS">
+		<ne_class value="RNC" />
+		<ne_ip value="10.8.85.6" />
+		<ne_instance value="812" />
+		<ne_sw value="RNC16" />
+	</CHILI>
+
+	<HARRIER rnc="CHILI">
+		<ne_class value="WBTS" />
+		<ne_ip value="10.9.199.113" />
+		<ne_instance value="930" />
+		<ne_sw value="WN9.1" />
+		<ne_cell_instance value="1" />
+	</HARRIER>
+
+	
+<!-- OMS - RNC - WBTS -->
+	<ZLATAN_OMS>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.219.103" />
+		<ne_instance value="2100" />
+		<ne_sw value="WOMS18" />
+		<ne_admin_username value="Nokiaoms" />		
+		<ne_admin_password value="nemuuser3" />
+		<ne_root_password value="Nokia@123" />
+		<ne_prompt value="&lt;&lt;" />
+		<ne_root_prompt value="&lt;&lt;" />
+	</ZLATAN_OMS>
+
+	<ZLATAN oms="ZLATAN_OMS">
+		<ne_class value="RNC" />
+		<ne_ip value="10.9.162.207" />
+		<ne_instance value="841" />
+		<ne_sw value="RNC18" />
+		<ne_admin_username value="SYSTEM" />
+		<ne_admin_password value="TIBJA_321" />
+		<NEAC_service_types type="list" value="'NEUM Admin Access', 'Default Access', 'FTP Access', 'SFTP Access', 'Remote MML Access', 'EM Access'" />
+		<NEAC_service_usernames type="list" value="'NUPADM', 'DEFACC', 'FTPACC', 'SFTPAC', 'REMMML', 'Nemuadmin'" />
+		<NEAC_service_password type="list" value="'PASSWORD', 'PASSWORD', 'PASSWORD', 'PASSWORD', 'PASSWORD', 'Nemuser_34'" />
+	</ZLATAN>
+	
+	<BRISTOL rnc="ZLATAN">
+		<ne_class value="WBTS" />
+		<ne_ip value="10.9.189.85" />
+		<ne_instance value="969" />
+		<ne_sw value="WBTS18" />
+		<ne_cell_instance value="1" />
+		<ne_admin_username value="Nemuadmin" />
+		<ne_admin_password value="Nemuser_34" />		
+	</BRISTOL>
+
+<!-- OMS - RNC - WBTS -->
+	<MESSI_OMS>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.142.145" />
+		<ne_instance value="2127" />
+		<ne_sw value="WOMS18" />
+	</MESSI_OMS>
+
+	<MIKE oms="MESSI_OMS">
+		<ne_class value="RNC" />
+		<ne_subclass value="MCRNC"/>
+		<ne_ip value="10.91.227.28" />
+		<ne_instance value="834" />
+		<ne_sw value="mcRNC18" />
+	</MIKE>
+		
+<!-- OMS - RNC - WBTS -->
+	<TIMONEN_OMS>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.219.80" />
+		<ne_instance value="1113" />
+		<ne_sw value="WOMS17" />
+	</TIMONEN_OMS>
+
+	<TIMONEN oms="TIMONEN_OMS">
+		<ne_class value="RNC" />
+		<ne_ip value="10.8.54.50" />
+		<ne_instance value="196" />
+		<ne_sw value="RNC17" />
+	</TIMONEN>
+
+	<HOLI rnc="TIMONEN">
+		<ne_class value="WBTS" />
+		<ne_ip value="10.91.227.151" />
+		<ne_instance value="993" />
+		<ne_sw value="WL9.1" />
+		<ne_cell_instance value="1" />
+	</HOLI>
+
+<!-- OMS - RNC - WBTS -->
+	<OMS583_OMS>
+		<ne_class value="OMS" />
+		<ne_ip value="10.68.171.62" />
+		<ne_instance value="583" />
+		<ne_sw value="WOMS17" />
+		<ne_root_password value="root" />
+	</OMS583_OMS>
+
+	<RNC313 oms="OMS583_OMS">
+		<ne_class value="RNC" />
+		<ne_ip value="10.70.2.133" />
+		<ne_instance value="313" />
+		<ne_sw value="RNC17" />
+	</RNC313>
+
+	<BTS3132 rnc="RNC313">
+		<ne_class value="WBTS" />
+		<ne_ip value="10.69.49.96" />
+		<ne_instance value="3132" />
+		<ne_sw value="WBTS17" />
+		<ne_cell_instance value="1" />
+	</BTS3132>
+
+<!-- OMS - RNC - WBTS -->
+	<MERCURY>
+		<ne_class value="OMS" />
+		<ne_ip value="10.8.85.240" />
+		<ne_instance value="1021" />
+		<ne_admin_username value="Nemuadmin" />
+		<ne_admin_password value="nemuuser" />
+		<ne_sw value="WOMS17" />
+	</MERCURY>
+
+	<POUTIAINEN oms="MERCURY">
+		<ne_class value="RNC" />
+		<ne_ip value="10.8.54.79" />
+		<ne_instance value="801" />
+		<ne_admin_username value="SYSTEM" />
+		<ne_admin_password value="SYSTEM" />
+		<ne_sw value="RNC17" />
+	</POUTIAINEN>
+
+	<EMBRAER rnc="POUTIAINEN">
+		<ne_class value="WBTS" />
+		<ne_ip value="10.9.129.193" />
+		<ne_instance value="986" />
+		<ne_sw value="WBTS17" />
+		<ne_cell_instance value="10" />
+	</EMBRAER>
+
+<!-- OMS - RNC -WBTS -->
+	<POUTIAINEN_OMS>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.219.76" />
+		<ne_instance value="1111" />
+		<ne_sw value="WOMS17" />
+	</POUTIAINEN_OMS>
+
+	<STIGA oms="POUTIAINEN_OMS">
+		<ne_class value="RNC" />
+		<ne_ip value="10.8.54.39" />
+		<ne_admin_username value="SYSTEM" />
+		<ne_admin_password value="SYSTEM" />
+		<ne_instance value="187" />
+		<ne_sw value="RNC17" />
+	</STIGA>
+	
+	<GNAT rnc="STIGA">
+		<ne_class value="WBTS" />
+		<ne_ip value="10.9.135.41" />
+		<ne_instance value="927" />
+		<ne_sw value="WBTS17" />
+		<ne_cell_instance value="1" />
+	</GNAT>
+
+<!-- OMS - ASRNC -WBTS -->
+	<PHOSPHORUS>
+		<ne_class value="OMS"/>
+		<ne_ip value="10.9.219.123"/>
+		<ne_instance value="3010"/>
+		<ne_sw value="WOMS18"/>
+	</PHOSPHORUS>
+
+	<DRAVID oms="BANTAYAN">
+		<ne_class value="RNC"/>
+		<ne_subclass value="ASRNC"/>
+		<ne_admin_username value="_nokadmin"/>
+		<ne_admin_password value="uteadmin"/>
+		<ne_root_username value="_nokadmin" />
+		<ne_root_password value="uteadmin" />
+		<ne_ip value="10.91.194.149"/>
+		<ne_instance value="104"/>
+		<ne_sw value="ASRNC19FP3"/>
+		<ne_prompt value=">" />
+	</DRAVID>
+	
+	<DHANI oms="PHOSPHORUS">
+		<ne_class value="RNC"/>
+		<ne_subclass value="ASRNC"/>
+		<ne_admin_username value="_nokadmin"/>
+		<ne_admin_password value="uteadmin"/>
+		<ne_root_username value="_nokadmin" />
+		<ne_root_password value="uteadmin" />
+		<ne_ip value="10.91.246.232"/>
+		<ne_instance value="108"/>
+		<ne_sw value="ASRNC18FP3"/>
+		<ne_prompt value=">" />
+	</DHANI>
+
+	<HORNET rnc="DHANI">
+		<ne_class value="WBTS"/>
+		<ne_ip value="10.9.129.5"/>
+		<ne_instance value="923"/>
+		<ne_sw value="WBTS18"/>
+		<ne_cell_instance value="1"/>
+	</HORNET>
+
+<!-- OMS - ASRNC -WBTS -->
+	<POTASSIUM>
+		<ne_class value="OMS"/>
+		<ne_ip value="10.9.153.100"/>
+		<ne_instance value="2088"/>
+		<ne_sw value="WOMS18"/>
+	</POTASSIUM>
+
+	<SULTANASRNC oms="POTASSIUM">
+		<ne_class value="RNC"/>
+		<ne_subclass value="ASRNC"/>
+		<ne_admin_username value="_nokadmin"/>
+		<ne_admin_password value="uteadmin"/>
+		<ne_root_username value="_nokadmin" />
+		<ne_root_password value="uteadmin" />
+		<ne_ip value="10.92.61.9"/>
+		<ne_instance value="102"/>
+		<ne_sw value="ASRNC18FP3"/>
+		<ne_prompt value=">" />
+		<NEAC_service_types type="list" value="'NEUM Admin Access', 'SCLI Access', 'SFTP Access', 'EM Access', 'HTTPS Access'" />
+		<NEAC_service_usernames type="list" value="'NUPADM', 'scliac', 'sftpac', 'Nemuadmin', 'httpacc'" />
+		<NEAC_service_password type="list" value="'pASSWORD_123', 'Newkey@123', 'pASSWORD_123', 'nemuuser', 'Newkey@123'" />
+	</SULTANASRNC>
+
+	<MIG rnc="SULTANASRNC">
+		<ne_class value="WBTS"/>
+		<ne_ip value="10.9.189.97"/>
+		<ne_instance value="926"/>
+		<ne_sw value="WBTS18"/>
+		<ne_cell_instance value="1"/>
+	</MIG>
+		
+<!-- OMS - ASRNC -WBTS -->
+	<VENUS>
+		<ne_class value="OMS"/>
+		<ne_ip value="10.8.85.242"/>
+		<ne_instance value="1022"/>
+		<ne_sw value="vWOMS17"/>
+	</VENUS>
+
+	<YUVARAJASRNC oms="VENUS">
+		<ne_class value="RNC"/>
+		<ne_subclass value="MCRNC"/>
+		<ne_admin_username value="_rcpadmin"/>
+		<ne_admin_password value="RCP_owner"/>
+		<ne_ip value="10.92.61.199"/>
+		<ne_instance value="103"/>
+		<ne_sw value="ASRNC17"/>
+	</YUVARAJASRNC>
+
+	<VICKERS rnc="YuvarajASRNC">
+		<ne_class value="WBTS"/>
+		<ne_ip value="10.9.189.177"/>
+		<ne_instance value="976"/>
+		<ne_sw value="WBTS17"/>
+		<ne_cell_instance value="1"/>
+	</VICKERS>
+
+<!-- OMS - mcRNC -WBTS -->
+	<MINI3_OMS>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.153.112" />
+		<ne_instance value="2427" />
+		<ne_sw value="WOMS17" />
+	</MINI3_OMS>
+
+	<MESSI oms="MINI3_OMS">
+		<ne_class value="RNC" />
+		<ne_ip value="10.91.227.11" />
+		<ne_instance value="843" />
+		<ne_sw value="RNC17" />
+	</MESSI>
+	
+	<SIKORSKY rnc="MESSI">
+		<ne_class value="WBTS" />
+		<ne_ip value="10.9.162.193" />
+		<ne_instance value="964" />
+		<ne_sw value="WBTS17" />
+		<ne_cell_instance value="1" />
+	</SIKORSKY>
+	
+	<INDIA oms="MINI3_OMS">
+		<ne_class value="RNC" />
+		<ne_subclass value="MCRNC" />
+		<ne_admin_username value="_nokadmin" />
+		<ne_admin_password value="system" />
+		<ne_ip value="10.9.162.145" />
+		<ne_instance value="826" />
+		<ne_sw value="mcRNC17" />
+	</INDIA>
+
+	<DRAGONFLY rnc="INDIA">
+		<ne_class value="WBTS" />
+		<ne_ip value="10.9.189.237" />
+		<ne_instance value="985" />
+		<ne_sw value="WL9.1" />
+		<ne_cell_instance value="1" />
+	 </DRAGONFLY>
+
+<!-- OMS - mcRNC -WBTS -->
+	<SRNOMS10>
+		<ne_class value="OMS" />
+		<ne_ip value="10.8.17.247" />
+		<ne_instance value="555" />
+		<ne_sw value="WOMS17" />
+	</SRNOMS10>
+
+	<MCRNC250 oms="SRNOMS10">
+		<ne_class value="RNC" />
+		<ne_subclass value="MCRNC" />
+		<ne_admin_username value="_nokadmin" />
+		<ne_admin_password value="system" />
+		<ne_ip value="10.41.83.144" />
+		<ne_instance value="250" />
+		<ne_sw value="RNC17" />
+	</MCRNC250>
+
+<!-- OMS - mcRNC - WBTS -->
+	<PALLAS>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.142.137" />
+		<ne_instance value="1033" />
+		<ne_sw value="WOMS17" />
+	</PALLAS>
+
+	<MORPHEUS oms="PALLAS">
+		<ne_class value="RNC" />
+		<ne_ip value="10.8.54.83" />
+		<ne_instance value="803" />
+		<ne_sw value="RNC17" />
+	</MORPHEUS>
+
+	<BELITE rnc="INDIA">
+		<ne_class value="WBTS" />
+		<ne_ip value="10.9.189.229" />
+		<ne_instance value="983" />
+		<ne_sw value="WL9.1" />
+		<ne_cell_instance value="2" />
+	</BELITE>
+
+	<BELL rnc="INDIA">
+		<ne_class value="WBTS" />
+		<ne_ip value="10.9.189.205" />
+		<ne_instance value="960" />
+		<ne_sw value="WBTS17" />
+		<ne_cell_instance value="1" />
+	</BELL>
+
+<!-- OMS - mcRNC - WBTS-->
+	<NEPTUNE>
+		<ne_class value="OMS" />
+		<ne_ip value="10.8.85.209" />
+		<ne_instance value="1029" />
+		<ne_sw value="WOMS18" />
+	</NEPTUNE>
+
+	<PHOSPHOROUS>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.219.123" />
+		<ne_instance value="3010" />
+		<ne_sw value="WOMS18" />
+	</PHOSPHOROUS>
+	
+	<LIMA oms="PHOSPHOROUS">
+		<ne_class value="RNC" />
+		<ne_subclass value="MCRNC" />
+		<ne_admin_username value="_nokfsoperator" />
+		<ne_admin_password value="nemuuser" />
+		<ne_ip value="10.9.162.191" />
+		<ne_instance value="829" />
+		<ne_sw value="mcRNC18" />
+	</LIMA>
+
+	<!-- OMS - IADA - WBTS -->
+	<BIGMAMA>
+		<ne_class value="OMS" />
+		<ne_ip value="10.8.85.109" />
+		<ne_instance value="2001" />
+		<ne_sw value="IHO5.0" />
+	</BIGMAMA>
+
+	<STUKA_IADA oms="BIGMAMA">
+		<ne_class value="IADA" />
+		<ne_ip value="10.9.162.42" />
+		<ne_instance value="779" />
+		<ne_sw value="IH5.0" />
+	</STUKA_IADA>
+
+	<STUKA iada="STUKA_IADA">
+		<ne_class value="WBTS" />
+		<ne_ip value="10.9.199.90" />
+		<ne_instance value="178" />
+		<ne_sw value="WN8.0" />
+		<ne_cell_instance value="1" />
+	</STUKA>
+	
+	<QUEBEC oms="MESSI_OMS">
+		<ne_class value="RNC" />
+		<ne_subclass value="MCRNC" />
+		<ne_ip value="10.91.227.240" />
+		<ne_instance value="834" />
+		<ne_sw value="mcRNC18" />
+		<ne_admin_username value="root" />
+		<ne_admin_password value="nemuuser" />
+		<NEAC_service_types type="list" value="'NEUM Admin Access', 'SCLI Access', 'SFTP Access', 'EM Access', 'HTTP Access', 'HTTPS Access'" />
+		<NEAC_service_usernames type="list" value="'NUPADM1', 'SCLIAC', 'SFTPAC', 'Nemuadmin', 'HTTPACC', 'HTTPSACC'" />
+		<NEAC_service_password type="list" value="'P@ssw0rd123_', 'P@ssw0rd123_', 'P@ssw0rd123_', 'nemuuser','P@ssw0rd123_', 'P@ssw0rd123_'" />
+	</QUEBEC>
+	
+	<MYASISHCHEV rnc="QUEBEC">
+		<ne_class value="WBTS" />
+		<ne_ip value="10.9.189.157" />
+		<ne_instance value="1773" />
+		<ne_sw value="WBTS18" />
+		<ne_cell_instance value="17731" />
+	</MYASISHCHEV>
+	
+	<CHINAOMS>
+		<ne_class value="OMS"/>
+		<ne_ip value="135.242.137.207"/>
+		<ne_instance value="507"/>
+		<ne_sw value="WOMS17"/>
+	</CHINAOMS>
+
+	<CHINARNC oms="CHINAOMS">
+		<ne_class value="RNC"/>
+		<ne_subclass value="MCRNC"/>
+		<ne_ip value="135.242.137.230"/>
+		<ne_instance value="51"/>
+		<ne_sw value="mcRNC18"/>
+		<ne_admin_username value="nupadm" />
+		<ne_admin_password value="asb#1234" />
+		<NEAC_service_types type="list" value="'NEUM Admin Access', 'SCLI Access', 'SFTP Access', 'EM Access', 'HTTP Access', 'HTTPS Access'" />
+		<NEAC_service_usernames type="list" value="'nupadm', 'sclica', 'sftpca', 'Nemuadmin', 'HTTPACC', 'HTTPSACC'" />
+		<NEAC_service_password type="list" value="'asb#1234', 'asb#1234', 'asb#1234', 'nemuuser','asb#1234', 'asb#1234'" />
+		<ne_root_username value="root" />
+		<ne_root_password value="root" />
+	</CHINARNC>
+
+	<CHINAWBTS rnc="CHINARNC">
+		<ne_class value="WBTS"/>
+		<ne_ip value="135.242.137.229"/>
+		<ne_instance value="7061"/>
+		<ne_sw value="WBTS18"/>
+		<ne_cell_instance value="61001"/>
+	</CHINAWBTS>
+	
+	<!-- OMS - IADA - WBTS -->
+	<GOLD_OMS>
+		<ne_class value="OMS" />
+		<ne_ip value="10.8.85.130" />
+		<ne_instance value="2005" />
+		<ne_sw value="IHO5.0" />
+	</GOLD_OMS>
+
+	<GOLD oms="GOLD_OMS">
+		<ne_class value="IADA" />
+		<ne_ip value="10.9.162.113" />
+		<ne_instance value="780" />
+		<ne_sw value="IH6.0" />
+	</GOLD>
+
+<!-- OMS - IADA - WBTS -->
+	<HEADACHE>
+		<ne_class value="OMS" />
+		<ne_ip value="10.8.85.147" />
+		<ne_instance value="2007" />
+		<ne_sw value="IHO6.0" />
+	</HEADACHE>
+
+	<WILDCAT_IADA oms="HEADACHE">
+		<ne_class value="IADA" />
+		<ne_ip value="10.9.162.113" />
+		<ne_instance value="179" />
+		<ne_sw value="IH6.0" />
+		<ne_root_password value="root" />
+	</WILDCAT_IADA>
+	
+	<GRINGO>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.219.117" />
+		<ne_instance value="3007" />
+		<ne_sw value="WOMS18" />
+	</GRINGO>
+	
+	<OSCAR oms="GRINGO">
+		<ne_class value="RNC" />
+		<ne_subclass value="MCRNC" />
+		<ne_admin_username value="root" />
+		<ne_admin_password value="nemuuser" />
+		<ne_ip value="10.91.227.234" />
+		<ne_instance value="832" />
+		<ne_sw value="mcRNC18" />
+	</OSCAR>
+	
+	<YAK rnc="OSCAR">
+		<ne_class value="WBTS" />
+		<ne_ip value="10.8.88.193" />
+		<ne_instance value="937" />
+		<ne_sw value="WBTS18" />
+		<ne_cell_instance value="1" />
+	</YAK>
+
+	<WILDCAT iada="WILDCAT_IADA">
+		<ne_class value="WBTS" />
+		<ne_ip value="10.9.199.106" />
+		<ne_instance value="179" />
+		<ne_sw value="WN9.0" />
+		<ne_cell_instance value="1" />
+	</WILDCAT>
+
+<!-- OMS - IADA - WBTS -->
+	<HOMEBOY>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.219.82" />
+		<ne_instance value="1114" />
+		<ne_sw value="IHO6.0" />
+	</HOMEBOY>
+
+	<LOCKHEED_IADA oms="HOMEBOY">
+		<ne_class value="IADA" />
+		<ne_ip value="10.8.85.249" />
+		<ne_instance value="775" />
+		<ne_sw value="IH6.0" />
+	</LOCKHEED_IADA>
+
+	<GRUMMAN_IADA oms="HOMEBOY">
+		<ne_class value="IADA" />
+		<ne_ip value="10.8.85.233" />
+		<ne_instance value="778" />
+		<ne_sw value="WN9.0" />
+	</GRUMMAN_IADA>
+
+	<GRUMMAN iada="GRUMMAN_IADA">
+		<ne_class value="WBTS" />
+		<ne_ip value="10.9.199.26" />
+		<ne_instance value="953" />
+		<ne_sw value="WN9.0" />
+		<ne_cell_instance value="1" />
+	</GRUMMAN>
+
+<!-- OMS - IADA - WBTS -->
+	<INZERILLO>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.219.84" />
+		<ne_instance value="1115" />
+		<ne_sw value="IHO6.0" />
+	</INZERILLO>
+
+	<LOCKHEED rnc="DRAVID">
+		<ne_class value="WBTS" />
+		<ne_ip value="10.8.45.130" />
+		<ne_instance value="775" />
+		<ne_sw value="WBTS19" />
+		<ne_cell_instance value="1" />
+	</LOCKHEED>
+
+<!-- OMS - IADA - WBTS -->
+	<HEADACHE>
+		<ne_class value="OMS" />
+		<ne_ip value="10.8.85.147" />
+		<ne_instance value="2007" />
+		<ne_sw value="IHO6.0" />
+	</HEADACHE>
+
+	<HAVILLAND oms="HEADACHE">
+		<ne_class value="IADA" />
+		<ne_ip value="10.9.162.125" />
+		<ne_instance value="774" />
+		<ne_sw value="IHO6.0" />
+	</HAVILLAND>
+
+	<HAVILLAND_WBTS iada="HAVILLAND">
+		<ne_class value="WBTS" />
+		<ne_ip value="10.9.199.34" />
+		<ne_instance value="949" />
+		<ne_sw value="WN7.0" />
+		<ne_cell_instance value="1" />
+	</HAVILLAND_WBTS>
+
+<!-- OMS - IADA - WBTS -->
+	<VALACHI>
+		<ne_class value="OMS" />
+		<ne_ip value="10.8.85.127" />
+		<ne_instance value="2004" />
+		<ne_sw value="IHO6.0" />
+	</VALACHI>
+
+	<BREWSTER oms="VALACHI">
+		<ne_class value="IADA" />
+		<ne_ip value="10.9.162.119" />
+		<ne_instance value="783" />
+		<ne_sw value="IHO6.0" />
+	</BREWSTER>
+
+	<BREWSTER_WBTS iada="BREWSTER">
+		<ne_class value="WBTS" />
+		<ne_ip value="10.9.199.2" />
+		<ne_instance value="958" />
+		<ne_sw value="WN9.0" />
+		<ne_cell_instance value="1" />
+	</BREWSTER_WBTS>
+
+<!-- OMS - RNC -->
+	<BALOTELLI_OMS>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.219.74" />
+		<ne_instance value="2075" />
+		<ne_sw value="WOMS18" />
+	</BALOTELLI_OMS>
+
+	<BALOTELLI oms="BALOTELLI_OMS">
+		<ne_class value="RNC" />
+		<ne_ip value="10.9.162.212" />
+		<ne_instance value="842" />
+		<ne_sw value="RNC19" />
+	</BALOTELLI>
+	
+	<HAWK rnc="BALOTELLI">
+		<ne_class value="WBTS" />
+		<ne_ip value="10.9.189.105" />
+		<ne_instance value="925" />
+		<ne_sw value="WBTS19" />
+		<ne_cell_instance value="1" />
+	</HAWK>
+	
+	<LANCER rnc="BALOTELLI">
+		<ne_class value="WBTS" />
+		<ne_ip value="10.9.189.81" />
+		<ne_instance value="974" />
+		<ne_sw value="WNBTS17" />
+		<ne_cell_instance value="1" />
+	</LANCER>
+
+	<FIREFLY rnc="BALOTELLI">
+		<ne_class value="WBTS" />
+		<ne_ip value="10.9.189.233" />
+		<ne_instance value="984" />
+		<ne_sw value="WL9.1" />
+		<ne_cell_instance value="1" />
+	 </FIREFLY>
+
+	<MORANE rnc="BALOTELLI">
+		<ne_class value="WBTS" />
+		<ne_ip value="10.9.189.210" />
+		<ne_instance value="967" />
+		<ne_sw value="WBTS17" />
+		<ne_cell_instance value="1" />
+	</MORANE>
+
+<!-- OMS - RNC - WBTS -->
+	<TULPPIO_OMS>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.219.78" />
+		<ne_instance value="189" />
+		<ne_sw value="WOMS17" />
+	</TULPPIO_OMS>
+
+	<TULPPIO oms="TULPPIO_OMS">
+		<ne_class value="RNC" />
+		<ne_ip value="10.8.54.37" />
+		<ne_instance value="189" />
+		<ne_sw value="RNC17" />
+	</TULPPIO>
+	
+	<KIPPARI rnc="TULPPIO">
+		<ne_class value="WBTS" /> 
+		<ne_ip value="10.9.129.233" /> 
+		<ne_instance value="910" /> 
+		<ne_sw value="WL9.1" /> 
+		<ne_cell_instance value="7" />
+	</KIPPARI>
+
+	<COUGAR rnc="TULPPIO">
+		<ne_class value="WBTS" />
+		<ne_ip value="10.9.189.241" />
+		<ne_instance value="944" />
+		<ne_sw value="WBTS16" />
+		<ne_cell_instance value="1" />
+	</COUGAR>
+
+	<ARCTIC rnc="TULPPIO">
+		<ne_class value="WBTS" />
+		<ne_ip value="10.8.60.2" />
+		<ne_instance value="157" />
+		<ne_sw value="WN6.0 EP1" />
+		<ne_cell_instance value="1" />
+	 </ARCTIC>
+
+	 <RAMMSTEIN rnc="TULPPIO">
+		<ne_class value="WBTS" />
+		<ne_ip value="10.8.60.18" />
+		<ne_instance value="160" />
+		<ne_sw value="WN6.0 EP1" />
+		<ne_cell_instance value="1" />
+	 </RAMMSTEIN>
+
+<!-- LTE -->
+<!-- CBTS -->
+	<CLOUDBTS_KRZYCHU>
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.93.203.4" />
+		<ne_instance value="100" />
+		<ne_sw value="CBTS18A" />
+		<ne_cell_instance value="1" />
+		<ne_subclass value="CBTS" />
+	</CLOUDBTS_KRZYCHU>
+
+	<CLOUDBTS_SZEREMETEFETE>
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.93.203.7" />
+		<ne_instance value="100" />
+		<ne_sw value="CBTS18A" />
+		<ne_cell_instance value="1" />
+		<ne_subclass value="CBTS" />
+	</CLOUDBTS_SZEREMETEFETE>	
+
+<!-- OMS - MRBTS -->
+	<CBISTAMSUPERMAN>
+		<ne_class value="OMS" />
+		<ne_ip value="10.91.225.156" />
+		<ne_instance value="126" />
+		<ne_sw value="LOMS18" />
+	</CBISTAMSUPERMAN>
+
+	<MRBTS725 oms="CBISTAMSUPERMAN">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.93.249.142" />
+		<ne_instance value="725" />
+		<ne_sw value="FLC18" />
+		<ne_cell_instance value="10" />
+		<ne_admin_username value="Nemuadmin" />
+		<ne_admin_password value="Nemu123+" />
+	</MRBTS725>
+
+	<MRBTS726 oms="MARTTY">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.93.249.162" />
+		<ne_instance value="726" />
+		<ne_sw value="TLC18SP" />
+		<ne_cell_instance value="0" />
+		<ne_root_password value="uteadmin" />
+		<ne_admin_username value="_nokadmin" />
+		<ne_admin_password value="uteadmin" />
+	</MRBTS726>	
+	
+	<ODIE oms="TARZAN">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.91.227.75" />
+		<ne_instance value="1750" />
+		<ne_sw value="TLF18A" />
+		<ne_cell_instance value="1" />
+	</ODIE>	
+	
+	<CMRBTS725 oms="CBISTAMSUPERMAN">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.93.184.136" />
+		<ne_instance value="725" />
+		<ne_sw value="FLC18SP" />
+		<ne_cell_instance value="10" />
+		<ne_admin_username value="Nemuadmin" />
+		<ne_admin_password value="Nemu123+" />
+	</CMRBTS725>
+	
+	<RANTANPLAN oms="CBISTAMSUPERMAN">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.91.227.109" />
+		<ne_instance value="1754" />
+		<ne_sw value="FLF18A" />
+		<ne_cell_instance value="1" />
+		<ne_admin_username value="Nemuadmin" />
+		<ne_admin_password value="nemuuser" />
+	</RANTANPLAN>	
+
+<!-- OMS - MRBTS -->
+	<OSCIEZNICA>
+		<ne_class value="OMS"/>
+		<ne_ip value="10.42.29.36"/>
+		<ne_instance value="409"/>
+		<ne_sw value="LOMS18"/>
+		<ne_root_password value="siemens" />
+	</OSCIEZNICA>
+
+	<TRUSKAWA oms="OSCIEZNICA">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.42.102.79" />
+		<ne_instance value="100762" />
+		<ne_sw value="FL17" />
+		<ne_cell_instance value="1" />
+	</TRUSKAWA>
+	
+	<MRBTS109031 oms="OSCIEZNICA">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.42.102.142" />
+		<ne_instance value="109031" />
+		<ne_sw value="FL18A" />
+		<ne_cell_instance value="1" />
+	</MRBTS109031>
+
+<!-- OMS - MRBTS -->
+	<TARZAN>
+		<ne_class value="OMS"/>
+		<ne_ip value="10.91.225.154"/>
+		<ne_instance value="124"/>
+		<ne_sw value="vLOMS18"/>
+		<ne_root_password value="nemuuser" />
+		<ne_admin_password value="Nokia@123"/>
+	</TARZAN>	
+	
+	<FZC727 oms="TARZAN">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.92.176.226" />
+		<ne_instance value="727" />
+		<ne_sw value="FLC18A" />
+		<ne_cell_instance value="10" />
+		<ne_root_password value="uteadmin" />
+	</FZC727>
+
+<!-- OMS - MRBTS -->
+	<BATMAN>
+		<ne_class value="OMS"/>
+		<ne_ip value="10.91.225.81"/>
+		<ne_instance value="125"/>
+		<ne_sw value="LOMS18"/>
+		<ne_root_password value="nemuuser" />
+	</BATMAN>
+	
+	<VARPUSHAUKKA>
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.91.227.184" />
+		<ne_instance value="1785" />
+		<ne_sw value="FL19" />
+		<ne_cell_instance value="1" />
+	</VARPUSHAUKKA>
+	
+<!-- OMS - SILICON - MRBTS -->
+	<SILICON>
+		<ne_class value="OMS"/>
+		<ne_ip value="10.9.152.212"/>
+		<ne_instance value="1527"/>
+		<ne_sw value="LTO15A"/>
+	</SILICON>
+
+	<KOTTARAINEN oms="SILICON">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.9.162.229" />
+		<ne_instance value="739" />
+		<ne_sw value="FL15A" />
+		<ne_cell_instance value="1" />
+	</KOTTARAINEN>
+	
+	<LTE_OMS_TA>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.229.205" />
+		<ne_instance value="7001" />
+		<ne_sw value="LOMS16" />
+	</LTE_OMS_TA>
+
+	<MRBTS_TA>
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.9.229.206" />
+		<ne_instance value="600999" />
+		<ne_sw value="FL16" />
+	</MRBTS_TA>
+
+	<MRBTS_TEST oms="OSCIEZNICA">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.42.102.79" />
+		<ne_instance value="100762" />
+		<ne_sw value="FL17" />
+		<ne_cell_instance value="1" />
+	</MRBTS_TEST>
+	
+<!-- OMS - MRBTS -->
+	<ARGON>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.219.86" />
+		<ne_instance value="1116" />
+		<ne_sw value="LTO15A" />
+	</ARGON>
+	
+<!-- OMS - MRBTS -->
+	<UNINBIUM>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.153.104" />
+		<ne_instance value="2118" />
+		<ne_sw value="LOMS17" />
+	</UNINBIUM>	
+
+	<IDEFIX oms="UNINBIUM">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.91.227.108" />
+		<ne_instance value="1753" />
+		<ne_sw value="FLF17A" />
+		<ne_cell_instance value="1" />
+	</IDEFIX>
+	
+	<KOSKIKARA oms="UNINBIUM">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.9.227.21" />
+		<ne_instance value="1724" />
+		<ne_sw value="FL17A" />
+		<ne_cell_instance value="113" />
+	</KOSKIKARA>
+	
+	<FZCP25>
+		<ne_class value="FZCP" />
+		<ne_ip value="10.89.29.25" />
+		<ne_instance value="BTS909525" />
+		<ne_sw value="FZCP18A" />
+		<ne_cell_instance value="46" />
+		<NEAC_service_types type="list" value="'NEUM Admin Access', 'Web Service Access', 'SCLI Access'" />
+		<NEAC_service_usernames type="list" value="'FZCADM', 'WEBADM', 'SCLIAC'" />
+		<NEAC_service_password type="list" value="'pASSWORD_123', 'pASSWORD_123', 'pASSWORD_123'" />
+	</FZCP25>
+
+	<FORMIKI>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.223.83" />
+		<ne_instance value="2141" />
+		<ne_sw value="LOMS18" />
+	</FORMIKI> 
+	
+	<FZCP29 oms="FORMIKI">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.89.29.29" />
+		<ne_instance value="909529" />
+		<ne_sw value="TLC18" />
+		<ne_cell_instance value="46" />
+	</FZCP29>
+
+	<CFZF25 oms="FORMIKI">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.89.30.1" />
+		<ne_instance value="909525" />
+		<ne_sw value="FLC18" />
+		<ne_cell_instance value="46" />
+	</CFZF25>
+	
+<!-- OMS - MRBTS -->
+	<CHLORUM>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.143.170" />
+		<ne_instance value="2086" />
+		<ne_sw value="LTO5.0" />
+	</CHLORUM>
+
+<!-- OMS - MRBTS -->
+	<HASSIUM>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.152.214" />
+		<ne_instance value="2112" />
+		<ne_sw value="LOMS16" />
+	</HASSIUM>
+
+	<AMPUHAUKKA oms="HASSIUM">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.91.227.187" />
+		<ne_instance value="1787" />
+		<ne_sw value="FL19" />
+		<ne_cell_instance value="1" />
+		<ne_admin_username value="Nemuadmin" />
+		<ne_admin_password value="nemuuser" />
+	</AMPUHAUKKA>
+
+<!-- OMS - MRBTS -->
+	<RIC>
+		<ne_class value="OMS"/>
+		<ne_ip value="10.9.223.64"/>
+		<ne_instance value="2137"/>
+		<ne_sw value="LOMS17"/>
+	</RIC>
+
+	<CBISTAMBMW>
+		<ne_class value="OMS"/>
+		<ne_ip value="10.91.225.116"/>
+		<ne_instance value="101"/>
+		<ne_sw value="vLOMS18"/>
+	</CBISTAMBMW>
+	
+	<KUIKKA oms="CBISTAMBMW">
+		<ne_class value="MRBTS"/>
+		<ne_ip value="10.9.162.143"/>
+		<ne_instance value="726"/>
+		<ne_sw value="FL18"/>
+		<ne_cell_instance value="261"/>
+	</KUIKKA>
+
+<!-- OMS - MRBTS -->
+	<OMS_SP1712>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.141.218" />
+		<ne_instance value="6789" />
+		<ne_sw value="LOMS17" />
+	</OMS_SP1712>
+	
+<!-- OMS - MRBTS -->
+	<HEISENBERG>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.142.157" />
+		<ne_instance value="2132" />
+		<ne_sw value="LOMS17" />
+	</HEISENBERG>
+
+	<TELKKA oms="HEISENBERG">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.9.162.63" />
+		<ne_instance value="727" />
+		<ne_sw value="FL17A" />
+		<ne_cell_instance value="102" />
+	</TELKKA>
+
+<!-- OMS - MRBTS -->
+	<LITHIUM>
+		<ne_class value="OMS"/>
+		<ne_ip value="10.9.219.92"/>
+		<ne_instance value="1119"/>
+		<ne_sw value="LTO15A"/>
+	</LITHIUM>
+
+	<KURPPA oms="LITHIUM">
+		<ne_class value="MRBTS"/>
+		<ne_ip value="10.9.162.231"/>
+		<ne_instance value="735"/>
+		<ne_sw value="FL15A"/>
+		<ne_cell_instance value="101"/>
+	</KURPPA>
+
+	<PULIVARI oms="LITHIUM">
+		<ne_class value="MRBTS"/>
+		<ne_ip value="10.91.227.77"/>
+		<ne_instance value="1752"/>
+		<ne_sw value="RL70FZ"/>
+		<ne_cell_instance value="1752"/>
+	</PULIVARI>
+
+<!-- OMS - MRBTS -->
+	<DHAN>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.141.200" />
+		<ne_instance value="2100" />
+		<ne_sw value="LTO7.0" />
+	</DHAN>
+
+	<METSO oms="DHAN">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.9.162.26" />
+		<ne_instance value="742" />
+		<ne_sw value="RL70" />
+		<ne_cell_instance value="92" />
+	</METSO>
+
+<!-- OMS - MRBTS -->
+	<JANNO>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.223.80" />
+		<ne_instance value="2140" />
+		<ne_sw value="LOMS17" />
+	</JANNO>
+
+	<PAKSUJALKA oms="JANNO">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.91.227.64" />
+		<ne_instance value="1730" />
+		<ne_sw value="FL17" />
+		<ne_cell_instance value="1" />
+	</PAKSUJALKA>
+
+	<CAMINO>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.221.186" />
+		<ne_instance value="2056" />
+		<ne_sw value="LOMS16A" />
+	</CAMINO>
+
+	<KORPPI oms="CAMINO">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.9.162.218" />
+		<ne_instance value="729" />
+		<ne_sw value="FL16A" />
+		<ne_cell_instance value="101" />
+		<ne_admin_password value="Nokia@123" />
+	</KORPPI>
+
+	<WYPS oms="PRIMERO">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.91.227.156" />
+		<ne_instance value="116" />
+		<ne_sw value="TLC16A" />
+		<ne_cell_instance value="1" />
+	</WYPS>
+
+	<FZCP115 oms="CAMINO">
+		<ne_class value="FZCP" />
+		<ne_ip value="10.91.227.155" />
+		<ne_instance value="115" />
+		<ne_sw value="FLC16A" />
+		<ne_cell_instance value="1" />
+	</FZCP115>
+
+<!-- OMS - MRBTS -->
+	<GROSERO>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.221.188" />
+		<ne_instance value="2057" />
+		<ne_sw value="LOMS18" />
+	</GROSERO>
+
+	<SORSA oms="GROSERO">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.9.162.140" />
+		<ne_instance value="748" />
+		<ne_sw value="FL18" />
+		<ne_cell_instance value="11" />
+		<ne_admin_username value="BTSSYS" />
+		<ne_admin_password value="Supra_23" />
+		<NEAC_service_types type="list" value="'NWI3 Access', 'EM Access', 'BTS Account Access'" />
+		<NEAC_service_usernames type="list" value="'Nemuadmin', 'Nemuadmin', 'BTSSYS'" />
+		<NEAC_service_password type="list" value="'Nemuser_23', 'Nemuser_23','Supra_23'" />
+	</SORSA>
+
+<!-- OMS - MRBTS -->
+	<HABAGAT>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.219.94" />
+		<ne_instance value="1120" />
+		<ne_sw value="LOMS17" />
+	</HABAGAT>
+
+	<FUZHOU>
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.9.162.235" />
+		<ne_instance value="766" />
+		<ne_sw value="TL19" />
+		<ne_cell_instance value="101" />
+	</FUZHOU>
+	
+	<SIRKKU oms="ANUSHKA">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.9.162.199" />
+		<ne_instance value="1710" />
+		<ne_sw value="FL18" />
+		<ne_cell_instance value="1" />
+	</SIRKKU>
+
+<!-- OMS - MRBTS -->
+	<FUZHOU_OMS>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.143.198" />
+		<ne_instance value="2095" />
+		<ne_sw value="LTO6.0" />
+	</FUZHOU_OMS>
+
+	<SHAANXI oms="FUZHOU_OMS">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.91.227.54" />
+		<ne_instance value="1756" />
+		<ne_sw value="RL55" />
+		<ne_cell_instance value="101" />
+	</SHAANXI>
+
+<!-- OMS - MRBTS -->
+	<FUJIAN>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.223.66" />
+		<ne_instance value="2136" />
+		<ne_sw value="LOMS18" />
+	</FUJIAN>
+
+	<FUJIANMRBTS oms="FUJIAN">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.9.162.250" />
+		<ne_instance value="1712" />
+		<ne_sw value="TL15A" />
+		<ne_cell_instance value="101" />
+	</FUJIANMRBTS>
+
+<!-- OMS -->
+	<MARTTY>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.142.155" />
+		<ne_instance value="2109" />
+		<ne_sw value="LOMS18" />
+	</MARTTY>
+
+	<RASTAS oms="MARTTY">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.9.162.21" />
+		<ne_instance value="751" />
+		<ne_sw value="FL18SP" />
+		<ne_cell_instance value="1" />
+	</RASTAS>
+
+<!-- OMS - MRBTS -->
+	<REPA>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.153.108" />
+		<ne_instance value="2425" />
+		<ne_sw value="LOMS18" />
+	</REPA>
+
+	<PELIKAANI oms="REPA">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.9.162.65" />
+		<ne_instance value="1717" />
+		<ne_sw value="FL18A" />
+		<ne_cell_instance value="101" />
+	</PELIKAANI>
+
+<!-- OMS -->
+	<SINGAPORE>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.153.102" />
+		<ne_instance value="2114" />
+		<ne_sw value="LOMS16A" />
+	</SINGAPORE>
+
+	<KAAKKURI oms="SINGAPORE">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.91.227.17" />
+		<ne_instance value="1720" />
+		<ne_sw value="FL16A" />
+		<ne_cell_instance value="111" />
+	</KAAKKURI>
+	
+<!-- OMS -->
+	<TITANIUM>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.143.194" />
+		<ne_instance value="2094" />
+		<ne_sw value="LTO6.0" />
+	</TITANIUM>
+
+<!-- OMS - MRBTS -->
+	<TYPHOON>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.153.110" />
+		<ne_instance value="2426" />
+		<ne_sw value="LOMS18A" />
+		<ne_admin_username value="Nemuadmin" />
+		<ne_admin_password value="nemuuser" />
+	</TYPHOON>
+
+	<UIKKU oms="TYPHOON">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.9.162.217" />
+		<ne_instance value="728" />
+		<ne_sw value="FL18" />
+		<ne_cell_instance value="101" />
+		<ne_admin_username value="Nemuadmin" />
+		<ne_admin_password value="nemuuser" />
+	</UIKKU>
+
+<!-- OMS - MRBTS -->
+	<POLONIUM>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.219.101" />
+		<ne_instance value="2110" />
+		<ne_sw value="LOMS16A" />
+		<ne_prompt value="$" />
+	</POLONIUM>
+
+	<KANA oms="POLONIUM">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.9.162.195" />
+		<ne_instance value="769" />
+		<ne_sw value="FL16A" />
+		<ne_cell_instance value="251" />
+	</KANA>
+
+<!-- OMS - MRBTS -->
+	<BANTAYAN>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.142.141" />
+		<ne_instance value="2016" />
+		<ne_sw value="WOMS18" />
+	</BANTAYAN>
+
+<!-- OMS - MRBTS -->
+	<ARSENIC>
+		<ne_class value="OMS" />
+		<ne_ip value="2a00:8a00:4000:020c:0000:0000:0011:000c" />
+		<ne_instance value="1117" />
+		<ne_sw value="LOMS16A" />
+	</ARSENIC>
+
+	<KOLIBRI oms="ARSENIC">
+		<ne_class value="MRBTS" />
+		<ne_ip value="2a00:8a00:4000:20c::1c:14" />
+		<ne_instance value="1739" />
+		<ne_sw value="FL16A" />
+		<ne_cell_instance value="2" />
+	</KOLIBRI>
+
+<!-- OMS - MRBTS -->
+	<BERYLLIUM>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.219.90" />
+		<ne_instance value="2067" />
+		<ne_sw value="LOMS16A" />
+	</BERYLLIUM>
+
+	<TURBAN oms="BERYLLIUM">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.91.227.175" />
+		<ne_instance value="1775" />
+		<ne_sw value="TL16A" />
+		<ne_cell_instance value="101" />
+	</TURBAN>
+
+	<ENB_100727 OMS="BERYLLIUM">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.9.153.106" />
+		<ne_instance value="100727" />
+		<ne_sw value="FL16A" />
+		<ne_cell_instance value="1" />
+	</ENB_100727>
+
+	<DITA>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.153.106" />
+		<ne_instance value="2424" />
+		<ne_sw value="LOMS17" />
+	</DITA>
+
+	<KAPUSTARINTA oms="UNINBIUM">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.9.162.253" />
+		<ne_instance value="1715" />
+		<ne_sw value="FL17A" />
+		<ne_cell_instance value="251" />
+	</KAPUSTARINTA>
+
+	<VARPUNEN oms="DITA">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.9.162.20" />
+		<ne_instance value="753" />
+		<ne_sw value="FL17A" />
+		<ne_cell_instance value="41" />
+	</VARPUNEN>
+
+<!-- OMS - MRBTS -->
+	<YUNNAN_OMS>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.223.86" />
+		<ne_instance value="2103" />
+		<ne_sw value="LOMS18" />
+	</YUNNAN_OMS>
+	
+	<TAIVAANVUOHI oms="YUNNAN_OMS">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.91.227.19" />
+		<ne_instance value="1722" />
+		<ne_sw value="FL18A" />
+		<ne_cell_instance value="111" />
+		<ne_admin_username value="BTSadmin" />
+		<ne_admin_password value="Nokia123!" />
+	</TAIVAANVUOHI>
+	
+	<VIRAT >
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.141.218" />
+		<ne_instance value="112" />
+		<ne_sw value="LOMS18" />
+	</VIRAT >
+
+	<YUNNAN oms="VIRAT">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.9.162.248" />
+		<ne_instance value="1709" />
+		<ne_sw value="TL18" />
+		<ne_cell_instance value="101" />
+	</YUNNAN>
+	
+	<MUSTI oms="VIRAT">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.91.227.67" />
+		<ne_instance value="1742" />
+		<ne_sw value="FLF18" />
+		<ne_cell_instance value="1" />
+	</MUSTI>
+
+<!-- OMS - MRBTS -->
+	<ANUSHKA >
+		<ne_class value="OMS" />
+		<ne_ip value="10.91.164.32" />
+		<ne_instance value="122" />
+		<ne_sw value="LOMS18" />
+	</ANUSHKA >
+
+	<HAISULI oms="ANUSHKA">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.91.227.251" />
+		<ne_instance value="1768" />
+		<ne_sw value="TLF18" />
+		<ne_cell_instance value="1" />
+	</HAISULI>
+
+<!-- OMS - MRBTS -->
+	<LESLIE>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.223.68" />
+		<ne_instance value="2138" />
+		<ne_sw value="LOMS17" />
+	</LESLIE>
+
+	<JIANGSU oms="LESLIE">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.9.162.249" />
+		<ne_instance value="775" />
+		<ne_sw value="TL19" />
+		<ne_cell_instance value="101" />
+		<ne_admin_username value="Nemuadmin" />
+		<ne_admin_password value="nemuuser" /> 
+	</JIANGSU>
+	
+	<FZC726 oms="LESLIE">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.93.249.162" />
+		<ne_instance value="726" />
+		<ne_sw value="TLC17A" />
+		<ne_cell_instance value="0" />
+		<ne_root_password value="uteadmin" />
+	</FZC726>
+
+<!-- OMS - MRBTS -->
+	<WILLIAMS>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.142.153" />
+		<ne_instance value="2131" />
+		<ne_sw value="LOMS18" />
+	</WILLIAMS>
+
+	<PEIPPO oms="WILLIAMS">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.9.162.23" />
+		<ne_instance value="733" />
+		<ne_sw value="FL18" />
+		<ne_cell_instance value="71" />
+	</PEIPPO>
+
+	<PULU oms="WILLIAMS">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.9.162.221" />
+		<ne_instance value="731" />
+		<ne_sw value="FL15A" />
+		<ne_cell_instance value="101" />
+	</PULU>
+
+<!-- OMS - MRBTS -->
+	<PRIMERO>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.221.176" />
+		<ne_instance value="2051" />
+		<ne_sw value="LOMS16A" />
+	</PRIMERO>
+
+<!-- Krakow FZM Elements -->
+<!-- OMS - MRBTS -->
+	<RADIUM>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.143.182" />
+		<ne_instance value="2092" />
+		<ne_sw value="LTO15A" />
+	</RADIUM>
+
+	<MRBTS5559 oms="RADIUM">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.83.224.59" />
+		<ne_instance value="5559" />
+		<ne_sw value="FL15A" />
+		<ne_cell_instance value="1" />
+	</MRBTS5559>
+
+	<MRBTS11504_1 oms="RADIUM">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.83.225.104" />
+		<ne_instance value="11504" />
+		<ne_sw value="TLF16" />
+		<ne_cell_instance value="1" />
+	</MRBTS11504_1>
+
+	<MRBTS11504_2 oms="RADIUM">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.83.225.104" />
+		<ne_instance value="11504" />
+		<ne_sw value="TLF16" />
+		<ne_cell_instance value="2" />
+	</MRBTS11504_2>
+
+	<MRBTS13507_77 oms="RADIUM">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.89.4.7" />
+		<ne_instance value="13507" />
+		<ne_sw value="FLC15A" />
+		<ne_cell_instance value="77" />
+	</MRBTS13507_77>
+
+<!-- OMS - MRBTS -->
+	<RANCHERO>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.221.203" />
+		<ne_instance value="2064" />
+		<ne_sw value="LT016" />
+	</RANCHERO>
+
+	<MRBTS11505_1 oms="RANCHERO">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.83.225.105" />
+		<ne_instance value="11505" />
+		<ne_sw value="TLF16" />
+		<ne_cell_instance value="1" />
+	</MRBTS11505_1>
+
+	<MRBTS11505_2 oms="RANCHERO">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.83.225.105" />
+		<ne_instance value="11505" />
+		<ne_sw value="TLF16" />
+		<ne_cell_instance value="2" />
+	</MRBTS11505_2>
+
+<!-- OMS - MRBTS -->
+	<CARLISLE>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.142.253" />
+		<ne_instance value="2117" />
+		<ne_sw value="LT016A" />
+	</CARLISLE >
+
+	<MRBTS12053 oms="CARLISLE">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.89.12.53" />
+		<ne_instance value="12053" />
+		<ne_sw value="TLF16A" />
+		<ne_cell_instance value="1" />
+	</MRBTS12053>
+
+<!-- OMS - MRBTS -->
+	<AIO>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.219.119" />
+		<ne_instance value="3008" />
+		<ne_sw value="LOMS16A" />
+	</AIO>
+
+<!-- OMS - MRBTS -->
+	<OMS-600>
+		<ne_class value="OMS" />
+		<ne_ip value="10.89.0.100" />
+		<ne_instance value="600" />
+		<ne_sw value="LTO15A" />
+	</OMS-600>
+
+<!-- OMS - MRBTS -->
+	<OMS-601>
+		<ne_class value="OMS" />
+		<ne_ip value="10.89.0.101" />
+		<ne_instance value="601" />
+		<ne_sw value="LTO55_70" />
+	</OMS-601>
+
+<!-- LTEA -->
+<!-- ENBEquipment - ENB -->
+	<LEGACY3>
+		<ne_class value="ENBEquipment" />
+		<ne_ip value="10.91.162.162" />
+		<ne_instance value="10_91_162_162" />
+		<ne_sw value="LR15.1" />
+	</LEGACY3>
+
+	<LEGACY3_ENB ENBEquipment="LEGACY3">
+		<ne_class value="ENB" />
+		<ne_instance value="0" />
+		<ne_sw value="LR15.1" />
+		<ne_cell_instance value="2" />
+	</LEGACY3_ENB>
+
+<!-- ENBEquipment - ENB -->
+	<LEGACY2>
+		<ne_class value="ENBEquipment" />
+		<ne_ip value="10.91.162.161" />
+		<ne_instance value="10_91_162_161" />
+		<ne_sw value="LR15.1" />
+	</LEGACY2>
+
+	<LEGACY2_ENB ENBEquipment="LEGACY2">
+		<ne_class value="ENB" />
+		<ne_instance value="0" />
+		<ne_sw value="LR15.1" />
+		<ne_cell_instance value="2" />
+	</LEGACY2_ENB>
+	
+	<!-- ENBEquipment - ENB -->
+	<LEGACY4>
+		<ne_class value="ENBEquipment" />
+		<ne_ip value="10.91.162.184" />
+		<ne_instance value="10_91_162_184" />
+		<ne_sw value="LR16.2" />
+	</LEGACY4>
+
+	<LEGACY4_ENB ENBEquipment="LEGACY4">
+		<ne_class value="ENB" />
+		<ne_instance value="0" />
+		<ne_sw value="LR16.2" />
+		<ne_cell_instance value="2" />
+	</LEGACY4_ENB>
+
+<!-- LTE Simulator -->
+<!-- OMS - MRBTS -->
+	<SIMULATOR_OMS>
+		<ne_class value="OMS" />
+		<ne_ip value="1.2.3.7" />
+		<ne_instance value="7001" />
+		<ne_sw value="LTO15A" />
+	</SIMULATOR_OMS>
+
+	<SIMULATOR oms="SIMULATOR_OMS">
+		<ne_class value="MRBTS" />
+		<ne_ip value="1.2.3.5" />
+		<ne_instance value="600016" />
+		<ne_sw value="FL15A" />
+		<ne_cell_instance value="1" />
+	</SIMULATOR>
+
+<!-- FZCP -->
+	<FZCP113>
+		<ne_class value="FZCP" />
+		<ne_ip value="10.91.227.146" />
+		<ne_instance value="113" />
+		<ne_sw value="FZCP15A" />
+	</FZCP113>
+	
+	<FDDCFZC725>
+		<ne_class value="FZCP" />
+		<ne_ip value="10.93.184.136" />
+		<ne_instance value="FZC-725" />
+		<ne_sw value="FZCP18SP" />
+	</FDDCFZC725>
+
+	<FZCPFZC727>
+		<ne_class value="FZCP" />
+		<ne_ip value="10.92.176.226" />
+		<ne_instance value="FZC-727" />
+		<ne_admin_username value="_nokadmin" />
+		<ne_admin_password value="uteadmin" />
+		<ne_sw value="FZCP18A" />
+	</FZCPFZC727>
+	
+	<FZCA_IKO oms="TARZAN">
+		<ne_class value="MRBTS" />
+		<ne_ip value="10.89.29.9" />
+		<ne_instance value="909509" />
+		<ne_sw value="FLC18A" />
+		<ne_cell_instance value="157" />
+	</FZCA_IKO>
+
+	<FZCP_IKO oms="TARZAN">
+		<ne_class value="FZCP" />
+		<ne_ip value="10.89.29.9" />
+		<ne_instance value="909509" />
+		<ne_sw value="FLC18A" />
+	</FZCP_IKO>
+	
+	
+	<FZCP116>
+		<ne_class value="FZCP" />
+		<ne_ip value="10.91.227.156" />
+		<ne_instance value="116" />
+		<ne_sw value="TLC16A" />
+	</FZCP116>
+	
+	<FZCPBTS1234>
+		<ne_class value="FZCP" />
+		<ne_ip value="10.93.249.142" />
+		<ne_instance value="BTS1234" />
+		<ne_sw value="FZCP18" />
+		<ne_admin_username value="_nokfsoperator" />
+		<ne_admin_password value="uteadmin" />
+		<ne_root_password value="uteadmin" />		
+	</FZCPBTS1234>
+	
+	<FZCPFZC726>
+		<ne_class value="FZCP" />
+		<ne_ip value="10.93.249.162" />
+		<ne_instance value="FZC-726" />
+		<ne_admin_username value="_nokadmin" />
+		<ne_admin_password value="uteadmin" />
+		<ne_sw value="FZCP18SP" />
+	</FZCPFZC726>
+
+<!-- SBTS -->
+	<HANKIKIVI>
+		<ne_class value="MRBTS" />
+		<ne_subclass value="SBTS" />
+		<ne_ip value="10.91.227.168" />
+		<ne_instance value="1783" />
+		<ne_cell_instance value="200" />
+		<ne_sw value="SRAN17A" />
+	</HANKIKIVI>
+	
+	<SEPELHANHI1773>
+		<ne_class value="MRBTS" />
+		<ne_subclass value="SBTS" />
+		<ne_ip value="10.91.227.161" />
+		<ne_instance value="1773" />
+		<ne_sw value="SBTS18A" />
+		<ne_cell_instance value="200" />
+	</SEPELHANHI1773>
+
+	<TUNDRA1774>
+		<ne_class value="SBTS" />
+		<ne_ip value="10.91.227.162" />
+		<ne_instance value="1774" />
+		<ne_sw value="SBTS16.2" />
+	</TUNDRA1774>
+
+	<KILJUHANHI>
+		<ne_class value="MRBTS" />
+		<ne_subclass value="SBTS" />
+		<ne_ip value="10.91.227.154" />
+		<ne_instance value="1740" />
+		<ne_sw value="SBTS18SP" />
+	</KILJUHANHI>
+	
+	<LANDESINHANHI>
+		<ne_class value="MRBTS" />
+		<ne_subclass value="SBTS" />
+		<ne_ip value="10.91.227.212" />
+		<ne_instance value="1812" />
+		<ne_sw value="SBTS19" />
+		<ne_cell_instance value="200" />
+		<ne_admin_username value="BTSadmin" />
+		<ne_admin_password value="Nokia901!" />
+	</LANDESINHANHI>
+	
+	<BTSMED>
+		<ne_class value="BTSMED"/>
+		<ne_ip value="10.91.215.58"/>
+		<ne_instance value="1"/>
+		<ne_sw value="BTSMED19"/>
+		<ne_admin_username value="Nemuadmin" />
+		<ne_admin_password value="nemuuser" />
+	</BTSMED>
+	
+	<BTSMEDSP1903>
+		<ne_class value="BTSMED"/>
+		<ne_ip value="10.92.233.232"/>
+		<ne_instance value="1"/>
+		<ne_sw value="BTSMED19"/>
+		<ne_admin_username value="Nemuadmin" />
+		<ne_admin_password value="nemuuser" />
+	</BTSMEDSP1903>
+	
+	<BTSMED_PATRYK>
+		<ne_class value="BTSMED"/>
+		<ne_ip value="10.91.241.49"/>
+		<ne_instance value="1"/>
+		<ne_sw value="BTSMED18A"/>
+	</BTSMED_PATRYK>
+
+	<BTSMED_NEW>
+		<ne_class value="BTSMED"/>
+		<ne_ip value="2a00:8a00:4000:20c::1:13b"/>
+		<ne_instance value="1"/>
+		<ne_sw value="BTSMED18A"/>
+	</BTSMED_NEW>
+
+<!-- Core elements -->
+	<FREDERIK>
+		<ne_class value="FLEXINS" />
+		<ne_ip value="10.8.83.57" />
+		<ne_sw value="NS17.5MP1" />
+		<ne_instance value="500023" />
+		<ne_admin_username value="SYSTEM" />
+		<ne_admin_password value="SYSTEM" />
+	</FREDERIK>
+
+	<FREEMAN>
+		<ne_class value="FLEXINS" />
+		<ne_ip value="10.8.83.53" />
+		<ne_sw value="NS15" />
+		<ne_instance value="865575" />
+		<ne_admin_username value="NUPADM" />
+		<ne_admin_password value="PASSWORD" />
+	</FREEMAN>
+	
+	<FLEXINS_TA>
+		<ne_class value="FLEXINS" />
+		<ne_ip value="10.9.232.169" />
+		<ne_sw value="NS16" />
+		<ne_instance value="3201" />
+	</FLEXINS_TA>
+	
+	<DFW>
+		<ne_class value="FLEXINS" />
+		<ne_ip value="10.52.61.75" />
+		<ne_sw value="NS17" />
+		<ne_instance value="373311" />
+		<ne_admin_username value="SYSTEM" />
+		<ne_admin_password value="PASSWORD" />
+	</DFW>
+
+	<MANTANA>
+		<ne_class value="FLEXINS" />
+		<ne_ip value="10.91.178.153" />
+		<ne_sw value="NS17.5" />
+		<ne_instance value="500024" />
+	</MANTANA>
+
+	<VTRIPLEACCESSNODESGSNMME>
+		<ne_class value="FLEXINS" />
+		<ne_ip value="10.91.178.131" />
+		<ne_sw value="NS17.5MP1" />
+		<ne_instance value="123456" />
+	</VTRIPLEACCESSNODESGSNMME>
+
+<!-- CDS -->
+	<TURTOLA>
+		<ne_class value="CDS" />
+		<ne_ip value="10.8.93.54" />
+		<ne_sw value="Md16.2IP" />
+		<ne_instance value="100234" />
+	</TURTOLA>
+
+<!-- HLR -->
+	<HILLA>
+		<ne_class value="HLR" />
+		<ne_ip value="10.8.93.5" />
+		<ne_sw value="Md16.1EP1IP" />
+		<ne_instance value="880001" />
+		<ne_username value="SYSTEM" />
+		<ne_password value="NEIMAT" />
+		<ne_admin_password value="NEIMAT" />
+	</HILLA>
+
+<!-- HLR -->
+	<HALLEY>
+		<ne_class value="HLR" />
+		<ne_ip value="10.8.93.50" />
+		<ne_sw value="Md16.1EP1IP" />
+		<ne_instance value="880011" />
+		<ne_username value="SYSTEM" />
+		<ne_password value="SYSTEM" />
+	</HALLEY>
+
+<!-- ONENDS -->
+	<OSS1>
+		<ne_class value="ONENDS" />
+		<ne_ip value="10.8.123.182" />
+		<ne_ip_sysmon1 value="10.8.123.182" />
+		<ne_ip_sysmon2 value="10.8.123.183" />
+		<ne_sw value="8.0" />
+		<ne_instance value="1" />
+	</OSS1>
+
+	<OSS2>
+		<ne_class value="ONENDS" />
+		<ne_ip value="10.8.123.54" />
+		<ne_ip_sysmon1 value="10.8.123.54" />
+		<ne_ip_sysmon2 value="10.8.123.55" />
+		<ne_sw value="8.0" />
+		<ne_instance value="2" />
+	</OSS2>
+
+	<GOKHALE>
+		<ne_class value="ONENDS" />
+		<ne_ip value="10.43.103.28" />
+		<ne_sw value="16.0.0" />
+		<ne_instance value="1" />
+	</GOKHALE>
+	
+	<VINDS>
+		<ne_class value="ONENDS" />
+		<ne_ip value="10.53.151.204" />
+		<ne_ip_INS value="10.53.151.203" />
+		<ne_ip_viadm1 value="10.53.151.204" />
+		<ne_ip_vibeds1 value="10.53.151.206" />
+		<ne_ip_vipgw1 value="10.53.151.207" />
+		<ne_ip_vipgwds1 value="10.53.151.208" />
+		<ne_ip_vird1 value="10.53.151.205" />
+		<ne_sw value="9.0.2" />
+		<ne_instance value="11" />
+	</VINDS>
+
+	<YOGANDS>
+		<ne_class value="ONENDS" />
+		<ne_ip value="10.8.83.89" />
+		<ne_ip_INS value="10.8.83.88" />
+		<ne_ip_sysmon1 value="10.8.83.89" />
+		<ne_ip_sysmon2 value="10.8.83.90" />
+		<ne_ip_viadm1 value="10.8.83.91" />
+		<ne_ip_vibeds1 value="10.8.83.92" />
+		<ne_ip_vipgw1 value="10.8.83.93" />
+		<ne_sw value="16.0.0" />
+		<ne_instance value="12" />
+	</YOGANDS>
+
+	<AGNINDS>
+		<ne_class value="ONENDS" />
+		<ne_ip value="10.53.82.195" />
+		<ne_ip_INS value="10.53.82.194" />
+		<ne_ip_sysmon1 value="10.53.82.195" />
+		<ne_ip_sysmon2 value="10.53.82.196" />
+		<ne_ip_viadm1 value="10.53.82.195" />
+		<ne_ip_vibeds1 value="10.53.82.197" />
+		<ne_ip_vipgw1 value="10.53.82.198" />
+		<ne_pgw_node_ip value="10.53.82.198" />
+		<ne_sw value="16.5.0" />
+		<ne_instance value="AGNI" />
+	</AGNINDS>
+
+	<ROYAL>
+		<ne_class value="ONENDS" />
+		<ne_ip value="10.62.91.71" />
+		<ne_sw value="16.0.0" />
+		<ne_instance value="13" />
+	</ROYAL>
+
+	<R33>
+		<ne_class value="ONENDS" />
+		<ne_ip value="10.43.103.28" />
+		<ne_sw value="16.0.0" />
+		<ne_instance value="33" />
+		<ne_prompt value=">" />
+		<ne_pgw_node_ip value="10.43.103.31" />
+	</R33>
+	
+	<BATMAN_ONENDS>
+		<ne_class value="ONENDS" />
+		<ne_ip value="10.53.119.103" />
+		<ne_sw value="19.0.0" />
+		<ne_instance value="1" />
+	</BATMAN_ONENDS>
+
+	<ROCKET>
+		<ne_class value="ONENDS" />
+		<ne_ip value="10.53.151.227" />
+		<ne_ip_INS value="10.53.151.226" />
+		<ne_ip_sysmon1 value="10.53.151.227" />
+		<ne_ip_sysmon2 value="10.53.151.36" />
+		<ne_ip_viadm1 value="10.53.151.227" />
+		<ne_ip_vibeds1 value="10.53.151.229" />
+		<ne_ip_vipgw1 value="10.53.151.230" />
+		<ne_pgw_node_ip value="10.53.151.230" />
+		<ne_sw value="19.0.0" />
+		<ne_instance value="2" />
+		<admin_username value="oamsys" />
+		<ne_admin_password value="yt_xk39B" />
+		<ne_root_password value="yt_xk39B" />		
+		<ne_prompt value="> " />
+	</ROCKET>
+
+<!-- NTHLRFE -->
+	<NTHLR175HPBM>
+		<ne_class value="NTHLRFE" />
+		<ne_ip value="10.8.33.183" />
+		<ne_sw value="17.5C" />
+		<ne_instance value="1" />
+	</NTHLR175HPBM>
+ 
+ <NTHLR185HPBM>
+    <ne_class value="NTHLRFE" />
+    <ne_ip value="10.53.32.24" />
+    <ne_sw value="18.5C" />
+    <ne_instance value="1" />
+ </NTHLR185HPBM >
+
+	<X4250TRE02>
+		<ne_class value="NTHLRFE" />
+		<ne_ip value="10.8.85.54" />
+		<ne_sw value="HI60.01" />
+		<ne_instance value="X4250TRE02" />
+	</X4250TRE02>
+
+	<SRNNTHLRFE2>
+		<ne_class value="NTHLRFE" />
+		<ne_ip value="10.8.3.87" />
+		<ne_sw value="HI60.01" />
+		<ne_instance value="SRNNTHLRFE2" />
+	</SRNNTHLRFE2>
+
+	<SRNNTHLR03>
+		<ne_class value="NTHLRFE" />
+		<ne_ip value="10.41.122.148" />
+		<ne_sw value="HI70.02.01" />
+		<ne_instance value="SRNNTHLR03-TRE" />
+	</SRNNTHLR03>
+
+	<SRNNTHLR04>
+		<ne_class value="NTHLRFE" />
+		<ne_ip value="10.41.122.150" />
+		<ne_sw value="15.5" />
+		<ne_instance value="SRNNTHLR04" />
+	</SRNNTHLR04>
+
+	<NTHLR8>
+		<ne_class value="NTHLRFE" />
+		<ne_ip value="2a00:8a00:4000:204::100" />
+		<ne_sw value="17.0C" />
+		<ne_instance value="DN53" />
+		<ne_subclass value="cmrepo" />
+		<ne_imsnfm value="1" />
+	</NTHLR8>
+
+<!-- NTHLRFE -->
+	<X4250TRE03>
+		<ne_class value="NTHLRFE" />
+		<ne_ip value="10.8.86.219" />
+		<ne_sw value="HI50.01" />
+		<ne_instance value="X4250TRE03" />
+	</X4250TRE03>
+
+<!-- NTHLRFE -->
+	<X4270TRE08>
+		<ne_class value="NTHLRFE" />
+		<ne_ip value="10.8.86.101" />
+		<ne_sw value="HI50.01" />
+		<ne_instance value="X4270TRE08" />
+	</X4270TRE08>
+
+<!-- NTHLRFE -->
+	<X4270TRE10>
+		<ne_class value="NTHLRFE" />
+		<ne_ip value="10.8.170.71" />
+		<ne_sw value="HI60.01" />
+		<ne_instance value="X4270TRE10" />
+	</X4270TRE10>
+
+<!-- NTHLRFE -->
+	<NTHLR14>
+		<ne_class value="NTHLRFE" />
+		<ne_ip value="10.8.117.196" />
+		<ne_sw value="HI60.01HA" />
+		<ne_instance value="NTHLR14" />
+	</NTHLR14>
+
+<!-- NTHLRFE -->
+	<NTHLR13>
+		<ne_class value="NTHLRFE" />
+		<ne_ip value="10.8.117.252" />
+		<ne_sw value="16.0" />
+		<ne_instance value="NTHLRFE13" />
+	</NTHLR13>
+
+<!-- NTHLRFE -->
+	<NTHLRNEW>
+		<ne_class value="NTHLRFE" />
+		<ne_ip value="10.43.104.4" />
+		<ne_sw value="16.0" />
+		<ne_instance value="NTHLRFENEW" />
+	</NTHLRNEW>
+
+<!-- NTHLRFE -->
+	<NTHLR15>
+		<ne_class value="NTHLRFE" />
+		<ne_ip value="10.8.117.254" />
+		<ne_sw value="HI70.01HA" />
+		<ne_instance value="NTHLR15" />
+	</NTHLR15>
+
+	<ARYAN09>
+		<ne_class value="NTHLRFE" />
+		<ne_ip value="10.58.134.161" />
+		<ne_sw value="15.5" />
+		<ne_instance value="ARYAN09" />
+	</ARYAN09>
+
+<!-- NTHLRFE -->
+	<NTHLR16>
+		<ne_class value="NTHLRFE" />
+		<ne_ip value="10.58.231.84" />
+		<ne_sw value="16.0" />
+		<ne_instance value=" NTHLR16" />
+	</NTHLR16>
+
+<!-- NTHLRFE -->
+	<SARDAR>
+		<ne_class value="NTHLRFE" />
+		<ne_ip value="10.58.250.2" />
+		<ne_sw value="16.0" />
+		<ne_instance value="sardar16" />
+	</SARDAR >
+
+	<!-- NTHLRFE -->
+	<NTHLR1>
+		<ne_class value="NTHLRFE" />
+		<ne_ip value="10.43.104.4" />
+		<ne_sw value="15.5" />
+		<ne_instance value="1" />
+	</NTHLR1>
+
+<!-- NTHLRFE -->
+	<NTHLRFE_01>
+		<ne_class value="NTHLRFE" />
+		<ne_ip value="10.58.250.2" />
+		<ne_sw value="16.0" />
+		<ne_instance value="01" />
+	</NTHLRFE_01>
+
+<!-- NTHLRFE -->
+	<NTBLRHP>
+		<ne_class value="NTHLRFE" />
+		<ne_ip value="10.8.48.187" />
+		<ne_sw value="19.0C" />
+		<ne_instance value="DN55_DU56" />
+		<ne_admin_username value="rtp99" />
+		<ne_admin_password value="yt_xk39b" />
+	</NTBLRHP>
+
+<!-- NTHLRFE -->
+	<NTHLRDTAG>
+		<ne_class value="NTHLRFE" />
+		<ne_ip value="10.8.48.5" />
+		<ne_sw value="16.0" />
+		<ne_instance value="NTHLRDTAG" />
+	</NTHLRDTAG>
+
+	<NTHLRCNUMROCKET>
+		<ne_class value="NTHLRFE" />
+		<ne_ip value="10.8.48.25" />
+		<ne_sw value="17.0" />
+		<ne_instance value="DNHLR03_DUNTHLR03" />
+		<ne_subclass value="cmrepo" />
+		<ne_imsnfm value="DN94_DUCnum" />
+	</NTHLRCNUMROCKET>
+	
+<!-- TIAMS -->
+	<TIAMSHP12>
+		<ne_class value="TIAMS"/>
+		<ne_ip value="2A00:8A00:4000:0203::103"/>
+		<ne_sw value="17.0Cc"/>
+		<ne_instance value="DN1234_TIAMSDU234"/>
+		<ne_subclass value="cmrepo" />
+		<ne_imsnfm value="1" />
+	</TIAMSHP12>
+	
+	<TIAMS_TA>
+		<ne_class value="TIAMS"/>
+		<ne_ip value="10.9.232.154"/>
+		<ne_sw value="11.0"/>
+		<ne_instance value="3101"/>
+	</TIAMS_TA>
+	
+	<DTAG>
+		<ne_class value="TIAMS"/>
+		<ne_ip value="10.8.48.12"/>
+		<ne_sw value="16.5C"/>
+		<ne_instance value="2"/>
+	</DTAG>
+
+	<TIAMS1>
+		<ne_class value="TIAMS"/>
+		<ne_ip value="10.8.170.110"/>
+		<ne_sw value="15.5"/>
+		<ne_instance value="1"/>
+	</TIAMS1>
+	
+	<TIAMS12>
+		<ne_class value="TIAMS" />
+		<ne_ip value="10.8.48.175" />
+		<ne_sw value="17.5CI" />
+		<ne_instance value="DN15" />
+		<ne_imsnfm value="BM1" />
+	</TIAMS12>
+	
+	<BMTIAMSCNUMROCKET>
+		<ne_class value="TIAMS" />
+		<ne_ip value="10.8.48.23" />
+		<ne_sw value="17.0Cc" />
+		<ne_instance value="DN94_DUCnum" />
+		<ne_subclass value="cmrepo" />
+		<ne_imsnfm value="DN94_DUCnum" />
+	</BMTIAMSCNUMROCKET>
+
+	<BMTIMASHPHSS175>
+		<ne_class value="TIAMS" />
+		<ne_ip value="10.8.48.17" />
+		<ne_sw value="17.5Cc" />
+		<ne_instance value="1" />
+		<ne_imsnfm value="DN63_DUTIMAS" />
+	</BMTIMASHPHSS175>
+	
+	<PSTIAMS12>
+		<ne_class value="TIAMS" />
+		<ne_ip value="10.8.48.176" />
+		<ne_sw value="19.0Cc" />
+		<ne_instance value="1" />
+		<ne_imsnfm value="DN15_DU16" />
+	</PSTIAMS12>
+
+	<DHONITIAMS>
+		<ne_class value="TIAMS" />
+		<ne_cluster value="TIAMSLCC" />
+		<cluster_instance value="DN63_DUTIMAS" />
+		<ne_ip value="10.8.48.17" />
+		<ne_sw value="18.5cc"/>
+		<ne_instance value="01" />
+		<ne_subclass value="cmrepo" />
+		<ne_imsnfm value="DN63" />
+	</DHONITIAMS>
+
+<!-- MSC -->
+	<MARJO>
+		<ne_class value="MSC" />
+		<ne_instance value="886942" />
+		<ne_sw value="Md17.0IP" />
+		<ne_ip value="10.43.72.177" />
+	</MARJO>
+
+	<MSC_TA>
+		<ne_class value="MSC" />
+		<ne_instance value="1001" />
+		<ne_sw value="Ma17.0IP" />
+		<ne_ip value="10.9.232.191" />
+	</MSC_TA>
+
+	<FTOMSS>
+		<ne_class value="MSC" />
+		<ne_instance value="123456" />
+		<ne_sw value="MSSCMCFP2" />
+		<ne_ip value="10.37.69.180" />
+		<ne_admin_username value="MSSADM" />
+		<ne_admin_password value="PASSWORD" />
+	</FTOMSS>
+	
+	<KODIAQ>
+		<ne_class value="MSC" />
+		<ne_instance value="500053" />
+		<ne_sw value="MSSCloudCMCFP2" />
+		<ne_ip value="10.92.58.131" />
+		<ne_admin_username value="SYSTEM" />
+		<ne_admin_password value="SYSTEM" />
+	</KODIAQ>
+	
+	<OSTKODIAQ>
+		<ne_class value="MSC" />
+		<ne_instance value="560045" />
+		<ne_sw value="MSSCloud17" />
+		<ne_ip value="10.53.89.87" />
+		<ne_admin_username value="MSSADM" />
+		<ne_admin_password value="PASSWORD" />
+	</OSTKODIAQ>
+	
+<!-- MSC -->
+	<MINTTU>
+		<ne_class value="MSC" />
+		<ne_instance value="880014" />
+		<ne_sw value="Md17.0IP" />
+		<ne_ip value="10.8.93.102" />
+	</MINTTU>
+
+<!-- MSC -->
+	<MINEA>
+		<ne_class value="MSC" />
+		<ne_instance value="123456" />
+		<ne_sw value="Md17.0IP" />
+		<ne_ip value="10.8.93.150" />
+	</MINEA>
+
+	<VKWID>
+		<ne_class value="MSC" />
+		<ne_instance value="560048" />
+		<ne_sw value="MSS17" />
+		<ne_ip value="10.53.65.55" />
+	</VKWID>
+<!-- MSC -->
+	 <KURIKKA>
+		<ne_class value="MSC" />
+		<ne_instance value="58168" />
+		<ne_sw value="Md16.1EP1IP" />
+		<ne_ip value="10.8.93.60" />
+	</KURIKKA>
+
+<!-- MSC -->
+	<MIKA>
+		<ne_class value="MSC" />
+		<ne_ip value="10.8.93.35" />
+		<ne_instance value="Mika" />
+		<ne_sw value="M15.1IP" />
+	</MIKA>
+
+<!-- MSC -->
+	 <VESALA>
+		<ne_class value="MSC" />
+		<ne_instance value="709961" />
+		<ne_sw value="Md17.0IP" />
+		<ne_ip value="10.8.93.225" />
+	</VESALA>
+
+<!-- MSC -->
+	 <MIRA>
+		<ne_class value="MSC" />
+		<ne_instance value="880013" />
+		<ne_sw value="Ma16.1EP1" />
+		<ne_ip value="10.8.93.96" />
+		<ne_admin_username value="NEIMAT" />
+		<ne_admin_password value="SYSTEM" />
+	</MIRA>
+
+<!-- MSC -->
+	 <MINNI>
+		<ne_class value="MSC" />
+		<ne_instance value="244598" />
+		<ne_sw value="MSS17" />
+		<ne_ip value="10.8.85.49" />
+		<ne_admin_username value="SYSTEM" />
+		<ne_admin_password value="NESUP786" />
+	</MINNI>
+
+<!-- MSC -->
+	<MONTANA>
+		<ne_class value="MSC" />
+		<ne_instance value="880010" />
+		<ne_sw value="M15.1IP" />
+		<ne_ip value="10.8.93.45" />
+	</MONTANA>
+
+<!-- MSC -->
+	<HARLEY>
+		<ne_class value="MSC" />
+		<ne_instance value="323917" />
+		<ne_sw value="MSS17" />
+		<ne_ip value="10.8.93.181" />
+	</HARLEY>
+
+<!-- MSC -->
+	<MILLA>
+		<ne_class value="MSC" />
+		<ne_instance value="886656" />
+		<ne_sw value="Ma17.0IP" />
+		<ne_ip value="10.9.146.206" />
+	</MILLA>
+
+	<!-- MSC -->
+	<MILA>
+		<ne_class value="MSC" />
+		<ne_instance value="123456" />
+		<ne_sw value="Md17.0IP" />
+		<ne_ip value="10.8.93.140" />
+	</MILA>
+
+	<!-- MSC -->
+	<MOONA>
+		<ne_class value="MSC" />
+		<ne_instance value="105635" />
+		<ne_sw value="Md17.0IP" />
+		<ne_ip value="10.8.93.114" />
+	</MOONA>
+
+<!-- MSC -->
+	<SANI>
+		<ne_class value="MSC" />
+		<ne_ip value="10.8.93.30" />
+		<ne_sw value="Md16.1IP" />
+		<ne_instance value="880006" />
+	</SANI>
+
+<!-- MSC -->
+	<SHATABDI>
+		<ne_class value="MSC" />
+		<ne_ip value="10.91.178.133" />
+		<ne_sw value="Mr17.0IP" />
+		<ne_instance value="123456" />
+	</SHATABDI>
+
+<!-- MSC -->
+	<VVAASU>
+		<ne_class value="MSC" />
+		<ne_ip value="10.43.57.171" />
+		<ne_sw value="MSS17" />
+		<ne_instance value="769015" />
+	</VVAASU>
+
+<!-- MGW -->
+	<TYRY>
+		<ne_class value="MGW" />
+		<ne_ip value="10.8.85.83" />
+		<ne_sw value="U6.0" />
+		<ne_instance value="205377" />
+		<ne_admin_username value="SYSTEM" />
+		<ne_admin_password value="NEIMAT" />
+	</TYRY>
+
+<!-- MGW -->
+	<DONJUAN>
+		<ne_class value="MGW" />
+		<ne_ip value="10.92.50.11" />
+		<ne_sw value="U6 5.2-0" />
+		<ne_instance value="15764" />
+		<ne_admin_username value="SYSTEM" />
+		<ne_admin_password value="SYSTEM" />
+	</DONJUAN>	
+
+	<MONA>
+		<ne_class value="MGW" />
+		<ne_ip value="10.92.50.6" />
+		<ne_sw value="U6.0EP1" />
+		<ne_instance value="943363" />
+	</MONA>
+	
+	<KOKKOLA>
+		<ne_class value="MGW" />
+		<ne_ip value=" 10.8.83.163" />
+		<ne_sw value="U5 6.1-0 " />
+		<ne_instance value="943752" />
+	</KOKKOLA>
+	
+<!-- MGW -->
+	<EEROLA>
+		<ne_class value="MGW" />
+		<ne_ip value="10.8.54.113" />
+		<ne_sw value="U5.0EP2" />
+		<ne_instance value="883925" />
+		<ne_admin_username value="SYSTEM" />
+		<ne_admin_password value="NEIMAT" />
+	</EEROLA>
+
+<!-- MGW -->
+	<ROUKKO>
+		<ne_class value="MGW" />
+		<ne_ip value="10.8.54.85" />
+		<ne_sw value="U5.0EP2" />
+		<ne_instance value="884055" />
+	</ROUKKO>
+
+<!-- MGW -->
+	<SOINTULA>
+		<ne_class value="MGW" />
+		<ne_ip value="10.8.54.121" />
+		<ne_sw value="U5.0EP2" />
+		<ne_instance value="884057" />
+		<ne_admin_username value="SYSTEM" />
+		<ne_admin_password value="NEIMAT" />
+	</SOINTULA>
+
+<!-- MGW -->
+	<AMERICA>
+		<ne_class value="MGW" />
+		<ne_ip value="10.9.145.97" />
+		<ne_sw value="U5.0EP2" />
+		<ne_instance value="720007" />
+		<ne_admin_username value="MGWADM" />
+		<ne_admin_password value="PASSWORD" />
+	</AMERICA>
+
+<!-- MGW -->
+	<DUPA>
+		<ne_class value="MGW" />
+		<ne_ip value="10.8.54.113" />
+		<ne_sw value="U5.0EP2" />
+		<ne_instance value="883925" />
+		<ne_admin_username value="NEIMAT" />
+	</DUPA>
+
+<!-- MGW -->
+	<TINKE>
+		<ne_class value="MGW" />
+		<ne_ip value="10.8.85.79" />
+		<ne_sw value="U6.0EP1" />
+		<ne_instance value="205401" />
+		<ne_admin_username value="NEIMAT" />
+		<ne_admin_password value="SYSTEM" />
+	</TINKE>
+
+<!-- MGW -->
+	<SASSI>
+		<ne_class value="MGW" />
+		<ne_ip value="10.8.54.117" />
+		<ne_sw value="U5.0EP2" />
+		<ne_instance value="884337" />
+	</SASSI>
+	
+	<ALUMGW2>
+		<ne_class value="MGW" />
+		<ne_ip value="10.111.67.33" />
+		<ne_sw value="7510.C710.B05.S0.01.01" />
+		<ne_instance value="10" />
+		<ne_admin_username value="diag" />
+		<ne_admin_password value="-assured" />
+	</ALUMGW2>
+
+<!-- MGW -->
+	<KANTO2>
+		<ne_class value="MGW" />
+		<ne_ip value="10.8.231.230" />
+		<ne_sw value="U5.0EP2" />
+		<ne_instance value="15764" />
+		<ne_admin_username value="NEIMAT" />
+		<ne_admin_password value="SYSTEM" />
+	</KANTO2>
+
+<!-- Open TAS -->
+	<VBRIA>
+		<ne_class value="TAS" />
+		<ne_ip value="10.53.65.60" />
+		<ne_sw value="TAS15.8" />
+		<ne_instance value="545556" />
+	</VBRIA>
+	
+	<TAS_TA>
+		<ne_class value="TAS" />
+		<ne_ip value="10.9.232.174" />
+		<ne_instance value="1001" />
+		<ne_sw value="TASCloud16.5" />
+	</TAS_TA>
+	
+	<SIGNORA>
+		<ne_class value="TAS" />
+		<ne_ip value="10.53.85.211" />
+		<ne_instance value="123456" />
+		<ne_sw value="TASCloud16.5" />
+	</SIGNORA>
+
+	<DATSUN>
+		<ne_class value="TAS" />
+		<ne_ip value="10.53.65.64" />
+		<ne_instance value="123456" />
+		<ne_sw value="TAS16.5" />
+	</DATSUN>
+
+<!-- Open TAS -->
+	<IRVING3>
+		<ne_class value="TAS" />
+		<ne_ip value="10.203.215.60" />
+		<ne_sw value="TAS15.8" />
+		<ne_instance value="394797" />
+		<ne_admin_username value="TRAIN1" />
+		<ne_admin_password value="NOKIA123" />
+	</IRVING3>
+
+<!-- SGSN -->
+	<SEVERI>
+		<ne_class value="SGSN" />
+		<ne_ip value="10.8.86.10" />
+		<ne_sw value="SG9.1" />
+		<ne_instance value="884054" />
+		<ne_admin_username value="NEIMAT" />
+		<ne_admin_password value="SYSTEM" />
+	</SEVERI>
+
+	<SGSN_TA>
+		<ne_class value="SGSN" />
+		<ne_ip value="10.9.232.170" />
+		<ne_sw value="SGA8CD3" />
+		<ne_instance value="71001" />
+	</SGSN_TA>
+	
+<!-- SGSN -->
+	<SULANDER>
+		<ne_class value="SGSN" />
+		<ne_ip value="10.8.27.137" />
+		<ne_sw value="SG9.1" />
+		<ne_instance value="719140" />
+		<ne_admin_username value="NEIMAT" />
+		<ne_admin_password value="SYSTEM" />
+	</SULANDER>
+
+<!-- SGSN -->
+	<SILVO>
+		<ne_class value="SGSN" />
+		<ne_ip value="10.8.86.23" />
+		<ne_sw value="SG8CD3" />
+		<ne_instance value="884165" />
+	</SILVO>
+
+<!-- SGSN -->
+	<SALLI>
+		<ne_class value="SGSN" />
+		<ne_ip value="10.8.86.116" />
+		<ne_sw value="SG9.1" />
+		<ne_instance value="210974" />
+		<ne_admin_username value="NEIMAT" />
+		<ne_admin_password value="SYSTEM" />
+	</SALLI>
+
+<!-- SGSN -->
+	<SAARA>
+		<ne_class value="SGSN" />
+		<ne_ip value="10.8.27.179" />
+		<ne_sw value="SG9.1" />
+		<ne_instance value="884284" />
+		<ne_admin_username value="NEIMAT" />
+		<ne_admin_password value="SYSTEM" />
+	</SAARA>
+
+<!-- SGSN -->
+	<STELLA>
+		<ne_class value="SGSN" />
+		<ne_ip value="10.8.86.220" />
+		<ne_sw value="SGA8CD2" />
+		<ne_instance value="316926" />
+		<ne_admin_username value="SYSTEM" />
+		<ne_admin_password value="SYSTEM" />
+	</STELLA>
+
+<!-- NTAS -->
+  <TAS01>
+    <ne_class value="NTAS" />
+    <ne_ip value="10.39.244.32" />
+    <ne_ip_CBAM value="10.39.244.25" />
+    <ne_CBAM_username value="root" />
+    <ne_CBAM_password value="n0kiaTas!" />
+    <ne_admin_username value="root" /> 
+    <ne_admin_password value="n0kiaTas!" /> 
+    <ne_sw value="NTASCloud18" />
+    <ne_instance value="123456" />
+    <MRC_INSTANCE value="TA_NTAS" />
+    <MR_INSTANCE value="TA_NTAS" />
+    <ne_prompt value="#" />
+    <NEAC_service_types type="list" value="'NETCONF', 'SFTP Access', 'SSH Access', 'Web Service Access'" />
+    <NEAC_service_usernames type="list" value="'nacmadmin', 'da', 'nacmadmin', 'ne3suser'" />
+    <NEAC_service_password type="list" value="'n0kiaTas!', 'n0kiaTas**', 'n0kiaTas!',  'n0kiaTas**'" />
+  </TAS01> 
+
+	<TAS02>
+		<ne_class value="NTAS" />
+		<ne_ip value="10.39.244.15" />
+		<ne_sw value="tas02" />
+		<ne_instance value="123456" />
+		<webui_username value="nacmadmin" />
+		<webui_password value="n0kiaTas!" />
+		<ne_root_username value="nacmadmin" />
+		<ne_root_password value="n0kiaTas!" />
+		<MRC_INSTANCE value="MRC_TA_NTAS" />
+		<MR_INSTANCE value="MR_TA_NTAS" />
+		<ne_prompt value="#" />
+		<NEAC_service_types type="list" value="'NETCONF', 'SFTP Access', 'SSH Access', 'Web Service Access'" />
+		<NEAC_service_usernames type="list" value="'nacmadmin', 'da', 'nacmadmin', 'ne3suser'" />
+		<NEAC_service_password type="list" value="'n0kiaTas!', 'n0kiaTas**', 'n0kiaTas!','ne3sUser**'" />
+	</TAS02>
+
+<!-- OMGW -->
+	<KASKELA>
+		<ne_class value="OMGW" />
+		<ne_ip value="10.8.83.195" />
+		<ne_sw value="Ui5.0EP2" />
+		<ne_instance value="Kaskela" />
+		<webui_username value="WEBACC" />
+		<webui_password value="PASSWORD" />
+		<ne_root_password value="root" />
+	</KASKELA>
+	
+	<OMGW_TA>
+		<ne_class value="OMGW" />
+		<ne_ip value="10.9.232.148" />
+		<ne_sw value="OpenMGW16.5" />
+		<ne_instance value="2301" />
+		<webui_username value="WEBACC" />
+		<webui_password value="PASSWORD" />
+	</OMGW_TA>
+	
+<!-- OMGW -->
+	<KASURI>
+		<ne_class value="OMGW" />
+		<ne_ip value="10.8.83.196" />
+		<ne_sw value="OpenMGW16.5" />
+		<ne_instance value="239425" />
+		<webui_username value="WEBACC" />
+		<webui_password value="PASSWORD" />
+	</KASURI>
+
+<!-- OMGW -->
+	<NAAKKA>
+		<ne_class value="OMGW" />
+		<ne_ip value="10.8.83.50" />
+		<ne_sw value="Ui5.0EP2" />
+		<ne_instance value="Naakka" />
+		<webui_username value="WEBACC"/>
+		<webui_password value="PASSWORD" />
+	</NAAKKA>
+
+<!-- OMGW -->
+	<LIGHTING>
+		<ne_class value="OMGW" />
+		<ne_ip value="10.69.9.136 " />
+		<ne_sw value="Ui5.0MP4.3" />
+		<ne_instance value="Lighting" />
+		<webui_username value="WEBACC"/>
+		<webui_password value="PASSWORD" />
+		<ne_root_password value="root" />
+	</LIGHTING>
+
+<!-- OMGW -->
+	<ASTRO>
+		<ne_class value="OMGW" />
+		<ne_ip value="10.69.114.189 " />
+		<ne_sw value="OpenMGW16.5" />
+		<ne_instance value="Astro" />
+		<webui_username value="WEBACC"/>
+		<webui_password value="PASSWORD" />
+		<ne_root_password value="root" />
+	</ASTRO>
+
+<!-- OMGW -->
+	<SIMBA>
+		<ne_class value="OMGW" />
+		<ne_ip value="10.69.115.14" />
+		<ne_sw value="OpenMGW16" />
+		<ne_instance value="Simba" />
+		<webui_username value="WEBACC"/>
+		<webui_password value="PASSWORD" />
+		<ne_root_password value="root" />
+	</SIMBA>
+
+	<KYPROS>
+		<ne_class value="OMGW" />
+		<ne_ip value="10.33.239.4" />
+		<ne_sw value="OpenMGW16" />
+		<ne_instance value="Kypros" />
+		<webui_username value="WEBACC" />
+		<webui_password value="PASSWORD" />
+		<ne_root_password value="root" />
+	</KYPROS>
+
+	<MIFFY>
+		<ne_class value="OMGW" />
+		<ne_ip value="10.69.114.237" />
+		<ne_sw value="OpenMGW16" />
+		<ne_instance value="Miffy" />
+		<webui_username value="WEBACC" />
+		<webui_password value="PASSWORD" />
+		<ne_root_password value="root" />
+	</MIFFY>
+
+	<!-- OMGW -->
+	<TEIOTLA>
+		<ne_class value="OMGW" />
+		<ne_ip value="10.8.48.9" />
+		<ne_sw value="OpenMGW18" />
+		<ne_instance value="Teiotla" />
+		<webui_username value="OMMADM" />
+		<webui_password value="PASSWORD" />
+		<ne_root_password value="root" />
+		<ne_admin_password value="root" />
+		<ne_prompt value="#" />
+		<NEAC_service_types type="list" value="'NEUM Admin Access', 'Web Service Access', 'SCLI Access', 'HTTPS Access'"/>
+		<NEAC_service_usernames type="list" value="'omwadn', 'webusr', 'scliac', 'httpsuser'"/>
+		<NEAC_service_password type="list" value="'P@ssw0rd123_', 'P@ssw0rd123_', 'P@ssw0rd123_','P@ssw0rd123_'"/>
+	</TEIOTLA>
+
+	<!-- OMGW -->
+	<SLUSH>
+		<ne_class value="OMGW" />
+		<ne_ip value="10.8.246.24" />
+		<ne_sw value="OpenMGW18" />
+		<ne_instance value="1" />
+		<webui_username value="WEBACC" />
+		<webui_password value="PASSWORD" />
+		<ne_root_password value="openmgw16" />
+		<ne_admin_username value="root" />
+		<ne_admin_password value="openmgw16" />
+	</SLUSH>
+
+	<!-- OMGW -->
+	<IRVING2>
+		<ne_class value="OMGW" />
+		<ne_ip value="10.48.177.132" />
+		<ne_sw value="Ui5.0EP2" />
+		<ne_instance value="373171" />
+		<webui_username value="WEBACC"/>
+		<webui_password value="PASSWORD" />
+		<ne_root_password value="root" />
+	</IRVING2>
+
+<!-- OBGW -->
+	<CRANE>
+		<ne_class value="OBGW" />
+		<ne_ip value="10.8.17.215" />
+		<ne_sw value="Ba6.0" />
+		<ne_instance value="Crane" />
+	</CRANE>
+
+<!-- OBGW -->
+	<OPENBGW1>
+		<ne_class value="OBGW" />
+		<ne_ip value="10.58.253.153" />
+		<ne_sw value="base" />
+		<ne_instance value="1" />
+	</OPENBGW1>
+
+<!-- OBGW -->
+	<BGW50>
+		<ne_class value="OBGW" />
+		<ne_ip value="10.83.221.100" />
+		<ne_sw value="OpenBGW16" />
+		<ne_instance value="BGW50" />
+		<ne_root_username value="root" />
+		<ne_root_password value="root" />
+	</BGW50>
+
+<!-- OBGW -->
+	<TIGER>
+		<ne_class value="OBGW" />
+		<ne_ip value="10.7.33.4" />
+		<ne_sw value="OpenBGW16" />
+		<ne_instance value="1" />
+		<ne_root_username value="root" />
+		<ne_root_password value="root" />
+	</TIGER>
+
+<!-- OBGW -->
+	<TERVASAARI>
+		<ne_class value="OBGW" />
+		<ne_ip value="10.91.227.178" />
+		<ne_sw value="OpenBGW17" />
+		<ne_instance value="1" />
+		<ne_admin_username value="root" />
+		<ne_admin_password value="nokia@123" />
+		<ne_root_username value="root" />
+		<ne_root_password value="nokia@123" />
+		<ne_prompt value="#" />
+		<NEAC_service_types type="list" value="'NEUM Admin Access', 'SCLI Access', 'Web Service Access', 'HTTPS Access', 'SFTP Access'" />
+		<NEAC_service_usernames type="list" value="'ADMBGA', 'scliusr', 'websera', 'webusa', 'sftpinea'" />
+		<NEAC_service_password type="list" value="'nokia@125', 'nokia@126', 'nokia@123', 'nokia@125', 'nokia@122'" />
+	</TERVASAARI>
+
+<!-- OBGW -->
+	<IRVING1>
+		<ne_class value="OBGW" />
+		<ne_ip value="10.203.215.116" />
+		<ne_sw value="OpenBGW16" />
+		<ne_instance value="374153" />
+		<ne_admin_username value="root" />
+		<ne_admin_password value="root" />
+		<ne_root_username value="root" />
+		<ne_root_password value="root" />
+		<ne_prompt value="#" />
+	</IRVING1>
+
+<!-- BNGLB -->
+	<LOADBALANCER1>
+		<ne_class value="BNGLB" />
+		<ne_ip value="10.8.170.119" />
+		<ne_ip2 value="10.8.83.117" />
+		<ne_sw value="11.0" />
+		<ne_instance value="1" />
+	</LOADBALANCER1>
+
+<!-- BNGLB -->
+	<LOADBALANCER45>
+		<ne_class value="BNGLB" />
+		<ne_ip value="10.8.83.211" />
+		<ne_ip2 value="10.8.83.209" />
+		<ne_sw value="16.5" />
+		<ne_instance value="45" />
+	</LOADBALANCER45>
+
+	<!-- BNGLB -->
+	<LOADBALANCER155>
+		<ne_class value="BNGLB" />
+		<ne_ip value="10.8.83.211" />
+		<ne_ip2 value="10.8.83.209" />
+		<ne_sw value="15.5" />
+		<ne_instance value="155" />
+	</LOADBALANCER155>
+	
+	<BMLBCNUMROCKET>
+		<ne_class value="BNGLB" />
+		<ne_ip value="10.8.48.33" />
+		<ne_sw value="17.0" />
+		<ne_instance value="DNCNUM123_DU321" />
+		<ne_subclass value="cmrepo" />
+		<ne_imsnfm value="DN94_DUCnum" />
+		<ne_admin_username value="rtp99" />
+		<ne_admin_password value="yt_xk39b" />
+	</BMLBCNUMROCKET>
+	
+
+<!-- CSCFLCC -->
+	<CSCFLCC_56>
+		<ne_class value="CSCF" />
+		<ne_cluster value="CSCFLCC" />
+		<ne_sw value="11.0" />
+		<cluster_instance value="56" />
+		<ne_instance value="1" />
+		<ne_ip value="10.8.170.100" />
+		<ne_instance2 value="2" />
+		<ne_ip2 value="10.8.170.96" />
+	</CSCFLCC_56>
+
+	<CSCFLCC_7>
+		<ne_class value="CSCF" />
+		<ne_cluster value="CSCFLCC" />
+		<ne_sw value="base" />
+		<cluster_instance value="7" />
+		<ne_instance value="1" />
+		<ne_ip value="10.8.170.113" />
+	</CSCFLCC_7>
+
+	<CSCFLCC_67>
+		<ne_class value="CSCF" />
+		<ne_cluster value="CSCFLCC" />
+		<ne_sw value="16.0C" />
+		<cluster_instance value="DN5_DU4" />
+		<ne_instance value="01" />
+		<ne_ip value="10.255.127.105" />
+	</CSCFLCC_67>
+
+	<CSCFLCC_16>
+		<ne_class value="CSCF" />
+		<ne_cluster value="CSCFLCC" />
+		<ne_sw value="base" />
+		<cluster_instance value="16" />
+		<ne_instance value="01" />
+		<ne_ip value="10.58.173.78 " />
+	</CSCFLCC_16>
+
+	<BMCSCFCNUMROCKET>
+		<ne_class value="CSCF" />
+		<ne_cluster value="DU" />
+		<ne_sw value="17.0C" />
+		<cluster_instance value="DN72_CSCFDU72" />
+		<ne_instance value="01" />
+		<ne_ip value="10.93.250.157" />
+		<ne_instance2 value="02" />
+		<ne_ip2 value="10.93.250.158" />
+		<ne_subclass value="cmrepo" />
+		<ne_imsnfm value="DN94_DUCnum" />
+		<oam_lan_password value="yt_xk39b" />
+	</BMCSCFCNUMROCKET>
+	
+	<BHARTICBISCSCF>
+		<ne_class value="CSCF" />
+		<ne_subclass value="cmrepo" />
+		<ne_cluster value="DU" />
+		<cluster_instance value="DN101_DU2" />
+		<ne_sw value="19.0VI" />
+		<ne_instance value="01" />
+		<ne_ip value="10.91.223.40" />
+		<ne_instance2 value="02" />
+		<ne_ip2 value="10.91.223.40" />
+		<ne_imsnfm value="1" />
+	</BHARTICBISCSCF>
+
+<!-- CMD -->
+	<CMD>
+		<ne_class value="CMD" />
+		<ne_ip value="10.43.98.90" />
+		<ne_sw value="15.5" />'
+		<ne_instance value="1" />
+	</CMD>
+
+<!-- HSSFE -->
+	<HSS01>
+		<ne_class value="HSSFE" />
+		<ne_ip value="10.8.170.81" />
+		<ne_sw value="15.5" />
+		<ne_instance value="01" />
+	</HSS01>
+	
+	<HSSEMBEDDED04>
+		<ne_class value="HSSFE" />
+		<ne_ip value="2a00:8a00:4000:204::117" />
+		<ne_sw value="16.5" />
+		<ne_instance value="12" />
+	</HSSEMBEDDED04>
+	
+	<HSS03>
+		<ne_class value="HSSFE" />
+		<ne_ip value="10.8.170.120" />
+		<ne_sw value="15.5" />
+		<ne_instance value="3" />
+	</HSS03>
+
+	<HSS04>
+		<ne_class value="HSSFE" />
+		<ne_ip value="10.8.170.106" />
+		<ne_sw value="15.5" />
+		<ne_instance value="4" />
+	</HSS04>
+
+	<HSS05>
+		<ne_class value="HSSFE" />
+		<ne_ip value="10.8.93.194" />
+		<ne_sw value="8.2EP2" />
+		<ne_instance value="5" />
+	</HSS05>
+
+	<HSSFE_TA>
+		<ne_class value="HSSFE" />
+		<ne_ip value="10.9.232.121" />
+		<ne_sw value="16.5" />
+		<ne_instance value="3251" />
+	</HSSFE_TA>
+
+	<HSSFE_TA1>
+		<ne_class value="HSSFE" />
+		<ne_ip value="10.9.232.121" />
+		<ne_sw value="16.5" />
+		<ne_instance value="3251" />
+	</HSSFE_TA1>
+	
+	<ADI1>
+		<ne_class value="HSSFE" />
+		<ne_ip value=" 10.43.104.7" />
+		<ne_sw value="16C" />
+		<ne_instance value="ADI1" />
+	</ADI1>
+
+	<HSSFE_VI>
+		<ne_class value="HSSFE" />
+		<ne_sw value="17.5VNF" />
+		<ne_instance value="DN1_HSSD5000v" />
+		<ne_ip value="10.111.67.13" />
+		<ne_parent value="IMSNFM-2" />
+		<ne_child value="HSS-DN1_HSSD5000v" />
+	</HSSFE_VI>
+
+	<HSS15>
+		<ne_class value="HSSFE" />
+		<ne_ip value="2A00:8A00:4000:0204::108" />
+		<ne_sw value="17.0C" />
+		<ne_instance value="DN9_HSSD1" />
+		<ne_subclass value="cmrepo" />
+		<ne_imsnfm value="1" />
+	</HSS15>
+	
+	<BMHSSCNUMROCKET>
+		<ne_class value="HSSFE" />
+		<ne_ip value="10.8.48.30" />
+		<ne_sw value="17.0C" />
+		<ne_instance value="DN91_DU100" />
+		<ne_subclass value="cmrepo" />
+		<ne_imsnfm value="DN94_DUCnum" />
+	</BMHSSCNUMROCKET>
+	
+	<PSHSSFE>
+		<ne_class value="HSSFE" />
+		<ne_ip value="10.8.48.53" />
+		<ne_sw value="19.0C" />
+		<ne_instance value="DNHSS_DUHSS" />
+		<ne_admin_username value="rtp99" />
+		<ne_admin_password value="yt_xk39b" />
+	</PSHSSFE>
+	
+<!-- CMREPO -->
+	<PSCMREPO>
+		<ne_class value="CMREPO" />
+		<ne_ip value="10.8.48.175" />
+		<ne_sw value="17.5CI" />
+		<ne_instance value="PS" />
+		<ne_admin_username value="rtp99" />
+		<ne_admin_password value="yt_xk39b" />
+	</PSCMREPO>
+
+	<HSS175HPBM>
+		<ne_class value="NTHLRFE" />
+		<ne_ip value="10.8.48.21" />
+		<ne_sw value="18.5C" />
+		<ne_instance value="DN31" />
+		<ne_admin_username value="rtp99" />
+		<ne_admin_password value="yt_xk39b" />
+		<ne_subclass value="cmrepo" />
+		<ne_imsnfm value="3" />
+	</HSS175HPBM>
+	
+	<HSS175HPBMCMREPO>
+		<ne_class value="CMREPO" />
+		<ne_ip value="10.8.48.19" />
+		<ne_sw value="18.5C" />
+		<ne_instance value="2" />
+		<ne_admin_username value="wsuser" />
+		<ne_admin_password value="wspassword" />
+	</HSS175HPBMCMREPO>
+	
+<!-- IMS - WA-->
+	<PSCSCF34>
+		<ne_class value="CSCF" />
+		<ne_cluster value="CSCFLCC" />
+		<ne_sw value="base" />
+		<cluster_instance value="DN100_DU102" />
+		<ne_sw value="18.0C" />
+		<ne_instance value="01" />
+		<ne_ip value="10.8.48.177" />
+		<ne_instance2 value="02" />
+		<ne_ip2 value="10.8.48.178" />	
+		<ne_subclass value="cmrepo" />
+		<ne_imsnfm value="1" />
+	</PSCSCF34>
+
+	<MAZDA_CSCF11>
+		<ne_class value="CSCF" />
+		<ne_cluster value="CSCFLCC" />
+		<ne_sw value="base" />
+		<cluster_instance value="DN48_DU_Spec_49" />
+		<ne_sw value="18C" />
+		<ne_instance value="01" />
+		<ne_ip value="2a00:8a00:4000:20c::3c:0012" />
+	</MAZDA_CSCF11>
+
+
+	<MAZDA_HSSHP>
+		<ne_class value="HSSFE" />
+		<ne_ip value="2a00:8a00:4000:20c::3c:e" />
+		<ne_sw value="18.5C" />
+		<ne_instance value="DNHSS1" />
+		<ne_subclass value="cmrepo" />
+		<ne_imsnfm value="1" />
+	</MAZDA_HSSHP>
+
+<!-- IMS -->
+	<PSCSCF_IMS cscf="PSCSCF34" tiams="TIAMS12">
+		<ne_class value="IMS" />
+	</PSCSCF_IMS>
+
+	<ROCKET_IMS cscf="BMCSCFCNUMROCKET" tiams="BMTIAMSCNUMROCKET">
+		<ne_class value="IMS" />
+	</ROCKET_IMS>
+
+<!-- SGSN -->
+	<STERN>
+		<ne_class value="SGSN" />
+		<ne_ip value="10.8.86.239" />
+		<ne_instance value="323983" />
+		<ne_sw value="NSA3" />
+		<ne_admin_username value="SYSTEM" />
+		<ne_admin_password value="SYSTEM" />
+	</STERN>
+	
+	<PUNTO> 
+		<ne_class value="SGSN" /> 
+		<ne_ip value="10.43.72.193" />
+		<ne_sw value="NSA17.5" />		
+		<ne_instance value="123456" />
+	</PUNTO>
+
+<!-- FLEXING -->
+	<PETSKU>
+		<ne_class value="FING"/>
+		<ne_instance value="Petsku"/>
+		<ne_sw value="NG17.5"/>
+		<ne_ip value="10.9.172.226"/>
+		<ne_admin_username value="FNGADM" />
+		<ne_admin_password value="yt_xk39c" />
+	</PETSKU>
+
+<!-- FLEXING -->
+	<MARTINA>
+		<ne_class value="FING"/>
+		<ne_instance value="Martina"/>
+		<ne_admin_username value="FNGADM" />
+		<ne_admin_password value="qwerty@453" />
+		<ne_sw value="NG17"/>
+		<ne_ip value="10.91.227.78"/>
+	</MARTINA>
+
+<!-- FastMile -->
+	<FASTMILE16>
+		<ne_class value="LTTHC" />
+		<ne_ip value="10.9.227.148" />
+		<ne_instance value="1" />
+		<ne_sw value="LTTHC17" />
+		<ne_admin_username value="fmadmin" />
+		<ne_admin_password value="Fastmile_123" />
+	</FASTMILE16>
+
+	<FASTMILE161>
+		<ne_class value="LTTHC" />
+		<ne_ip value="10.9.227.152" />
+		<ne_instance value="1" />
+		<ne_sw value="LTTHC16" />
+		<ne_admin_username value="fmadmin" />
+		<ne_admin_password value="Nokia@123456" />
+		<ne_root_username value="root" />
+		<ne_root_password value="Nokia@123456" />
+	</FASTMILE161>
+
+<!-- OMS - ASRNC -WBTS -->
+	<VENUS>
+		<ne_class value="OMS"/>
+		<ne_ip value="10.8.85.242"/>
+		<ne_instance value="1022"/>
+		<ne_sw value="vWOMS17"/>
+	</VENUS>
+
+	<YUVARAJASRNC oms="VENUS">
+		<ne_class value="RNC"/>
+		<ne_subclass value="ASRNC"/>
+		<ne_admin_username value="_rcpadmin"/>
+		<ne_admin_password value="RCP_owner"/>
+		<ne_ip value="10.92.61.199"/>
+		<ne_instance value="103"/>
+		<ne_sw value="ASRNC17"/>
+	</YUVARAJASRNC>
+
+	<VICKERS rnc="YuvarajASRNC">
+		<ne_class value="WBTS"/>
+		<ne_ip value="10.9.189.177"/>
+		<ne_instance value="976"/>
+		<ne_sw value="WBTS17"/>
+		<ne_cell_instance value="1"/>
+	</VICKERS>
+
+<!-- VMWNETNUMBER2 TITAN -->
+	<VMWNETNUMBER2>
+		<ne_class value="TITAN" />
+		<ne_instance value="TA_vmwNETNUMBER2" />
+		<ne_sw value="7.9" />
+	</VMWNETNUMBER2>
+	
+	<VMWNETNUMBER2_MASTER1 TITAN="VMWNETNUMBER2">
+		<ne_class value="MASTER" />
+		<ne_ip value="10.53.90.243" />
+		<ne_instance value="1" />
+		<ne_sw value="7.9" />
+		<ne_admin_username value="admin" />
+		<ne_admin_password value="yt_xk39b" />
+		<ne_root_password value="changeme" />
+		<ne_SHA value="MD5" />
+		<ne_AES value="DES" />
+	</VMWNETNUMBER2_MASTER1>
+	
+	<VMWNETNUMBER2_EDGE1 TITAN="VMWNETNUMBER2">
+		<ne_class value="EDGE" />
+		<ne_ip value="10.53.90.241" />
+		<ne_instance value="1" />
+		<ne_sw value="7.9" />
+		<ne_admin_username value="admin" />
+		<ne_admin_password value="yt_xk39b" />
+		<ne_root_password value="changeme" />
+		<ne_SHA value="MD5" />
+		<ne_AES value="DES" />
+	</VMWNETNUMBER2_EDGE1>
+	
+	<VMWNETNUMBER2_EDGE2 TITAN="VMWNETNUMBER2">
+		<ne_class value="EDGE" />
+		<ne_ip value="10.53.90.242" />
+		<ne_instance value="2" />
+		<ne_sw value="7.9" />
+		<ne_admin_username value="admin" />
+		<ne_admin_password value="yt_xk39B" />
+		<ne_root_password value="changeme" />
+		<ne_SHA value="MD5" />
+		<ne_AES value="DES" />
+	</VMWNETNUMBER2_EDGE2>
+
+<!-- OSTNETNUMBER1 TITAN -->
+	<OSTNETNUMBER1>
+		<ne_class value="TITAN" />
+		<ne_instance value="TA_OSTNETNUMBER1" />
+		<ne_sw value="7.9" />
+	</OSTNETNUMBER1>
+	
+	<OSTNETNUMBER1_MASTER1 TITAN="OSTNETNUMBER1">
+		<ne_class value="MASTER" />
+		<ne_ip value="10.53.83.134" />
+		<ne_instance value="1" />
+		<ne_sw value="7.9" />
+		<ne_admin_username value="admin" />
+		<ne_admin_password value="Hampton-1" />
+		<ne_root_password value="changeme" />
+		<ne_SHA value="MD5" />
+		<ne_AES value="DES" />
+	</OSTNETNUMBER1_MASTER1>
+	
+	<OSTNETNUMBER1_DEGE1 TITAN="OSTNETNUMBER1">
+		<ne_class value="EDGE" />
+		<ne_ip value="10.53.83.135" />
+		<ne_instance value="1" />
+		<ne_sw value="7.9" />
+		<ne_admin_username value="admin" />
+		<ne_admin_password value="Hampton-1" />
+		<ne_root_password value="changeme" />
+		<ne_SHA value="MD5" />
+		<ne_AES value="DES" />
+	</OSTNETNUMBER1_DEGE1>
+	
+	<OSTNETNUMBER1_DEGE2 TITAN="OSTNETNUMBER1">
+		<ne_class value="EDGE" />
+		<ne_ip value="10.53.83.136" />
+		<ne_instance value="2" />
+		<ne_sw value="7.9" />
+		<ne_admin_username value="admin" />
+		<ne_admin_password value="Hampton-1" />
+		<ne_root_password value="changeme" />
+		<ne_SHA value="MD5" />
+		<ne_AES value="DES" />
+	</OSTNETNUMBER1_DEGE2>
+
+<!-- SAM009 -->
+	<SAM009>
+		<ne_class value="SAM" />
+		<ne_instance value="TA_SAM009" />
+		<ne_sw value="14.0R7" />
+		<ne_ip_1 value="10.91.135.64"/>
+		<ne_admin_username value="samadmin" />
+		<ne_admin_password value="Sam#123" />
+	</SAM009>
+<!-- SAM009 -->	
+
+<!-- SAM001 -->
+	<SAM001>
+		<ne_class value="SAM" />
+		<ne_instance value="TA_SAM001" />
+		<ne_sw value="14.0R7" />
+		<ne_ip_1 value="10.91.135.56"/>
+		<ne_ip_2 value="10.91.135.57"/>
+		<ne_admin_username value="samadmin" />
+		<ne_admin_password value="Sam#123" />
+		<ne_Auxiliary_Server value="False"/>
+		<ne_Redundant_Server value="True"/>
+	</SAM001>
+<!-- SAM001 -->	
+
+<!--OMS-MCRNC-->
+	<Pate01>
+		<ne_class value="OMS" />
+		<ne_ip value="10.9.219.125" />
+		<ne_instance value="3011" />
+		<ne_sw value="WOMS17" />
+	</Pate01>
+	
+	<NOVEMBER oms="Pate01">
+		<ne_class value="RNC" />
+		<ne_subclass value="MCRNC" />
+		<ne_admin_username value="root" />
+		<ne_ip value="10.91.227.29" />
+		<ne_instance value="835" />
+		<ne_sw value="mcRNC17" />
+	</NOVEMBER>
+	
+<!-- Common variables specific to NE class -->
+
+	<common_for_OMS>
+		<ne_admin_username value="Nemuadmin" />
+		<ne_admin_password value="nemuuser" />
+		<ne_root_username value="root" />
+		<ne_root_password value="nemuuser" />
+		<MRC_instance value="MRC_TA_OMS" />
+		<MR_instance value="MR_TA_OMS" />
+		<NEAC_service_types type="list" value="'NWI3 Access', 'EM Access'" />
+		<NEAC_service_usernames type="list" value="'Nemuadmin','Nemuadmin'" />
+		<NEAC_service_password type="list" value="'nemuuser','nemuuser'" />
+	</common_for_OMS>
+
+	<common_for_BSC>
+		<MRC_instance value="MRC_TA_BSC" />
+		<MR_instance value="MR_TA_BSC" />
+		<ne_admin_username value="SYSTEM" />
+		<ne_admin_password value="SYSTEM" />
+		<ne_prompt value="> " />
+		<NEAC_service_types type="list" value="'NEUM Admin Access', 'FTP Access', 'Q3 Access', 'FTAM Access', 'Remote MML Access'" />
+		<NEAC_service_usernames type="list" value="'NUPADM', 'FTPACC', 'Q3ACCS', 'FTAMAC', 'REMMML'" />
+		<NEAC_service_password type="list" value="'PASSWORD', 'PASSWORD', 'PASSWORD', 'PASSWORD', 'PASSWORD'" />
+	</common_for_BSC>
+
+	<common_for_mcBSC>
+		<MRC_instance value="MRC_TA_mcBSC" />
+		<MR_instance value="MR_TA_mcBSC" />
+		<ne_admin_username value="SYSTEM" />
+		<ne_admin_password value="SYSTEM" />
+		<ne_prompt value="> " />
+		<NEAC_service_types type="list" value="'NEUM Admin Access', 'FTP Access', 'Q3 Access', 'FTAM Access', 'Remote MML Access'" />
+		<NEAC_service_usernames type="list" value="'NUPADM', 'FTPACC', 'Q3ACCS', 'FTAMAC', 'REMMML'" />
+		<NEAC_service_password type="list" value="'PASSWORD', 'PASSWORD', 'PASSWORD', 'PASSWORD', 'PASSWORD'" />
+	</common_for_mcBSC>
+
+	<common_for_RNC>
+		<MRC_instance value="MRC_TA_RNC" />
+		<MR_instance value="MR_TA_RNC" />
+		<ne_admin_username value="SYSTEM" />
+		<ne_admin_password value="SYSTEM" />
+		<ne_root_username value="root" />
+		<ne_root_password value="nemuuser" />
+		<NEAC_service_types type="list" value="'NEUM Admin Access', 'Default Access', 'FTP Access', 'SFTP Access', 'Remote MML Access', 'EM Access'" />
+		<NEAC_service_usernames type="list" value="'NUPADM', 'DEFACC', 'FTPACC', 'SFTPAC', 'REMMML', 'Nemuadmin'" />
+		<NEAC_service_password type="list" value="'PASSWORD', 'PASSWORD', 'PASSWORD', 'PASSWORD', 'PASSWORD', 'nemuuser'" />
+	</common_for_RNC>
+
+	<common_for_MCRNC>
+		<MRC_instance value="MRC_TA_mcRNC" />
+		<MR_instance value="MR_TA_mcRNC" />
+		<ne_prompt value=">" />
+		<ne_admin_username value="_nokfsoperator" />
+		<ne_admin_password value="nemuuser" />
+		<NEAC_service_types type="list" value="'NEUM Admin Access', 'SCLI Access', 'SFTP Access', 'EM Access', 'HTTP Access', 'HTTPS Access'" />
+		<NEAC_service_usernames type="list" value="'NUPADM', 'SCLIAC', 'SFTPAC', 'Nemuadmin', 'HTTPACC', 'HTTPSACC'" />
+		<NEAC_service_password type="list" value="'P@ssw0rd123_', 'P@ssw0rd123_', 'P@ssw0rd123_', 'nemuuser','P@ssw0rd123_', 'P@ssw0rd123_'" />
+		<ne_root_username value="root" />
+		<ne_root_password value="nemuuser" />
+	</common_for_MCRNC>
+
+	<common_for_ASRNC>
+		<MRC_instance value="MRC_TA_ASRNC" />
+		<MR_instance value="MR_TA_ASRNC" />
+		<ne_admin_username value="_rcpadmin"/>
+		<ne_admin_password value="RCP_owner"/>
+		<ne_prompt value=">" />
+		<NEAC_service_types type="list" value="'NEUM Admin Access', 'SCLI Access', 'SFTP Access', 'EM Access', 'HTTPS Access'" />
+		<NEAC_service_usernames type="list" value="'NUPADM', 'scliac', 'SFTPAC', 'Nemuadmin', 'HTTSPACC'" />
+		<NEAC_service_password type="list" value="'pASSWORD_123', 'pASSWORD_123', 'pASSWORD_123', 'nemuuser', 'pASSWORD_123'" />
+		<ne_root_username value="_rcpadmin" />
+		<ne_root_password value="RCP_owner" />
+	</common_for_ASRNC>
+
+	<common_for_IADA>
+		<MRC_instance value="MRC_TA_IADA" />
+		<MR_instance value="MR_TA_IADA" />
+		<NEAC_service_types type="list" value="'NEUM Admin Access', 'SCLI Access', 'SFTP Access', 'EM Access'" />
+		<NEAC_service_usernames type="list" value="'NUPADM', 'scliac', 'SFTPAC', 'Nemuadmin'" />
+		<NEAC_service_password type="list" value="'PASSWORD', 'PASSWORD', 'PASSWORD', 'nemuuser'" />
+		<ne_root_username value="root" />
+		<ne_root_password value="nemuuser" />
+	</common_for_IADA>
+
+	<common_for_MRBTS>
+		<MRC_instance value="MRC_TA_LTE" />
+		<MR_instance value="MR_TA_LTE" />
+		<ne_admin_username value="Nemuadmin" />
+		<ne_admin_password value="nemuuser" />
+		<NEAC_service_types type="list" value="'NWI3 Access', 'EM Access'" />
+		<NEAC_service_usernames type="list" value="'Nemuadmin','Nemuadmin'" />
+		<NEAC_service_password type="list" value="'nemuuser','nemuuser'" />
+	</common_for_MRBTS>
+	
+	<common_for_SMM>
+		<MRC_instance value="MRC_TA_SMM" />
+		<MR_instance value="MR_TA_SMM" />
+		<ne_admin_username value="smm0dev" />
+		<ne_admin_password value="pab&amp;!y8drUwezu" />
+		<ne_admin_gui_username value="admin" />
+		<ne_admin_gui_password value="z4fave3H#mepHu" />
+		<ne_SHA value="SHA256" />
+		<ne_AES value="AES128" />
+		<NEAC_service_types type="list" value="'SSH Access', 'SNMP v3 Access', 'SFTP Access', 'HWM and SWM Access'" />
+		<NEAC_service_usernames type="list" value="'smm0dev', 'smmomc', 'smm0xfer', 'smm0xfer'" />
+		<NEAC_service_password type="list" value="'pab&amp;!y8drUwezu', 'draSephU?eDe3h', 'draSephU?eDe3h', 'draSephU?eDe3h'" />
+	</common_for_SMM>	
+
+	<common_for_BTSMED>
+		<MRC_instance value="MRC_TA_BTSMED" />
+		<MR_instance value="MR_TA_BTSMED" />
+		<ne_admin_username value="Nemuadmin" />
+		<ne_admin_password value="nemuuser" />
+		<ne_prompt value="$" />
+	</common_for_BTSMED>
+
+	<common_for_WBTS>
+		<ne_admin_username value="Nemuadmin" />
+		<ne_admin_password value="nemuuser" />
+		<MRC_instance value="MRC_TA_WBTS" />
+		<MR_instance value="MR_TA_WBTS" />
+		<NEAC_service_types type="list" value="'NWI3 Access', 'EM Access'" />
+		<NEAC_service_usernames type="list" value="'Nemuadmin','Nemuadmin'" />
+		<NEAC_service_password type="list" value="'nemuuser','nemuuser'" />
+	</common_for_WBTS>
+	
+	<common_for_MSC>
+		<MRC_instance value="MRC_TA_MSC" />
+		<MR_instance value="MR_TA_MSC" />
+		<ne_admin_username value="SYSTEM" />
+		<ne_admin_password value="SYSTEM" />
+		<NEAC_service_types type="list" value="'NEUM Admin Access', 'FTP Access', 'Remote MML Access'" />
+		<NEAC_service_usernames type="list" value="'NUPADM', 'FTPACC', 'REMMML'" />
+		<NEAC_service_password type="list" value="'PASSWORD', 'PASSWORD', 'PASSWORD'" />
+	</common_for_MSC>
+
+	<common_for_TAS>
+		<MRC_instance value="MRC_TA_TAS" />
+		<MR_instance value="MR_TA_TAS" />
+		<NEAC_service_types type="list" value="'NEUM Admin Access', 'FTP Access', 'Remote MML Access'" />
+		<NEAC_service_usernames type="list" value="'NUPADM', 'FTPACC', 'REMMML'" />
+		<NEAC_service_password type="list" value="'PASSWORD', 'PASSWORD', 'PASSWORD'" />
+	</common_for_TAS>
+
+	<common_for_CDS>
+		<MRC_instance value="MRC_TA_CDS" />
+		<MR_instance value="MR_TA_CDS" />
+		<NEAC_service_types type="list" value="'NEUM Admin Access', 'FTP Access', 'Remote MML Access'" />
+		<NEAC_service_usernames type="list" value="'NUPADM', 'FTPACC', 'REMMML'" />
+		<NEAC_service_password type="list" value="'PASSWORD', 'PASSWORD', 'PASSWORD'" />
+	</common_for_CDS>
+
+	<common_for_MGW>
+		<MRC_instance value="MRC_TA_MGW" />
+		<MR_instance value="MR_TA_MGW" />
+		<ne_admin_username value="SYSTEM" />
+		<ne_admin_password value="SYSTEM" />
+		<NEAC_service_types type="list" value="'NEUM Admin Access', 'Web Service Access', 'FTP Access', 'Remote MML Access'" />
+		<NEAC_service_usernames type="list" value="'NUPADM', 'WEBSER', 'FTPACC', 'REMMML'" />
+		<NEAC_service_password type="list" value="'PASSWORD', 'PASSWORD', 'PASSWORD', 'PASSWORD', " />
+	</common_for_MGW>
+
+	<common_for_OMGW>
+		<MRC_instance value="MRC_TA_OMGW" />
+		<MR_instance value="MR_TA_OMGW" />
+		<NEAC_service_types type="list" value="'NEUM Admin Access', 'Web Service Access', 'SCLI Access', 'HTTPS Access'" />
+		<NEAC_service_usernames type="list" value="'OMWADM', 'WEBSER', 'scliac', 'httpsuser'" />
+		<NEAC_service_password type="list" value="'PASSWORD', 'PASSWORD', 'Nokia123','PASSWORD'" />
+		<ne_root_username value="root" />
+		<ne_root_password value="rootroot" />
+		<ne_admin_username value="root" />
+		<ne_admin_password value="rootroot" />
+		<ne_prompt value="#" />
+		<ne_prompt_direct_scli value="> " />
+	</common_for_OMGW>
+
+	<common_for_FZCP>
+		<MRC_instance value="MRC_TA_FZCP" />
+		<MR_instance value="MR_TA_FZCP" />
+		<NEAC_service_types type="list" value="'NEUM Admin Access', 'Web Service Access', 'SCLI Access'" />
+		<NEAC_service_usernames type="list" value="'FZCADM', 'WEBSER', 'SCLIAC'" />
+		<NEAC_service_password type="list" value="'Nokia123?', 'Nokia123?', 'Nokia123?'" />
+		<ne_root_username value="root" />
+		<ne_root_password value="system" />
+		<ne_admin_username value="root" />
+		<ne_admin_password value="system" />
+	</common_for_FZCP>
+
+	<common_for_OBGW>
+		<MRC_instance value="MRC_TA_OBGW" />
+		<MR_instance value="MR_TA_OBGW" />
+		<NEAC_service_types type="list" value="'NEUM Admin Access', 'SCLI Access', 'Web Service Access', 'HTTPS Access', 'SFTP Access'" />
+		<NEAC_service_usernames type="list" value="'BGWADMACC', 'SCLIACC', 'WSAACC', 'HTTPSACC', 'SFTPACC'" />
+		<NEAC_service_password type="list" value="'nokia@123', 'Nokia@123', 'Nokia@123', 'Nokia@123', 'Nokia@123'" />
+		<ne_admin_username value="root" />
+		<ne_admin_password value="root" />
+		<ne_root_username value="root" />
+		<ne_root_password value="root" />
+	</common_for_OBGW>
+
+	<common_for_HLR>
+		<MRC_instance value="MRC_TA_HLR" />
+		<MR_instance value="MR_TA_HLR" />
+		<NEAC_service_types type="list" value="'NEUM Admin Access', 'FTP Access', 'Remote MML Access'" />
+		<NEAC_service_usernames type="list" value="'NUPADM', 'FTPACC', 'REMMML'" />
+		<NEAC_service_password type="list" value="'PASSWORD', 'PASSWORD', 'PASSWORD'" />
+	</common_for_HLR>
+
+	<common_for_FLEXINS>
+		<MRC_instance value="MRC_TA_FLEXINS" />
+		<MR_instance value="MR_TA_FLEXINS" />
+		<ne_admin_username value="SYSTEM" />
+		<ne_admin_password value="SYSTEM" />
+		<NEAC_service_types type="list" value="'NEUM Admin Access', 'FTP Access', 'Web Service Access', 'Remote MML Access', 'SFTP Access'" />
+		<NEAC_service_usernames type="list" value="'NUPADM', 'FTPACC', 'WEBSER', 'REMMML', 'SFTPAC'" />
+		<NEAC_service_password type="list" value="'PASSWORD','PASSWORD', 'PASSWORD', 'PASSWORD', 'PASSWORD'" />
+	</common_for_FLEXINS>
+
+	<common_for_FING>
+		<ne_admin_username value="root" />
+		<ne_admin_password value="rootroot" />
+		<ne_prompt value="#" />
+		<MRC_instance value="MRC_TA_FING" />
+		<MR_instance value="MR_TA_FING" />
+		<NEAC_service_types type="list" value="'NEUM Admin Access', 'Web Service Access', 'SCLI Access', 'SSH Access'" />
+		<NEAC_service_usernames type="list" value="'FINGAD', 'WEBSER', 'SCLIACC', 'SSHACC'" />
+		<NEAC_service_password type="list" value="'qwerty@453', 'Password_123', 'Password_123','Password_123'" />
+	</common_for_FING>
+
+	<common_for_NTHLRFE>
+		<ne_admin_username value="rtp99" />
+		<ne_admin_password value="yt_xk39b" />
+		<wsuser_lan_username value="wsuser" />
+		<wsuser_lan_password value="wspassword" />
+		<oam_lan_username value="rtp99" />
+		<oam_lan_password value="yt_xk39b" />
+		<ne_cmuser_username value="cmuser" />
+		<ne_cmuser_password value="yt_xk39b" />
+		<MRC_instance value="MRC_TA_NTHLRFE" />
+		<MR_instance value="MR_TA_NTHLRFE" />
+		<NEAC_service_types type="list" value="'SFTP Access', 'HTTP Access', 'HTTPS Access', 'SSH Access', 'SS7 Access', 'Remote MML Access', 'Web Service Access'" />
+		<NEAC_service_usernames type="list" value="'rtp99', 'wsuser', 'wsuser', 'rtp99', 'rtp99', 'rtp99', 'wsuser'" />
+		<NEAC_service_password type="list" value="'yt_xk39b', 'wspassword', 'wspassword', 'yt_xk39b', 'yt_xk39b', 'yt_xk39b', 'wspassword'" />
+	</common_for_NTHLRFE>
+
+	<common_for_ONENDS>
+		<MRC_instance value="MRC_TA_ONENDS" />
+		<MR_instance value="MR_TA_ONENDS" />
+		<ne_admin_username value="oamsys" />
+		<ne_admin_password value="siemens" />
+		<ne_root_username value="root" />
+		<ne_root_password value="siemens" />
+		<ne_username2 value="sdfrun" />
+		<ne_username2_password value ="sdfrun1" />
+		<GENMED_Instance value="1" />
+		<NEAC_service_types type="list" value="'Web Service Access', 'SSH Access', 'HTTPS Access', 'HWM and SWM Access'" />
+		<NEAC_service_usernames type="list" value="'ne3suser', 'oamsys', 'dbmanager', 'iccm'" />
+		<NEAC_service_password type="list" value="'ne3suser1', 'yt_xk39B', 'OAM!adm1', 'xTgh610@#'" />
+	</common_for_ONENDS>
+
+	<common_for_CSCF>
+		<ne_admin_username value="rtp99" />
+		<ne_admin_password value="yt_xk39b" />
+		<oam_lan_username value="rtp99" />
+		<oam_lan_password value="yt_xk39b" />
+		<wsuser_lan_username value="wsuser" />
+		<wsuser_lan_password value="wspassword" />
+		<ne_cmuser_username value="cmuser" />
+		<ne_cmuser_password value="yt_xk39b" />
+		<MRC_instance value="MRC_TA_CSCFLCC" />
+		<MR_instance value="MR_TA_CSCFLCC" />
+		<NEAC_service_types type="list" value="'SFTP Access', 'HTTP Access', 'HTTPS Access', 'SSH Access', 'SS7 Access', 'Remote MML Access', 'Web Service Access'" />
+		<NEAC_service_usernames type="list" value="'rtp99', 'wsuser', 'wsuser', 'rtp99', 'rtp99', 'rtp99', 'wsuser'" />
+		<NEAC_service_password type="list" value="'yt_xk39b', 'wspassword', 'wspassword', 'yt_xk39b', 'yt_xk39b', 'yt_xk39b', 'wspassword'" />
+	</common_for_CSCF>
+
+	<common_for_BNGLB>
+		<ne_admin_username value="rtp99" />
+		<ne_admin_password value="yt_xk39b" />
+		<wsuser_lan_username value="wsuser" />
+		<wsuser_lan_password value="wspassword" />
+		<MRC_instance value="MRC_TA_BNGLB" />
+		<MR_instance value="MR_TA_BNGLB" />
+		<NEAC_service_types type="list" value="'SFTP Access', 'HTTP Access', 'HTTPS Access', 'SSH Access', 'SS7 Access', 'Remote MML Access', 'Web Service Access'" />
+		<NEAC_service_usernames type="list" value="'rtp99', 'wsuser', 'wsuser', 'rtp99', 'rtp99', 'rtp99', 'wsuser'" />
+		<NEAC_service_password type="list" value="'yt_xk39b', 'wspassword', 'wspassword', 'yt_xk39b', 'yt_xk39b', 'yt_xk39b', 'wspassword'" />
+	</common_for_BNGLB>
+
+	<common_for_CMD>
+		<ne_admin_username value="cmd" />
+		<ne_admin_password value="cmd" />
+		<MRC_instance value="MRC_TA_CMD" />
+		<MR_instance value="MR_TA_CMD" />
+	</common_for_CMD>
+
+	<common_for_HSSFE>
+		<oam_lan_username value="rtp99" />
+		<oam_lan_password value="yt_xk39b" />
+		<ne_admin_username value="rtp99" />
+		<ne_admin_password value="yt_xk39b" />
+		<wsuser_lan_username value="wsuser" />
+		<wsuser_lan_password value="wspassword" />
+		<MRC_instance value="MRC_TA_HSSFE" />
+		<MR_instance value="MR_TA_HSSFE" />
+		<NEAC_service_types type="list" value="'SFTP Access', 'HTTP Access', 'HTTPS Access', 'SSH Access', 'SS7 Access', 'Remote MML Access', 'Web Service Access'" />
+		<NEAC_service_usernames type="list" value="'rtp99', 'wsuser', 'wsuser', 'rtp99', 'rtp99', 'rtp99', 'wsuser'" />
+		<NEAC_service_password type="list" value="'yt_xk39b', 'wspassword', 'wspassword', 'yt_xk39b', 'yt_xk39b', 'yt_xk39b', 'wspassword'" />
+	</common_for_HSSFE>
+
+	<common_for_REPOSERVER>
+		<ne_admin_username value="rtp99" />
+		<ne_admin_password value="yt_xk39b" />
+		<wsuser_lan_username value="wsuser" />
+		<wsuser_lan_password value="wspassword" />
+		<MRC_instance value="MRC_TA_REPOSERVER" />
+		<MR_instance value="MR_TA_REPOSERVER" />
+	</common_for_REPOSERVER>
+
+	<common_for_SGSN>
+		<MRC_instance value="MRC_TA_SGSN" />
+		<MR_instance value="MR_TA_SGSN" />
+		<ne_admin_username value="SYSTEM" />
+		<ne_admin_password value="SYSTEM" />
+		<NEAC_service_types type="list" value="'NEUM Admin Access', 'Q3 Access', 'FTP Access', 'FTAM Access', 'Remote MML Access'" />
+		<NEAC_service_usernames type="list" value="'NUPADM', 'Q3ACCS', 'FTPACC', 'FTAMAC', 'REMMML'" />
+		<NEAC_service_password type="list" value="'PASSWORD', 'PASSWORD', 'PASSWORD', 'PASSWORD', 'PASSWORD'" />
+	</common_for_SGSN>
+
+	<common_for_SBTS>
+		<MRC_instance value="MRC_TA_SBTS" />
+		<MR_instance value="MR_TA_SBTS" />
+		<ne_admin_username value="toor4nsn" />
+		<ne_admin_password value="oZPS0POrRieRtu" />
+		<NEAC_service_types type="list" value="'EM Access', 'Web Service Access'" />
+		<NEAC_service_usernames type="list" value="'Nemuadmin', 'sbtsoam'" />
+		<NEAC_service_password type="list" value="'nemuuser', 'A0zY~rP#8Mx@'" />
+	</common_for_SBTS>
+
+	<common_for_CBTS>
+		<MRC_instance value="MRC_TA_CBTS" />
+		<MR_instance value="MR_TA_CBTS" />
+		<ne_admin_username value="_nokadmin" />
+		<ne_admin_password value="uteadmin" />
+		<ne_prompt value="> " />
+	</common_for_CBTS>
+
+	<common_for_NRBTS>
+		<MRC_instance value="MRC_TA_NRBTS" />
+		<MR_instance value="MR_TA_NRBTS" />
+		<ne_admin_username value="toor4nsn" />
+		<ne_admin_password value="oZPS0POrRieRtu" />
+		<NEAC_service_types type="list" value="'SOAM Web Service Access'" />
+		<NEAC_service_usernames type="list" value="'toor4nsn'" />
+		<NEAC_service_password type="list" value="'oZPS0POrRieRtu'" />
+		<ne_prompt value=">" />
+	</common_for_NRBTS>
+	
+	<common_for_TIAMS>
+		<ne_admin_username value="rtp99" />
+		<ne_admin_password value="yt_xk39b" />
+		<wsuser_lan_username 	value="wsuser" />
+		<wsuser_lan_password	value="wspassword" />
+		<oam_lan_username value="rtp99" />
+		<oam_lan_password value="yt_xk39b" />
+		<ne_cmuser_username value="cmuser" />
+		<ne_cmuser_password value="yt_xk39b" />
+		<MRC_instance value="MRC_TA_TIAMS" />
+		<MR_instance value="MR_TA_TIAMS" />		
+	</common_for_TIAMS>
+
+	<common_for_ENBEquipment>
+		<ne_SHA value="SHA" />
+		<ne_AES value="AES128" />
+		<ne_admin_username value="enb0dev" />
+		<ne_admin_password value="Qwe*90op" />
+		<ne_snmp_username value="initial_snm" />
+		<ne_snmp_password value="@t9n;_EBQb" />
+		<ne_ltea_type value="com.nokia.enba" />
+		<NEAC_service_types type="list" value="'NETCONF', 'SSH Access', 'SNMP v3 Access'" />
+		<NEAC_service_usernames type="list" value="'initial_snm', 'enb0dev', 'initial_snm'" />
+		<NEAC_service_password type="list" value="'@t9n;_EBQb', 'Qwe*90op', '@t9n;_EBQb'" />
+		<MRC_instance value="MRC_TA_ENBEquipment" />
+		<MR_instance value="MR_TA_ENBEquipment" />		
+	</common_for_ENBEquipment>
+	
+	<common_for_TITAN>
+		<MRC_instance value="MRC_TA_TITAN" />
+		<MR_instance value="MR_TA_TITAN" />
+		<NEAC_service_types type="list" value="'SSH Access', 'SNMP v3 Access'" />
+		<NEAC_service_usernames type="list" value="'admin', 'TA_netnumber'" />
+		<NEAC_service_password type="list" value="'yt_xk39b', 'password'" />
+	</common_for_TITAN>
+	
+	<common_for_SAM>
+		<MRC_instance value="MRC_TA_SAM" />
+		<MR_instance value="MR_TA_SAM" />
+		<NEAC_service_types type="list" value="'HTTPS Access', 'SFTP Access'" />
+		<NEAC_service_usernames type="list" value="'osstest', 'samadmin'" />
+		<NEAC_service_password type="list" value="'Sam5620!', 'Sam#123'" />
+	</common_for_SAM>
+	
+	<common_for_LTTHC>
+		<MRC_instance value="MRC_TA_LTTH" />
+		<MR_instance value="MR_TA_LTTH" />
+		<NEAC_service_types type="list" value="'Web Service Access'" />
+		<NEAC_service_usernames type="list" value="'wsuser'" />
+		<NEAC_service_password type="list" value="'Nokia@123456'" />
+		<ne_admin_username value="fmadmin" />
+		<ne_admin_password value="Nokia@123456" />
+		<ne_root_username value="root" />
+		<ne_root_password value="root" />
+	</common_for_LTTHC>
+
+	<common_for_CMREPO>
+		<oam_lan_username value="rtp99" />
+		<oam_lan_password value="yt_xk39b" />
+		<wsuser_lan_username value="wsuser" />
+		<wsuser_lan_password value="wspassword" />
+		<MRC_instance value="MRC_TA_CMREPO" />
+		<MR_instance value="MR_TA_CMREPO" />
+	</common_for_CMREPO>
+
+<!-- Common variables for all NE -->
+	<common_for_all>
+		<PLMN_instance value="PLMN" />
+		<ne_prompt value="$" />
+		<ne_root_prompt value="#" />
+	</common_for_all>
+
+</NetworkElements>
