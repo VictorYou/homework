@@ -24,7 +24,7 @@ node('agent_host') {
     stage ('build apps') {
       dir('build') {
         sshagent(['github-viyou', 'gerrite-viyou']) {
-          sh "bash build_app.sh ${NEW_VERSION} ${REGISTRY_CREDENTIAL}"
+          sh "bash -ex build_app.sh ${NEW_VERSION} ${REGISTRY_CREDENTIAL}"
         }
       }
     }
