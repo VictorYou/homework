@@ -1,0 +1,145 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "tvnfrest.fullname" . }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ template "tvnfrest.fullname" . }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+{{- with .Values.deploymentAnnotations }}
+  annotations:
+{{ toYaml . | indent 4 }}
+{{- end }}
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ template "tvnfrest.fullname" . }}
+      release: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "tvnfrest.fullname" . }}
+        release: {{ .Release.Name }}
+{{- with .Values.podLabels }}
+{{ toYaml . | indent 8 }}
+{{- end }}
+{{- with .Values.podAnnotations }}
+      annotations:
+{{ toYaml . | indent 8 }}
+{{- end }}
+    spec:
+      {{- if .Values.securityContext.enabled }}
+      securityContext:
+        fsGroup: {{ .Values.securityContext.fsGroup }}
+        runAsUser: {{ .Values.securityContext.runAsUser }}
+      {{- end }}
+      initContainers:
+      - name: wait-for-mysql
+        image: "{{ .Values.tvnfImage }}"
+        imagePullPolicy: {{ .Values.imagePullPolicy | quote }}
+        resources:
+{{ toYaml .Values.initContainer.resources | indent 10 }}
+        env:
+        - name: svc_mysql
+          value: "{{ .Release.Name }}-mysql"
+        - name: COMMAND_SCRIPT
+          value: |-
+            until mysqladmin -h $svc_mysql -P3306 ping -u root -pYh123$%^; do
+              echo waiting for mysql
+              sleep 2
+            done
+            echo 'mysql is started'
+        command:
+        - sh
+        args:
+        - -c
+        - $(COMMAND_SCRIPT)
+      serviceAccountName: tvnf
+      containers:
+      - name: testvnf-rest
+        image: "{{ .Values.tvnfImage }}"
+        imagePullPolicy: {{ .Values.imagePullPolicy | quote }}
+        command: [ "/bin/bash", "-c", "--" ]
+        args: [ "bash -x /home/testvnf/testvnf_init.sh $svc_mysql" ]
+        resources:
+{{ toYaml .Values.resources | indent 10 }}
+        env:
+        - name: svc_mysql
+          value: "{{ .Release.Name }}-mysql"
+        - name: TVNF_NAME
+          value: {{ .Release.Name }}
+        - name: NAMESPACE
+          value: {{ .Release.Namespace }}
+        - name: TA_IMAGE
+          value: {{ .Values.taImage }}
+        - name: DIR_TVNF_PARENT
+          value: /tmp
+        - name: TVNF_VERSION
+          valueFrom:
+            configMapKeyRef:
+              name: "{{ .Release.Name }}-config"
+              key: tvnf_version
+        - name: LONG_LIVED_JWT
+          valueFrom: 
+            configMapKeyRef:
+              name: "{{ .Release.Name }}-config"
+              key: long_lived_jwt
+        - name: NDAP_PASSWORD
+          valueFrom: 
+            configMapKeyRef:
+              name: "{{ .Release.Name }}-config"
+              key: ndap_password
+        livenessProbe:
+          exec:
+            command:
+            - sh
+            - -c
+            - "python3 /home/testvnf/testvnf_rest/manage.py check"
+          initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds }}
+          periodSeconds: {{ .Values.livenessProbe.periodSeconds }}
+          timeoutSeconds: {{ .Values.livenessProbe.timeoutSeconds }}
+          successThreshold: {{ .Values.livenessProbe.successThreshold }}
+          failureThreshold: {{ .Values.livenessProbe.failureThreshold }}
+        readinessProbe:
+          exec:
+            command:
+            - sh
+            - -c
+            - "python3 /home/testvnf/testvnf_rest/manage.py check"
+          initialDelaySeconds: {{ .Values.readinessProbe.initialDelaySeconds }}
+          periodSeconds: {{ .Values.readinessProbe.periodSeconds }}
+          timeoutSeconds: {{ .Values.readinessProbe.timeoutSeconds }}
+          successThreshold: {{ .Values.readinessProbe.successThreshold }}
+          failureThreshold: {{ .Values.readinessProbe.failureThreshold }}
+        volumeMounts:
+        - name: "{{ .Release.Name }}-secrets"
+          mountPath: /etc/secrets
+        - name: "{{ .Release.Name }}-log"
+          mountPath: /tmp/logs
+        - name: "{{ .Release.Name }}-ta"
+          mountPath: /tmp/NeVe_TA_RF
+      imagePullSecrets:
+      - name: "registrykey-{{ .Release.Name }}"
+      volumes:
+      - name: "{{ .Release.Name }}-secrets"
+        configMap:
+          name: "{{ .Release.Name }}-config"
+          items:
+          - key: ndap_ca
+            path: ndap_ca
+      - name: "{{ .Release.Name }}-log"
+        persistentVolumeClaim:
+          claimName: "{{ .Release.Name }}-log"
+      - name: "{{ .Release.Name }}-ta"
+        persistentVolumeClaim:
+          claimName: "{{ .Release.Name }}-ta"
+      nodeSelector:
+        role: testvnf
+      hostAliases:
+      - ip: {{ .Values.ndapIp }}
+        hostnames:
+        - "ndap-reverse-proxy-service.default.svc.cluster.local"

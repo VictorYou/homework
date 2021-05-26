@@ -1,0 +1,37 @@
+<init-configuration>
+<NEType adaptation="NOKBSC" version="S15" class="BSC"> <!-- change the adaptation,version,class to the actual used adaptation,version,class -->
+<NEInstance agentAddress ="****"  topologyCreation="false" credentialCreation="true" integrationType="integration">
+  <userInfos>
+				<userInfo type="MML">
+					<username>****</username>  <!-- change the username **** to the actual used user name -->
+					<password>****</password>  <!-- change the password **** to the actual used password -->
+				</userInfo>
+			</userInfos>
+ 		<MR distName="MRC-**/MR-**">  	                       <!-- change the instance of MR distName ** and MRC distName ** to the actual used MR instance -->											
+	        	<MO distName="PLMN-**/BSC-**">                 <!-- change the instance of PLMN distName ** and MO distName **  to the actual used MO instance -->
+	        	    <AgentInterface>SSH</AgentInterface>       <!-- Agent interface support SSH or VT or TELNET,please fill actual used value -->
+	        	    <version>S15</version>                     <!-- change the version to the actual used version -->
+	            	<transportMethod>FTAM</transportMethod>    <!-- transportMethod support FTAM or FTP,please fill actual used value -->
+					<PMtransportMethod>FTP</PMtransportMethod> <!-- PMtransportMethod support FTAM or FTP,please fill actual used value -->
+	        	    <CMEventtransportMethod>FTP</CMEventtransportMethod><!-- CMEventtransportMethod support FTAM or FTP,please fill actual used value -->
+	        	</MO>
+	        </MR>
+	            <MO distName="PLMN-**/BSC-**/OSI-1">                 <!-- change the instance of PLMN distName ** and MO distName **  to the actual used MO instance -->
+					<transportClass>OSI</transportClass>       <!-- transportClass support OSI or TCP,please fill actual used value -->
+					<BTSRemoteTSAP>7833</BTSRemoteTSAP>        <!-- change BTSRemoteTSAP value to the actual used -->
+					<cmipPSAP>3333030230</cmipPSAP>           <!-- change CMIPPSAP value to the actual used-->
+					<cmipSSAP>3333030230</cmipSSAP>           <!-- change CMIPSSAP value to the actual used -->
+					<cmipTSAP>3333</cmipTSAP>                 <!-- change CMIPTSAP value to the actual used -->
+					<ftamPSAP>1133030210</ftamPSAP>           <!-- change FTAMPSAP value  to the actual used -->
+					<ftamSSAP>1133030210</ftamSSAP>           <!-- change FTAMSSAP value to the actual used -->
+					<ftamTSAP>1133</ftamTSAP>                 <!-- change FTAMTSAP value to the actual used -->
+					<vtPSAP>2233030220</vtPSAP>                <!-- change vtPSAP  value to the actual used -->
+					<vtSSAP>2233030220</vtSSAP>                <!-- change vtSSAP value to the actual used -->
+					<vtTSAP>2233</vtTSAP>                      <!-- change vtTSAP value to the actual used -->
+					<rnmSupport>True</rnmSupport>              <!-- rnmSupport support True and False,please fill actual used value -->
+					<rnmTSAP>7733</rnmTSAP>                   <!-- change rnmTSAP value to the actual used -->
+					
+	        	</MO>
+        </NEInstance>
+    </NEType>
+</init-configuration>

@@ -1,0 +1,13 @@
+apiVersion: v1
+appVersion: 5.7.14
+description: test vnf rest
+engine: 
+home: 
+icon: https://www.mysql.com/common/logos/logo-mysql-170x115.png
+keywords:
+- testvnf
+- mysql
+maintainers:
+name: testvnf-rest
+sources:
+version: 0.0.1

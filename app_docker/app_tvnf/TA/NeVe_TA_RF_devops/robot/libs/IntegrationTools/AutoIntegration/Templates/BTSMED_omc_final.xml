@@ -1,0 +1,58 @@
+<complete-configuration initFilePath="/var/tmp/BTSMED_omc.xml">
+    <NEType adaptation="com.nokia.btsmed" class="BTSMED" version="****">
+        <NEInstance agentAddress="*****">
+            <precondition>
+                <NEPrerequisite></NEPrerequisite>
+                <NetActPrerequisite>
+                    <AdaptationDeployment/>
+                    <credentialCheck>
+                        <credential profile="Default" type="SOAM Web Service Access"/>
+                    </credentialCheck>
+                    <command description="Check whether common_mediations is installed and running" execute="echo '#checkServiceStatus(common_mediations)'" outputLog="false">
+                        <param name="status" valueExp="$stdout.get('(.*)', 1, m)"/>
+                        <case expression="#{status}#.equals('started')">
+                            <log>common_mediations is running.</log>
+                        </case>
+                        <default>
+                            <abort>common_mediations is not running, need to start it by user.</abort>
+                        </default>
+                    </command>
+                </NetActPrerequisite>
+            </precondition>
+            <configuration>
+                <NEConfigure></NEConfigure>
+                <NetActConfigure>
+                    <MOCreation>
+                        <MR distName="****">
+                            <MO distName="PLMN-****/BTSMED-*">
+                                <version>****</version>
+                                <directIntegration>1</directIntegration>
+                            </MO>
+                        </MR>
+                        <MO distName="PLMN-****/BTSMED-*/NE3SWS-1">
+                            <hostName>****</hostName>
+                            <baseServiceName>NE3S/1.0</baseServiceName>
+                            <ne3sBasicOperationsService>NE3SBasicOperationsService</ne3sBasicOperationsService>
+                            <ne3sBulkOperationsService>NE3SBulkOperationsService</ne3sBulkOperationsService>
+                            <ne3sOperationService>NE3SOperationService</ne3sOperationService>
+                            <ne3sRegistrationService>NE3SRegistrationService</ne3sRegistrationService>
+                            <ne3sSessionService>NE3SSessionService</ne3sSessionService>
+                            <httpPort>****</httpPort>
+                            <httpsPort>****</httpsPort>
+                            <ipVersion>*</ipVersion>
+                            <securityMode>*</securityMode>
+                        </MO>
+                    </MOCreation>
+                </NetActConfigure>
+            </configuration>
+            <verification>
+                <NE3S>
+                    <registration-check/>
+                </NE3S>
+                <FM>
+				    <alarm-upload></alarm-upload>
+			    </FM>
+            </verification>
+        </NEInstance>
+    </NEType>
+</complete-configuration>

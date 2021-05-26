@@ -1,0 +1,26 @@
+05-02 14:33 root         INFO     Integrate OMS start.
+05-02 14:33 root         INFO     Login 10.91.48.122 Username: omc start.
+05-02 14:33 paramiko.transport INFO     Connected (version 2.0, client OpenSSH_7.4)
+05-02 14:33 paramiko.transport INFO     Auth banner: You are about to access a private system. This system is for use of
+authorized users only. All connections are logged. Any unauthorized
+access or access attempts are punishable to the fullest extent of 
+local legislation.
+
+
+05-02 14:33 paramiko.transport INFO     Authentication (publickey) failed.
+05-02 14:33 paramiko.transport INFO     Authentication (password) successful!
+05-02 14:33 root         INFO     Login 10.91.48.122 Username: omc done.
+05-02 14:33 root         INFO     Create MR object start.
+05-02 14:33 root         INFO     Get create objects start.
+05-02 14:33 robotThreadLog DEBUG    14:33:58.155 | C:\Python27\Lib\site-packages\oss_radio_tools_lib\NetAct\ZSI\client.py:309:SendSOAPData | SOAP request content: <SOAP-ENV:Envelope xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ZSI="http://www.zolera.com/schemas/ZSI/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><SOAP-ENV:Header></SOAP-ENV:Header><SOAP-ENV:Body xmlns:ns1="http://www.nsn.com/schemas/public/oss/nasda/ws-api/persistency/operations"><ns1:GetMOsRequest><ns1:moId>MRC-MRC</ns1:moId></ns1:GetMOsRequest></SOAP-ENV:Body></SOAP-ENV:Envelope>
+05-02 14:33 robotThreadLog DEBUG    14:33:58.645 | C:\Python27\Lib\site-packages\oss_radio_tools_lib\NetAct\ZSI\client.py:450:ReceiveSOAP | <?xml version="1.0" encoding="utf-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><GetMOsResponse xmlns:a="http://www.nsn.com/schemas/public/oss/nasda/ws-api/persistency/query" xmlns:b="http://www.nsn.com/schemas/public/oss/nasda/ws-api/persistency/metadata" xmlns:c="http://www.nsn.com/schemas/public/oss/nasda/ws-api/persistency/model" xmlns:d="http://www.nsn.com/schemas/public/oss/nasda/ws-api/common" xmlns="http://www.nsn.com/schemas/public/oss/nasda/ws-api/persistency/operations"><d:errorCode>OK</d:errorCode><result><batchItemMOResult><d:errorCode>ERR_OBJECT_NOT_FOUND</d:errorCode><d:errorCause>Object not found.</d:errorCause></batchItemMOResult></result></GetMOsResponse></soapenv:Body></soapenv:Envelope>
+05-02 14:33 RobotFramework INFO     *WARN* NASDA Error occurred! : ERR_OBJECT_NOT_FOUND
+Object not found
+05-02 14:33 robotThreadLog DEBUG    14:33:58.894 | C:\Python27\Lib\site-packages\oss_radio_tools_lib\NetAct\ZSI\client.py:309:SendSOAPData | SOAP request content: <SOAP-ENV:Envelope xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ZSI="http://www.zolera.com/schemas/ZSI/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><SOAP-ENV:Header></SOAP-ENV:Header><SOAP-ENV:Body xmlns:ns1="http://www.nsn.com/schemas/public/oss/nasda/ws-api/persistency/operations"><ns1:GetMOsRequest><ns1:moId>MRC-MRC/MR-LTE</ns1:moId></ns1:GetMOsRequest></SOAP-ENV:Body></SOAP-ENV:Envelope>
+05-02 14:34 robotThreadLog DEBUG    14:34:08.270 | C:\Python27\Lib\site-packages\oss_radio_tools_lib\NetAct\ZSI\client.py:450:ReceiveSOAP | <?xml version="1.0" encoding="utf-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><GetMOsResponse xmlns:a="http://www.nsn.com/schemas/public/oss/nasda/ws-api/persistency/query" xmlns:b="http://www.nsn.com/schemas/public/oss/nasda/ws-api/persistency/metadata" xmlns:c="http://www.nsn.com/schemas/public/oss/nasda/ws-api/persistency/model" xmlns:d="http://www.nsn.com/schemas/public/oss/nasda/ws-api/common" xmlns="http://www.nsn.com/schemas/public/oss/nasda/ws-api/persistency/operations"><d:errorCode>OK</d:errorCode><result><batchItemMOResult><d:errorCode>ERR_OBJECT_NOT_FOUND</d:errorCode><d:errorCause>Object not found.</d:errorCause></batchItemMOResult></result></GetMOsResponse></soapenv:Body></soapenv:Envelope>
+05-02 14:34 RobotFramework INFO     *WARN* NASDA Error occurred! : ERR_OBJECT_NOT_FOUND
+Object not found
+05-02 14:34 root         INFO     Create objects: 
+05-02 14:34 root         INFO     ['MRC-MRC', 'MRC-MRC/MR-LTE']
+05-02 14:34 root         INFO     Get create objects done.
+05-02 14:34 robotThreadLog DEBUG    14:34:08.533 | C:\Python27\Lib\site-packages\oss_radio_tools_lib\NetAct\ZSI\client.py:309:SendSOAPData | SOAP request content: <SOAP-ENV:Envelope xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ZSI="http://www.zolera.com/schemas/ZSI/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><SOAP-ENV:Header></SOAP-ENV:Header><SOAP-ENV:Body xmlns:ns1="http://www.nsn.com/schemas/public/oss/nasda/ws-api/persistency/operations"><ns1:GetMetadataRequest></ns1:GetMetadataRequest></SOAP-ENV:Body></SOAP-ENV:Envelope>

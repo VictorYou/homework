@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+Copyright (C) 2011 Nokia Siemens Networks
+
+Permission to use, copy, modify, and distribute this software and its
+documentation for any purpose, without fee, and without a written agreement
+is hereby granted, provided that the above copyright notice and this
+paragraph and the following two paragraphs appear in all copies.
+
+IN NO EVENT SHALL COPYRIGHT HOLDERS BE LIABLE TO ANY PARTY FOR DIRECT,
+INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, INCLUDING LOST
+PROFITS, ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN
+IF COPYRIGHT HOLDERS HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+COPYRIGHT HOLDERS SPECIFICALLY DISCLAIM ANY WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+PARTICULAR PURPOSE. THE SOFTWARE PROVIDED HEREUNDER IS ON AN "AS IS" BASIS,
+AND COPYRIGHT HOLDERS HAVE NO OBLIGATIONS TO PROVIDE MAINTENANCE, SUPPORT,
+UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
+
+-->
+<xs:schema targetNamespace="http://www.nsn.com/schemas/public/oss/nasda/ws-api/persistency/model" elementFormDefault="qualified" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.nsn.com/schemas/public/oss/nasda/ws-api/persistency/model">
+	
+	<xs:complexType name="MOLite">
+		<xs:annotation>
+			<xs:documentation>Light-weight representation of a ManagedObject
+				instance.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute ref="tns:moId"></xs:attribute>
+		<xs:attribute ref="tns:metaClass">
+			<xs:annotation>
+				<xs:documentation></xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute ref="tns:metaVersion">
+			<xs:annotation>
+				<xs:documentation></xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:simpleType name="MOId">
+        <xs:annotation>
+        	<xs:documentation>Identification of ManagedObject instance. A correctly written client must not make any assumptions about particular semantics and/or structure of the value.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string"></xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="ManagedObject">
+        <xs:annotation>
+        	<xs:documentation>ManagedObject is a generic container for name-value pairs of parameters.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+			<xs:extension base="tns:ParameterContainer">
+
+				<xs:attribute ref="tns:metaClass"></xs:attribute>
+
+				<xs:attribute ref="tns:metaVersion"></xs:attribute>
+
+				<xs:attribute ref="tns:moId"></xs:attribute>
+
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+
+	<xs:complexType name="P">
+		<xs:annotation>
+			<xs:documentation>
+				Represents binding of a scalar parameter name and its
+				value. The value is set as content, with the following
+				datatypes supported: Integer, Long, Boolean, String and
+				Date.
+
+				Interoperability note: Date value must always be set in
+				XMLGregorianCalendar stringified format; all other
+				values are set using their default stringification
+				routines.
+			</xs:documentation>
+		</xs:annotation>
+
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="name" type="xs:string"></xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+
+	</xs:complexType>
+
+
+	<xs:attribute name="moId" type="tns:MOId"></xs:attribute>
+
+
+    <xs:attribute name="metaClass" type="xs:string">
+    	<xs:annotation>
+    		<xs:documentation>ManagedObject metadata - qualified class identifier.</xs:documentation></xs:annotation></xs:attribute>
+
+    <xs:attribute name="metaVersion" type="xs:string">
+    	<xs:annotation>
+    		<xs:documentation>ManagedObject metadata - class version (release).</xs:documentation>
+    	</xs:annotation></xs:attribute>
+
+    <xs:element name="p" type="tns:P"></xs:element>
+
+    <xs:complexType name="Item">
+    	<xs:sequence>
+    		<xs:element ref="tns:p" maxOccurs="unbounded" minOccurs="0"></xs:element>
+    	</xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="item" type="tns:Item"></xs:element>
+
+    <xs:complexType name="List" abstract="true">
+        <xs:annotation>
+        	<xs:documentation></xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="name" type="xs:string"></xs:attribute>
+    </xs:complexType>
+
+    <xs:element name="list" type="tns:List"></xs:element>
+
+    <xs:complexType name="ParameterContainer" abstract="true">
+    	<xs:choice maxOccurs="unbounded" minOccurs="0">
+    		<xs:element ref="tns:p"></xs:element>
+    		<xs:element ref="tns:scalarList"></xs:element>
+    		<xs:element ref="tns:structList"></xs:element>
+    	</xs:choice>
+    </xs:complexType>
+
+
+    <xs:element name="moLite" type="tns:MOLite"></xs:element>
+
+    <xs:element name="managedObject" type="tns:ManagedObject"></xs:element>
+
+
+    <xs:complexType name="StructList">
+    	<xs:complexContent>
+    		<xs:extension base="tns:List">
+    			<xs:sequence>
+    				<xs:element ref="tns:item" minOccurs="0" maxOccurs="unbounded"></xs:element>
+    			</xs:sequence>
+    		</xs:extension>
+    	</xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="ScalarList">
+    	<xs:complexContent>
+    		<xs:extension base="tns:List">
+    			<xs:sequence>
+    				<xs:element ref="tns:p" minOccurs="0" maxOccurs="unbounded"></xs:element>
+    			</xs:sequence>
+    		</xs:extension>
+    	</xs:complexContent>
+    </xs:complexType>
+
+	<xs:simpleType name="RelationshipId">
+		<xs:annotation>
+			<xs:documentation>Identification of relationship definition. A client
+				shall not make any assumptions about particular semantics and/or
+				structure of the value.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"></xs:restriction>
+	</xs:simpleType>
+
+    <xs:element name="relationshipId" type="tns:RelationshipId"></xs:element>
+
+	<xs:complexType name="Relationship">
+		<xs:annotation>
+			<xs:documentation>Identification of relationship triple.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="relationshipId" type="tns:RelationshipId"></xs:element>
+			<xs:element name="sourceMOId" type="tns:MOId"></xs:element>
+			<xs:element name="targetMOId" type="tns:MOId"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="relationship" type="tns:Relationship"></xs:element>
+
+    <xs:element name="structList" type="tns:StructList" substitutionGroup="tns:list"></xs:element>
+
+    <xs:element name="scalarList" type="tns:ScalarList" substitutionGroup="tns:list"></xs:element>
+</xs:schema>

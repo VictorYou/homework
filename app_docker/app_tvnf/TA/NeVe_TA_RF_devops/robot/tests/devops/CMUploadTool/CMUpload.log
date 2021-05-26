@@ -1,0 +1,16 @@
+12-29 16:42 root         INFO     Login 10.91.114.44 Username: omc start.
+12-29 16:42 paramiko.transport INFO     Connected (version 2.0, client OpenSSH_5.3)
+12-29 16:42 paramiko.transport INFO     Auth banner: You are about to access a private system. This system is for use of
+authorized users only. All connections are logged. Any unauthorized
+access or access attempts are punishable to the fullest extent of 
+local legislation.
+
+
+12-29 16:42 paramiko.transport INFO     Authentication (password) successful!
+12-29 16:42 root         INFO     Login 10.91.114.44 Username: omc done.
+12-29 16:42 root         INFO     Do CM Upload for PLMN-PLMN/SBTS-1779 start.
+12-29 16:42 root         INFO     Get additional parameter for PLMN-PLMN/SBTS-1779 start.
+12-29 16:42 root         INFO     Get additional parameter:  -sranBtsContentInUse true 
+12-29 16:42 root         INFO     Get additional parameter for PLMN-PLMN/SBTS-1779 doen.
+12-29 16:43 root         INFO     PLMN-PLMN/SBTS-1779 CMUpload successfully.
+12-29 16:43 root         INFO     Do CM Upload for PLMN-PLMN/SBTS-1779 done.

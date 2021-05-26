@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: "{{ .Release.Name }}-config"
+  namespace: {{ .Release.Namespace }}
+data:
+  tvnf_version: {{ .Values.tvnfVersion }}
+  ndap_password: {{ .Values.ndapPassword }}
+  long_lived_jwt: {{ .Values.longLivedJwt }}
+  ndap_ca: |-
+{{ .Files.Get "ndap_ca" | indent 4  }}
