@@ -128,11 +128,11 @@ node('agent_host') {
     sh """
 $helmcmd install ${app_name} --set certificate=${certificate} --set private_key=${private_key} --set appImage=${app_docker_image} --set appVersion=${app_version} --set appHost=${app_host} app_chart
 """
-    command = "timeout 900 bash -c 'until curl -f --cacert ${chart_folder}/ndap_ca -X POST https://${tvnf_host}:${tvnf_port}/testvnf/v1/connectTests/123456; do echo waiting for certificate to be effective; sleep 10; done'"
-    println("command: ${command}")
-    sh """
-"${command}"
-"""
+//    command = "timeout 900 bash -c 'until curl -f --cacert ${chart_folder}/ndap_ca -X POST https://${tvnf_host}:${tvnf_port}/testvnf/v1/connectTests/123456; do echo waiting for certificate to be effective; sleep 10; done'"
+//    println("command: ${command}")
+//    sh """
+//"${command}"
+//"""
   }
 }
 

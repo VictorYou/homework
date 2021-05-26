@@ -113,12 +113,6 @@ spec:
       imagePullSecrets:
       - name: "registrykey-{{ .Release.Name }}"
       volumes:
-      - name: "{{ .Release.Name }}-secrets"
-        configMap:
-          name: "{{ .Release.Name }}-config"
-          items:
-          - key: ndap_ca
-            path: ndap_ca
       - name: "{{ .Release.Name }}-log"
         persistentVolumeClaim:
           claimName: "{{ .Release.Name }}-log"
