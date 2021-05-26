@@ -23,7 +23,7 @@ node('agent_host') {
   if (NEW_VERSION) {
     stage ('build apps') {
       dir('build') {
-        sshagent(['gitlab-viyou', 'gerrite-viyou']) {
+        sshagent(['github-viyou', 'gerrite-viyou']) {
           sh "bash build_app.sh ${NEW_VERSION} ${REGISTRY_CREDENTIAL}"
         }
       }
@@ -32,7 +32,7 @@ node('agent_host') {
     error "error getting new version, exiting..."
   }
   stage ('tag & push to origin') {
-    sshagent(['gitlab-viyou']) {
+    sshagent(['github-viyou']) {
       sh "git tag homework.${NEW_VERSION} HEAD"
       sh "git push origin HEAD:${branch} --tags"
     }
