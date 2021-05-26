@@ -8,7 +8,7 @@ metadata:
 spec:
   tls:
   - hosts:
-    - {{ .Values.tvnfHost }}
+    - {{ .Values.appHost }}
     secretName: "tls-{{ .Release.Name }}"
   rules:
   - host: {{ .Values.tvnfHost }}
