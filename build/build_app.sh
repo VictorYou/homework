@@ -58,7 +58,6 @@ build_app_docker()
     local new_version=$(get_next_version "$latest_version")
     local registry_repo="fastpass-testing-docker-local.esisoj70.emea.nsn-net.net"
     local image_with_tag="$registry_repo/$image_name:$new_version"
-    local image_to_copy="$image_name.$new_version.tar"
     sudo docker rmi -f ubuntu:latest
     cd app_tvnf_docker/app_tvnf/TA; sh build_ta_zip.sh; cd - 
     sudo docker build -t "$image_with_tag" $folder
@@ -67,7 +66,8 @@ build_app_docker()
     git tag "$image_name.$new_version" HEAD
     git push --tags
   else
-    image_to_copy="$image_name.$latest_version.tar"
+    echo "no need to build, exiting"
+    exit 1
   fi
 }
 
