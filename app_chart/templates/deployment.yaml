@@ -39,7 +39,7 @@ spec:
       {{- end }}
       initContainers:
       - name: wait-for-mysql
-        image: "{{ .Values.tvnfImage }}"
+        image: "{{ .Values.appImage }}"
         imagePullPolicy: {{ .Values.imagePullPolicy | quote }}
         resources:
 {{ toYaml .Values.initContainer.resources | indent 10 }}
@@ -61,7 +61,7 @@ spec:
       serviceAccountName: tvnf
       containers:
       - name: testvnf-rest
-        image: "{{ .Values.tvnfImage }}"
+        image: "{{ .Values.appImage }}"
         imagePullPolicy: {{ .Values.imagePullPolicy | quote }}
         command: [ "/bin/bash", "-c", "--" ]
         args: [ "bash -x /home/testvnf/testvnf_init.sh $svc_mysql" ]
