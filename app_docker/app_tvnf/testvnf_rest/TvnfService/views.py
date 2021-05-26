@@ -11,7 +11,6 @@ from rest_framework.response import Response
 from MySQLdb._exceptions import OperationalError
 
 from .TestVnfActions import TestVnfActions
-from .NdapCommunicator import NdapCommunicator
 
 import threading
 import time
@@ -97,7 +96,6 @@ class SetupEnvReq(GenericAPIView):
       log.debug(f'error in setting up environment: {type(e)}, {e.args}, {e}, {e.__doc__}')
       testcases = []
       result = 'failure'
-    NdapCommunicator().setup_env_result_req(result, testcases, sutId, tvnfId)
 
 
 class RunTestcaseReq(GenericAPIView):
@@ -138,10 +136,8 @@ class ResetReq(GenericAPIView):
     try:
       tvnf = Tvnf.objects.all()[0]
       tvnfId = tvnf.tvnfId
-      NdapCommunicator().register_req(tvnfId)
     except Exception as e:
       log.debug(f'exception caught in reset_tvnf: {type(e)}, {e.args}, {e}, {e.__doc__}')
-      NdapCommunicator().failed_req(tvnfId, sutId)
 
 
 class ConnectTestExecutionReq(GenericAPIView):
