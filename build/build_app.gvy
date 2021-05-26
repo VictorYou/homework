@@ -22,10 +22,8 @@ node('agent_host') {
   }
   if (NEW_VERSION) {
     stage ('build apps') {
-      dir('build') {
-        sshagent(['github-viyou', 'gerrite-viyou']) {
-          sh "bash -ex build_app.sh ${NEW_VERSION} ${REGISTRY_CREDENTIAL}"
-        }
+      sshagent(['github-viyou', 'gerrite-viyou']) {
+        sh "bash -ex build/build_app.sh ${NEW_VERSION} ${REGISTRY_CREDENTIAL}"
       }
     }
   } else {
