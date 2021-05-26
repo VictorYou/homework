@@ -59,7 +59,6 @@ build_app_docker()
     local registry_repo="fastpass-testing-docker-local.esisoj70.emea.nsn-net.net"
     local image_with_tag="$registry_repo/$image_name:$new_version"
     sudo docker rmi -f ubuntu:latest
-    cd app_tvnf_docker/app_tvnf/TA; sh build_ta_zip.sh; cd - 
     sudo docker build -t "$image_with_tag" $folder
     push_docker_image "$image_with_tag" "$registry_credential"
     sudo docker rmi "$image_with_tag"
