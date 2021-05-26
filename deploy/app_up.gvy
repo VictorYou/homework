@@ -101,6 +101,7 @@ add something like:
 
 properties([parameters([
   string(defaultValue: 'app', description: '', name: 'app_name'),
+  string(defaultValue: 'fastpass-tvnf2.tvnf.ndap.local', description: '', name: 'app_host'),
   string(defaultValue: 'viyou/app_docker:0.0.1', description: '', name: 'app_docker_image'),
   string(defaultValue: 'https://10.131.73.190:12567', description: '', name: 'k8s_endpoint'),
   string(defaultValue: 'fastpass-tvnf', description: '', name: 'namespace'),
@@ -125,7 +126,7 @@ node('agent_host') {
   }
   stage('run helm on tool vm') {
     sh """
-$helmcmd install ${app_name} --set certificate=${certificate} --set private_key=${private_key} --set appImage=${app_docker_image} --set appVersion=${app_version} app_chart
+$helmcmd install ${app_name} --set certificate=${certificate} --set private_key=${private_key} --set appImage=${app_docker_image} --set appVersion=${app_version} --set appHost=${app_host} app_chart
 """
     command = "timeout 900 bash -c 'until curl -f --cacert ${chart_folder}/ndap_ca -X POST https://${tvnf_host}:${tvnf_port}/testvnf/v1/connectTests/123456; do echo waiting for certificate to be effective; sleep 10; done'"
     println("command: ${command}")
