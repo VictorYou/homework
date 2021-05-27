@@ -103,19 +103,7 @@ spec:
           timeoutSeconds: {{ .Values.readinessProbe.timeoutSeconds }}
           successThreshold: {{ .Values.readinessProbe.successThreshold }}
           failureThreshold: {{ .Values.readinessProbe.failureThreshold }}
-        volumeMounts:
-        - name: "{{ .Release.Name }}-log"
-          mountPath: /tmp/logs
-        - name: "{{ .Release.Name }}-ta"
-          mountPath: /tmp/NeVe_TA_RF
       imagePullSecrets:
       - name: "registrykey-{{ .Release.Name }}"
-      volumes:
-      - name: "{{ .Release.Name }}-log"
-        persistentVolumeClaim:
-          claimName: "{{ .Release.Name }}-log"
-      - name: "{{ .Release.Name }}-ta"
-        persistentVolumeClaim:
-          claimName: "{{ .Release.Name }}-ta"
       nodeSelector:
         role: testvnf

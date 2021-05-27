@@ -23,10 +23,7 @@ from . import views
 #router.register(prefix='testvnf', viewset=TvnfViewSet)
 
 urlpatterns = [ 
-  url(r'suts/(?P<sutId>\w+)/runTests', views.RunTestcaseReq.as_view(), name="executeTestsReq"),
-  url(r'suts/(?P<sutId>\w+)', views.ResetReq.as_view(), name="ResetReq"),
   url(r'suts', views.SetupEnvReq.as_view(), name="SetupEnvReq"),
-  url(r'abortTests/(?P<sessionId>(\w+-)+\w+)', views.AbortTestExecutionReq.as_view(), name="AbortTestExecutionReq"),
   url(r'connectTests/(?P<sessionId>\w+)', views.ConnectTestExecutionReq.as_view(), name="ConnectTestExecutionReq"),
 #  url(r'^', include(router.urls)),
 ]
