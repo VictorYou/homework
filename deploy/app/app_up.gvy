@@ -105,7 +105,7 @@ properties([parameters([
   string(defaultValue: '31832', description: '', name: 'app_port'),
   string(defaultValue: 'viyou/app_docker:latest', description: '', name: 'app_docker_image'),
   string(defaultValue: '0.0.1', description: '', name: 'app_version'),
-  string(defaultValue: 'https://10.131.73.190:12567', description: '', name: 'k8s_endpoint'),
+  string(defaultValue: 'https://79A63B50B35BA655847AE3DD6997B7B8.sk1.us-west-2.eks.amazonaws.com', description: '', name: 'k8s_endpoint'),
   string(defaultValue: 'fastpass-tvnf', description: '', name: 'namespace'),
 ])])
 
