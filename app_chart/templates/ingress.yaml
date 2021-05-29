@@ -11,7 +11,7 @@ spec:
 #    - {{ .Values.appHost }}
 #    secretName: "tls-{{ .Release.Name }}"
   rules:
-  - host: {{ .Values.tvnfHost }}
+  - host: {{ .Values.appHost }}
     http:
       paths:
       - path: /testvnf
