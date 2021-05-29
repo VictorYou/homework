@@ -1,1 +1,1 @@
-alter table testvnf.AppService_testcase convert to character set utf8;
+alter table testvnf.TvnfService_sut convert to character set utf8;
