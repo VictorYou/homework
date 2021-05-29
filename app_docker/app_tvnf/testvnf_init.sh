@@ -11,8 +11,8 @@ function main()
   python3 "$manage_py" makemigrations AppService
   python3 "$manage_py" migrate
   
-  echo "[INFO]: alter character set"
-  mysql -h $svc_mysql -P3306 -u testvnf -pYh123$%^ < "$current_dir/alter_db_character_set.sql"
+#  echo "[INFO]: alter character set"
+#  mysql -h $svc_mysql -P3306 -u testvnf -pYh123$%^ < "$current_dir/alter_db_character_set.sql"
   
   echo "[INFO]: create django user with ndap password"
 #  echo "from django.contrib.auth.models import User; User.objects.create_superuser('ndap', 'admin@example.com', 'pass')" > /home/create_django_user
