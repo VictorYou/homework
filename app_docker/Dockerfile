@@ -1,5 +1,5 @@
 FROM ubuntu:latest
-MAINTAINER victor.you@nokia-sbell.com
+MAINTAINER 361551968@qq.com
 
 RUN apt-get update
 RUN apt install -y tzdata
@@ -27,9 +27,6 @@ RUN pip3 install requests-toolbelt \
 
 RUN apt install -y vim
 
-ENV NDAP_URL=https://ndap-reverse-proxy-service.default.svc.cluster.local
-ENV NDAP_CA_FILE=/etc/secrets/ndap_ca
-
 RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
 RUN chmod +x ./kubectl
 RUN mv ./kubectl /usr/local/bin/kubectl
@@ -39,5 +36,5 @@ COPY app_tvnf/ /home/testvnf/
 RUN ls -la /home/testvnf/
 
 ENTRYPOINT ["/bin/sh", "-c"] 
-CMD ["env | grep NDAP_CA_FILE"]
+CMD ["env"]
 
