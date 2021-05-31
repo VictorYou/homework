@@ -1,0 +1,10 @@
+**/.*.swp
+**/*.zip
+**/*.tgz
+**/*.qcow2
+.*
+**/.terraform/*
+!/.gitignore
+!/.gitreview
+!/**/VNFD.*.zip
+
