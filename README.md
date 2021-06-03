@@ -1,9 +1,10 @@
 # homework
-## clone codebase and checkout master branch
+## prepare eks
+### clone codebase and checkout master branch
 ```hcl
 git checkout master
 ```
-## deploy eks
+### deploy eks
 ```hcl
 cd deploy/eks
 terraform init
@@ -17,9 +18,9 @@ alias ek='kubectl --kubeconfig <codebase folder>/deploy/eks/kubeconfig_test-eks'
 ```
 verify eks is up
 ```hcl
-rk get no
+ek get no
 ```
-## deploy ingress controller
+### deploy ingress controller
 ```hcl
 eh repo add bitnami https://charts.bitnami.com/bitnami
 eh install my-ingress-controller bitnami/nginx-ingress-controller
@@ -29,7 +30,15 @@ check port for ingress controller
 ek get svc my-ingress-controller-nginx-ingress-controller
 ```
 in this case, it is 32095/TCP for http and 32376/TCP for https in this case. modify from aws console，edit security group to allow TCP traffic for those 2 ports.
-## deploy jenkins and setup
+## prepare jenkins
+### prepare jenkins image
+```hcl
+cd jenkins
+docker build -t viyou/jenkins:0.0 .
+docker tag viyou/jenkins:0.0 viyou/jenkins:latest
+docker push
+```
+### deploy jenkins and setup
 deploy jenkins and get password
 ```hcl
 eh repo add jenkins https://charts.jenkins.io
@@ -66,6 +75,8 @@ wait for 1 minute or 2 and check ingress is effective
 ek get ing
 ```
 open browser and access https://homework-jenkins.ddns.net:32376/ jenkins with admin / <password you get>.
-
+create a credential to access github, github-viyou in this case.
+install plugins below:
+   	Pipeline: Groovy 
 
 
