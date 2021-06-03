@@ -24,7 +24,12 @@ rk get no
 eh repo add bitnami https://charts.bitnami.com/bitnami
 eh install my-ingress-controller bitnami/nginx-ingress-controller
 ```
-# deploy jenkins and setup
+check port for ingress controller
+```hcl
+ek get svc my-ingress-controller-nginx-ingress-controller
+```
+in this case, it is 32095/TCP for http and 32376/TCP for https in this case. modify from aws console，edit security group to allow TCP traffic for those 2 ports.
+## deploy jenkins and setup
 deploy jenkins and get password
 ```hcl
 eh repo add jenkins https://charts.jenkins.io
