@@ -9,7 +9,7 @@ git checkout master
 cd deploy/eks
 terraform init
 terraform apply -var-file="testing.tfvars" -var="access_key=<your access key>" -var="secret_key=<your secret key>"
-
+mv kubeconfig_test-eks-LumdwL5J kubeconfig_test-eks
 ```
 set up local command environment
 ```hcl
@@ -29,7 +29,7 @@ check port for ingress controller
 ```hcl
 ek get svc my-ingress-controller-nginx-ingress-controller
 ```
-in this case, it is 32095/TCP for http and 32376/TCP for https in this case. modify from aws console，edit security group to allow TCP traffic for those 2 ports.
+in this case, it is 32445/TCP for http and 32723/TCP for https in this case. modify from aws console，edit security group to allow TCP traffic for those 2 ports.
 ## prepare jenkins
 ### prepare jenkins image
 ```hcl
@@ -43,10 +43,11 @@ deploy jenkins and get password
 ```hcl
 eh repo add jenkins https://charts.jenkins.io
 eh repo update
-eh install myjenkins jenkins/jenkins
+eh install myjenkins jenkins/jenkins --set controller.image="viyou/jenkins" --set controller.tag=latest --set controller.installPlugins=false
 ek exec -it svc/myjenkins -c jenkins -- /bin/cat /run/secrets/chart-admin-password && echo
 ```
-apply for dynamic jenkins from https://my.noip.com, with hostname as homework-jenkins.ddns.net and ip as one of you eks instance ip, 54.151.69.137, in this case
+password is 66q6LlUXJbCf1EV8IlyjFz in this case.
+apply for dynamic jenkins from https://my.noip.com, with hostname as homework-jenkins.ddns.net and ip as what you get from checking ing, 54.177.223.84, in this case
 deploy ingress for jenkins
 ```hcl
 ek apply -f - <<EOF
@@ -74,7 +75,7 @@ wait for 1 minute or 2 and check ingress is effective
 ```hcl
 ek get ing
 ```
-open browser and access https://homework-jenkins.ddns.net:32376/ jenkins with admin / <password you get>.
+open browser and access https://homework-jenkins.ddns.net:32723/ jenkins with admin / 66q6LlUXJbCf1EV8IlyjFz
 create a credential to access github, github-viyou in this case.
 install plugins below:
    	Pipeline: Groovy 
