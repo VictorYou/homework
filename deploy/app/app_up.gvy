@@ -1,12 +1,12 @@
-properties([parameters([
-  string(name: 'app_name', defaultValue: 'app'),
-  string(name: 'app_host', defaultValue: 'homework-app.ddns.net'),
-  string(name: 'app_port', defaultValue: '30036'),
-  string(name: 'app_docker_image', defaultValue: 'viyou/app_docker:latest'),
-  string(name: 'app_version', defaultValue: '0.0.1'),
-  string(name: 'k8s_endpoint', defaultValue: 'https://773EF95D5147AA9EE79774ED29B85923.gr7.us-west-1.eks.amazonaws.com'),
-  string(name: 'namespace', defaultValue: 'homework'),
-])])
+//properties([parameters([
+//  string(name: 'app_name', defaultValue: 'app'),
+//  string(name: 'app_host', defaultValue: 'homework-app.ddns.net'),
+//  string(name: 'app_port', defaultValue: '30036'),
+//  string(name: 'app_docker_image', defaultValue: 'viyou/app_docker:latest'),
+//  string(name: 'app_version', defaultValue: '0.0.1'),
+//  string(name: 'k8s_endpoint', defaultValue: 'https://773EF95D5147AA9EE79774ED29B85923.gr7.us-west-1.eks.amazonaws.com'),
+//  string(name: 'namespace', defaultValue: 'homework'),
+//])])
 
 node('agent_host') {
   stage ('clean up workspace') {
