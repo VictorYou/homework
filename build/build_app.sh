@@ -59,7 +59,8 @@ build_app_docker()
     local image_with_tag="$registry_repo/$image_name:$new_version"
     local image_with_tag_latest="$registry_repo/$image_name:latest"
     docker rmi -f ubuntu:latest
-    docker build -t "$image_with_tag" --build-arg=http_proxy="http://10.144.1.10:8080/" --build-arg=https_proxy="http://10.144.1.10:8080/" $folder
+#    docker build -t "$image_with_tag" --build-arg=http_proxy="http://10.144.1.10:8080/" --build-arg=https_proxy="http://10.144.1.10:8080/" $folder
+    docker build -t "$image_with_tag" $folder
     docker tag "$image_with_tag" "$image_with_tag_latest"
     push_docker_image "$image_with_tag" "$registry_credential"
     push_docker_image "$image_with_tag_latest" "$registry_credential"
