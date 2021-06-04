@@ -33,7 +33,7 @@ check port for ingress controller
 ```hcl
 ek get svc my-ingress-controller-nginx-ingress-controller
 ```
-in this case, it is 32445/TCP for http and 32723/TCP for https in this case. modify from aws console，edit security group to allow TCP traffic for those 2 ports.
+in this case, it is `30537/TCP` for http and `30036/TCP` for https in this case. modify from aws console，edit security group to allow TCP traffic for those 2 ports.
 ## prepare jenkins
 ### prepare jenkins image
 ```hcl
@@ -49,8 +49,8 @@ cd jenkins/jenkins
 eh install myjenkins . --set controller.image="viyou/jenkins" --set controller.tag=latest --set controller.installPlugins=false
 ek exec -it svc/myjenkins -c jenkins -- /bin/cat /run/secrets/chart-admin-password && echo
 ```
-password is 66q6LlUXJbCf1EV8IlyjFz in this case.
-apply for dynamic jenkins from https://my.noip.com, with hostname as homework-jenkins.ddns.net and homework-app.ddns.net and ip as what you get from checking ing, i.e, 13.57.13.46, in this case
+password is `UmPnUvrbluoku2Np37um36` in this case.
+apply for dynamic jenkins from https://my.noip.com, with hostname as `homework-jenkins.ddns.net` and `homework-app.ddns.net` and ip as what you get from checking ing, i.e, `54.151.84.97`, in this case
 deploy ingress for jenkins
 ```hcl
 ek apply -f - <<EOF
@@ -91,6 +91,19 @@ cd deploy/app
 ek create ns homework
 terraform apply
 '''
-
+create a job to deploy app https://homework-jenkins.ddns.net:30036/job/deploy_app/ and undeploy app: https://homework-jenkins.ddns.net:30036/job/undeploy_app/
+check encrypted ca.crt and token for helm to access homework resources
+```hcl
 ekh get secret app-token-s5c5l -o jsonpath='{.data.ca\.crt}'
 ekh get secret app-token-s5c5l -o jsonpath='{.data.token}' | base64 --decode
+```
+## deploy app
+use the `ca.crt` and `token` as parameters to build https://homework-jenkins.ddns.net:30036/job/deploy_app/
+then try accessing app with curl
+```hcl
+curl -f -k -X POST https://homework-app.ddns.net:30036/testvnf/v1/connectTests/123456          # {"result":"OK"}
+```
+and if you undeploy app with https://homework-jenkins.ddns.net:30036/job/undeploy_app/, it should fail
+```hcl
+curl -f -k -X POST https://homework-app.ddns.net:30036/testvnf/v1/connectTests/123456          # curl: (22) The requested URL returned error: 404 
+```
