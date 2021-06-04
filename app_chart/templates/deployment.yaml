@@ -106,4 +106,4 @@ spec:
       imagePullSecrets:
       - name: "registrykey-{{ .Release.Name }}"
       nodeSelector:
-        role: testvnf
+        role: app
