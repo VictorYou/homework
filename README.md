@@ -4,25 +4,25 @@ this homework deploys a dummy web app to eks, and when you curl it, it should re
 curl -f -k -X POST https://homework-app.ddns.net:30036/testvnf/v1/connectTests/123456          # {"result":"OK"}
 ```
 ## Prepare eks
-### clone codebase and checkout master branch
+* clone codebase and checkout master branch
 ```hcl
 git clone https://github.com/VictorYou/homework.git
 cd homework
 git checkout master
 ```
-### deploy eks
+* deploy eks
 ```hcl
 cd deploy/eks
 terraform init
 terraform apply -var-file="testing.tfvars" -var="access_key=<your access key>" -var="secret_key=<your secret key>"
 mv kubeconfig_test-eks-LumdwL5J kubeconfig_test-eks
 ```
-set up local command environment
+* set up local command environment
 ```hcl
 alias eh='/snap/bin/helm --kubeconfig <codebase folder>/deploy/eks/kubeconfig_test-eks'
 alias ek='kubectl --kubeconfig <codebase folder>/deploy/eks/kubeconfig_test-eks'
 ```
-verify eks is up
+* verify eks is up
 ```hcl
 ek get no
 ```
@@ -31,7 +31,7 @@ ek get no
 eh repo add bitnami https://charts.bitnami.com/bitnami
 eh install my-ingress-controller bitnami/nginx-ingress-controller
 ```
-check port for ingress controller
+* check port for ingress controller
 ```hcl
 ek get svc my-ingress-controller-nginx-ingress-controller
 ```
@@ -46,15 +46,14 @@ docker tag viyou/jenkins:0.0 viyou/jenkins:latest
 docker push
 ```
 ### deploy jenkins and setup
-deploy jenkins and get password
+* deploy jenkins and get password
 ```hcl
 cd jenkins/jenkins
 eh install myjenkins . --set controller.image="viyou/jenkins" --set controller.tag=latest --set controller.installPlugins=false
 ek exec -it svc/myjenkins -c jenkins -- /bin/cat /run/secrets/chart-admin-password && echo
 ```
 password is `UmPnUvrbluoku2Np37um36` in this case.
-
-deploy ingress for jenkins
+* deploy ingress for jenkins
 ```hcl
 ek apply -f - <<EOF
 apiVersion: networking.k8s.io/v1
@@ -82,7 +81,7 @@ wait for 1 minute or 2 and check ingress is effective
 ek get ing jenkins-ingress    # jenkins-ingress   <none>   homework-jenkins.ddns.net   54.151.84.97   80      10h
 ```
 apply for dynamic jenkins from https://my.noip.com, with hostname as `homework-jenkins.ddns.net` and `homework-app.ddns.net` and ip as what you get from checking ing, i.e, `54.151.84.97`, in this case.
-open browser and access jenkins: https://homework-jenkins.ddns.net:30036
+* open browser and access jenkins: https://homework-jenkins.ddns.net:30036
 in order to build docker image from jenkins pod, change permission on all nodes, eg:
 ```hcl
 ssh -i "homework.pem" ec2-user@ec2-13-57-13-46.us-west-1.compute.amazonaws.com "sudo chmod 777 /var/run/docker.sock"
