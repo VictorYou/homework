@@ -16,6 +16,7 @@ node {
     git(credentialsId: 'github-viyou', branch: 'master', url: 'https://github.com/VictorYou/homework.git')
     dir('build') {
       NEW_VERSION = sh returnStdout: true, script: "bash get_new_version.sh"
+      println("NEW_VERSION ${NEW_VERSION}")
     }
   }
   stage('prepare variables') {
