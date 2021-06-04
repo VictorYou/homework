@@ -4,7 +4,7 @@ properties([parameters([
   string(defaultValue: 'no', description: '(yes/no)', name: 'UPDATE_NEVE_IMAGE'), 
 ])])
 
-node('agent_host') {
+node {
   stage ('cleanup workspace') {
     cleanWs()
   }

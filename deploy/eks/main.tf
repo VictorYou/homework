@@ -137,8 +137,8 @@ resource "aws_security_group" "all_worker_access" {
   vpc_id      = module.vpc.vpc_id
 
   ingress {
-    from_port = 8080
-    to_port   = 8080
+    from_port = 22
+    to_port   = 22
     protocol  = "tcp"
 
     cidr_blocks = [
@@ -193,6 +193,7 @@ module "eks" {
       asg_desired_capacity          = 2
       additional_security_group_ids = [aws_security_group.worker_group_mgmt_one.id]
       eni_delete                    = true
+      key_name                      = "homework"
     },
     {
       name                          = "worker-group-2"
@@ -201,6 +202,7 @@ module "eks" {
       additional_security_group_ids = [aws_security_group.worker_group_mgmt_two.id]
       asg_desired_capacity          = 1
       eni_delete                    = true
+      key_name                      = "homework"
     },
   ]
 
