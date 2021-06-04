@@ -4,7 +4,6 @@ set -ex
 CURRENTDIR=$(dirname $0)
 TOBUILDDIR="$CURRENTDIR/to_build_app"
 . "$CURRENTDIR"/function_build_app.sh
-set_proxy
 
 
 push_or_pull_docker_image()
