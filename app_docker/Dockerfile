@@ -5,6 +5,7 @@ RUN apt-get update
 RUN apt install -y tzdata
 RUN echo "Asia/Beijing" > /etc/timezone
 RUN dpkg-reconfigure -f noninteractive tzdata
+RUN apt-get update
 RUN apt install -y \
   curl \
   python3.8-dev \

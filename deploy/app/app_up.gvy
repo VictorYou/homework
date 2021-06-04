@@ -1,10 +1,10 @@
 properties([parameters([
   string(name: 'app_name', defaultValue: 'app'),
-  string(name: 'app_host', defaultValue: 'app.homework'),
-  string(name: 'app_port', defaultValue: '31832'),
+  string(name: 'app_host', defaultValue: 'homework-app.ddns.net'),
+  string(name: 'app_port', defaultValue: '30036'),
   string(name: 'app_docker_image', defaultValue: 'viyou/app_docker:latest'),
   string(name: 'app_version', defaultValue: '0.0.1'),
-  string(name: 'k8s_endpoint', defaultValue: 'https://74EBEB878D3DF316CDADB5A3267BA392.gr7.us-west-2.eks.amazonaws.com'),
+  string(name: 'k8s_endpoint', defaultValue: 'https://773EF95D5147AA9EE79774ED29B85923.gr7.us-west-1.eks.amazonaws.com'),
   string(name: 'namespace', defaultValue: 'homework'),
 ])])
 

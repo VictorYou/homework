@@ -1,5 +1,5 @@
 provider "kubernetes-alpha" {
-  config_path = "../eks/kubeconfig_test-eks-9zgZUcj0"
+  config_path = "../eks/kubeconfig_test-eks"
 }
 resource "kubernetes_manifest" "app-ns" {
   provider = kubernetes-alpha
