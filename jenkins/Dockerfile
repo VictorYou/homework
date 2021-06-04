@@ -18,6 +18,8 @@ RUN apt-get update && \
     curl -sSL https://get.docker.com/ | sh
 
 RUN apt-get install -y expect
+
+# install helm
 RUN cd /home \
 	&& curl https://get.helm.sh/helm-v3.6.0-linux-amd64.tar.gz -so helm.tar.gz\
 	&& tar -xvf helm.tar.gz \
@@ -26,9 +28,16 @@ RUN cd /home \
 	&& chmod +x /usr/local/bin/helm \
 	&& helm --help \
 	&& cd
+
+# install kubectl
 RUN curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 RUN echo deb https://apt.kubernetes.io/ kubernetes-xenial main>/etc/apt/sources.list.d/kubernetes.list
 RUN apt-get update
 RUN apt-get install -y kubectl
+
+# install aws-iam-authenticator
+RUN curl -o aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.19.6/2021-01-05/bin/linux/amd64/aws-iam-authenticator
+RUN chmod +x ./aws-iam-authenticator
+RUN mv ./aws-iam-authenticator /usr/local/bin/aws-iam-authenticator
 
 USER jenkins
