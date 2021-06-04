@@ -8,7 +8,7 @@ properties([parameters([
   string(name: 'namespace', defaultValue: 'homework'),
 ])])
 
-node('agent_host') {
+node {
   stage ('clean up workspace') {
     cleanWs()
   }
