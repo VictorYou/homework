@@ -58,7 +58,7 @@ spec:
         args:
         - -c
         - $(COMMAND_SCRIPT)
-      serviceAccountName: tvnf
+      serviceAccountName: app
       containers:
       - name: testvnf-rest
         image: "{{ .Values.appImage }}"
