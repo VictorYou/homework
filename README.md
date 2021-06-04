@@ -95,7 +95,7 @@ cd deploy/app
 ek create ns homework
 terraform apply
 '''
-create a job to deploy app https://homework-jenkins.ddns.net:30036/job/deploy_app/ and undeploy app: https://homework-jenkins.ddns.net:30036/job/undeploy_app/
+create a job to deploy app https://homework-jenkins.ddns.net:30036/job/deploy_app/ and undeploy app: https://homework-jenkins.ddns.net:30036/job/undeploy_app/. those jobs have pipelines to deploy/undeploy app based on jenkins file.
 check encrypted ca.crt and token for helm to access homework resources
 ```hcl
 ekh get secret app-token-s5c5l -o jsonpath='{.data.ca\.crt}'
