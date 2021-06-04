@@ -1,10 +1,5 @@
 from rest_framework.serializers import ModelSerializer, CharField
-from .models import Tvnf, Sut
-
-class TvnfSerializer(ModelSerializer):
-  class Meta:
-    model = Tvnf 
-    fields = ("id", "tvnfId", "tvnfStatus",)
+from .models import Sut
 
 class SutSerializer(ModelSerializer):
   class Meta:
