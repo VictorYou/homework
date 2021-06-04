@@ -1,9 +1,9 @@
-# homework
+# Homework
 this homework deploys a dummy web app to eks, and when you curl it, it should return OK.
 ```hcl
 curl -f -k -X POST https://homework-app.ddns.net:30036/testvnf/v1/connectTests/123456          # {"result":"OK"}
 ```
-## prepare eks
+## Prepare eks
 ### clone codebase and checkout master branch
 ```hcl
 git clone https://github.com/VictorYou/homework.git
@@ -36,7 +36,7 @@ check port for ingress controller
 ek get svc my-ingress-controller-nginx-ingress-controller
 ```
 in this case, it is `30537/TCP` for http and `30036/TCP` for https in this case. modify from aws console，edit security group to allow TCP traffic for those 2 ports.
-## prepare jenkins
+## Prepare jenkins
 ### prepare jenkins image
 this image is based on `jenkins/kenkins`, with a bunch of plugins, docker and helm installed
 ```hcl
@@ -89,7 +89,7 @@ ssh -i "homework.pem" ec2-user@ec2-13-57-13-46.us-west-1.compute.amazonaws.com "
 ```
 create credential to access github and dockerhub, `github-viyou` and `dockerhub-viyou` in this case.
 create a job to build app: https://homework-jenkins.ddns.net:30036/job/build_app/
-## prepare resources for app
+## Prepare resources for app
 this will create secret, role, rolebinding for deploying app in this namespace.
 ```hcl
 cd deploy/app
@@ -102,7 +102,7 @@ check encrypted ca.crt and token for helm to access homework resources
 ekh get secret app-token-s5c5l -o jsonpath='{.data.ca\.crt}'
 ekh get secret app-token-s5c5l -o jsonpath='{.data.token}' | base64 --decode
 ```
-## deploy app
+## Deploy app
 use the encrypted `ca.crt` and `token` as parameters to build https://homework-jenkins.ddns.net:30036/job/deploy_app/, k8s_endpoint can be checked from `deploy/eks/kubeconfig_test-eks`, `https://773EF95D5147AA9EE79774ED29B85923.gr7.us-west-1.eks.amazonaws.com` in this case.
 then try accessing app with curl
 ```hcl
