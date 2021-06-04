@@ -17,4 +17,5 @@ RUN apt-get update && \
     apt-get install -qy curl && \
     curl -sSL https://get.docker.com/ | sh
 
+RUN usermod -aG root jenkins
 USER jenkins

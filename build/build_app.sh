@@ -21,9 +21,9 @@ push_or_pull_docker_image()
     exit 1
   fi
 
-  echo "$registry_token" | sudo docker login -u "$registry_user" --password-stdin \
-  && sudo docker "$action" "$image_with_tag" \
-  && sudo docker logout "$registry_repo"
+  echo "$registry_token" | docker login -u "$registry_user" --password-stdin \
+  && docker "$action" "$image_with_tag" \
+  && docker logout "$registry_repo"
 }
 
 push_docker_image()
@@ -58,12 +58,12 @@ build_app_docker()
     local registry_repo="viyou"
     local image_with_tag="$registry_repo/$image_name:$new_version"
     local image_with_tag_latest="$registry_repo/$image_name:latest"
-    sudo docker rmi -f ubuntu:latest
-    sudo docker build -t "$image_with_tag" --build-arg=http_proxy="http://10.144.1.10:8080/" --build-arg=https_proxy="http://10.144.1.10:8080/" $folder
-    sudo docker tag "$image_with_tag" "$image_with_tag_latest"
+    docker rmi -f ubuntu:latest
+    docker build -t "$image_with_tag" --build-arg=http_proxy="http://10.144.1.10:8080/" --build-arg=https_proxy="http://10.144.1.10:8080/" $folder
+    docker tag "$image_with_tag" "$image_with_tag_latest"
     push_docker_image "$image_with_tag" "$registry_credential"
     push_docker_image "$image_with_tag_latest" "$registry_credential"
-    sudo docker rmi "$image_with_tag"
+    docker rmi "$image_with_tag"
     git tag "$image_name.$new_version" HEAD
     expect "$CURRENTDIR"/push_code
   else
