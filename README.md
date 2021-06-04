@@ -1,11 +1,13 @@
 # homework
-this homework deploys a dummy web app to eks, and when you curl it, it returns OK
+this homework deploys a dummy web app to eks, and when you curl it, it should return OK.
 ```hcl
 curl -f -k -X POST https://homework-app.ddns.net:30036/testvnf/v1/connectTests/123456          # {"result":"OK"}
 ```
 ## prepare eks
 ### clone codebase and checkout master branch
 ```hcl
+git clone https://github.com/VictorYou/homework.git
+cd homework
 git checkout master
 ```
 ### deploy eks
@@ -36,6 +38,7 @@ ek get svc my-ingress-controller-nginx-ingress-controller
 in this case, it is `30537/TCP` for http and `30036/TCP` for https in this case. modify from aws console，edit security group to allow TCP traffic for those 2 ports.
 ## prepare jenkins
 ### prepare jenkins image
+this image is based on `jenkins/kenkins`, with a bunch of plugins, docker and helm installed
 ```hcl
 cd jenkins
 docker build -t viyou/jenkins:0.0 .
@@ -50,7 +53,7 @@ eh install myjenkins . --set controller.image="viyou/jenkins" --set controller.t
 ek exec -it svc/myjenkins -c jenkins -- /bin/cat /run/secrets/chart-admin-password && echo
 ```
 password is `UmPnUvrbluoku2Np37um36` in this case.
-apply for dynamic jenkins from https://my.noip.com, with hostname as `homework-jenkins.ddns.net` and `homework-app.ddns.net` and ip as what you get from checking ing, i.e, `54.151.84.97`, in this case
+
 deploy ingress for jenkins
 ```hcl
 ek apply -f - <<EOF
@@ -76,16 +79,18 @@ EOF
 ```
 wait for 1 minute or 2 and check ingress is effective
 ```hcl
-ek get ing
+ek get ing jenkins-ingress    # jenkins-ingress   <none>   homework-jenkins.ddns.net   54.151.84.97   80      10h
 ```
+apply for dynamic jenkins from https://my.noip.com, with hostname as `homework-jenkins.ddns.net` and `homework-app.ddns.net` and ip as what you get from checking ing, i.e, `54.151.84.97`, in this case.
 open browser and access jenkins: https://homework-jenkins.ddns.net:30036
 in order to build docker image from jenkins pod, change permission on all nodes, eg:
 ```hcl
 ssh -i "homework.pem" ec2-user@ec2-13-57-13-46.us-west-1.compute.amazonaws.com "sudo chmod 777 /var/run/docker.sock"
 ```
+create credential to access github and dockerhub, `github-viyou` and `dockerhub-viyou` in this case.
 create a job to build app: https://homework-jenkins.ddns.net:30036/job/build_app/
-
 ## prepare resources for app
+this will create secret, role, rolebinding for deploying app in this namespace.
 ```hcl
 cd deploy/app
 ek create ns homework
@@ -98,7 +103,7 @@ ekh get secret app-token-s5c5l -o jsonpath='{.data.ca\.crt}'
 ekh get secret app-token-s5c5l -o jsonpath='{.data.token}' | base64 --decode
 ```
 ## deploy app
-use the `ca.crt` and `token` as parameters to build https://homework-jenkins.ddns.net:30036/job/deploy_app/
+use the encrypted `ca.crt` and `token` as parameters to build https://homework-jenkins.ddns.net:30036/job/deploy_app/, k8s_endpoint can be checked from `deploy/eks/kubeconfig_test-eks`, `https://773EF95D5147AA9EE79774ED29B85923.gr7.us-west-1.eks.amazonaws.com` in this case.
 then try accessing app with curl
 ```hcl
 curl -f -k -X POST https://homework-app.ddns.net:30036/testvnf/v1/connectTests/123456          # {"result":"OK"}
