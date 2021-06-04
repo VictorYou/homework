@@ -1,8 +1,8 @@
 branch = 'master'
 
-properties([parameters([
-  string(defaultValue: 'no', description: '(yes/no)', name: 'UPDATE_NEVE_IMAGE'), 
-])])
+//properties([parameters([
+//  string(defaultValue: 'no', description: '(yes/no)', name: 'UPDATE_NEVE_IMAGE'), 
+//])])
 
 node {
   stage ('cleanup workspace') {
