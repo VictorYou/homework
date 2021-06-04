@@ -2,10 +2,7 @@
 **/*.zip
 **/*.tgz
 **/*.qcow2
-**/kubeconfig_*
-**/terraform*
 .*
-**/.terraform/*
 !/.gitignore
 !/.gitreview
 !/**/VNFD.*.zip

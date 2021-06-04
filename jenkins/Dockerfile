@@ -18,4 +18,17 @@ RUN apt-get update && \
     curl -sSL https://get.docker.com/ | sh
 
 RUN apt-get install -y expect
+RUN cd /home \
+	&& curl https://get.helm.sh/helm-v3.6.0-linux-amd64.tar.gz -so helm.tar.gz\
+	&& tar -xvf helm.tar.gz \
+	&& rm helm.tar.gz \
+	&& mv linux-amd64/helm /usr/local/bin/helm \
+	&& chmod +x /usr/local/bin/helm \
+	&& helm --help \
+	&& cd
+RUN curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+RUN echo deb https://apt.kubernetes.io/ kubernetes-xenial main>/etc/apt/sources.list.d/kubernetes.list
+RUN apt-get update
+RUN apt-get install -y kubectl
+
 USER jenkins
