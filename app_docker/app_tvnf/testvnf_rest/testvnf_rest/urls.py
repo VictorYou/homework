@@ -17,7 +17,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^testvnf/v1/', include('TvnfService.urls')),
+    url(r'^app/v1/', include('AppService.urls')),
     url(r'^admin/', admin.site.urls),
 ]
 
