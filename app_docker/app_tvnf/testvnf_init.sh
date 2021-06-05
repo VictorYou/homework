@@ -8,7 +8,7 @@ function main()
   local svc_mysql=$1
   
   echo "[INFO]: migrate db"
-  python3 "$manage_py" makemigrations TvnfService
+  python3 "$manage_py" makemigrations AppService
   python3 "$manage_py" migrate
   
   echo "[INFO]: alter character set"
