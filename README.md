@@ -1,8 +1,9 @@
 # Homework
-this homework deploys a dummy web app to eks, and when you curl it, it should return OK.
+This homework deploys a dummy web app to eks, and when you curl it, it should return OK.
 ```hcl
 curl -f -k -X POST https://homework-app.ddns.net:30036/testvnf/v1/connectTests/123456          # {"result":"OK"}
 ```
+Below are the steps to set up necessary tooling and deploy app.
 ## Prepare eks
 * clone codebase and checkout master branch
 ```hcl
@@ -35,14 +36,14 @@ eh install my-ingress-controller bitnami/nginx-ingress-controller
 ```hcl
 ek get svc my-ingress-controller-nginx-ingress-controller
 ```
-in this case, it is `30537/TCP` for http and `30036/TCP` for https in this case. modify from aws console，edit security group to allow TCP traffic for those 2 ports.
+In this case, it is `30537/TCP` for http and `30036/TCP` for https in this case. From aws console，edit security group to allow TCP traffic for those 2 ports.
 ## Prepare jenkins
 ### prepare jenkins image
-this image is based on `jenkins/kenkins`, with a bunch of plugins, docker and helm installed
+This image is based on `jenkins/kenkins`, with a bunch of plugins, docker and helm installed, so that we trigger pipeline and build docker image from jenkins pod.
 ```hcl
 cd jenkins
-docker build -t viyou/jenkins:0.0 .
-docker tag viyou/jenkins:0.0 viyou/jenkins:latest
+docker build -t viyou/jenkins:0.7 .
+docker tag viyou/jenkins:0.7 viyou/jenkins:latest
 docker push
 ```
 ### deploy jenkins and setup
@@ -80,30 +81,36 @@ wait for 1 minute or 2 and check ingress is effective
 ```hcl
 ek get ing jenkins-ingress    # jenkins-ingress   <none>   homework-jenkins.ddns.net   54.151.84.97   80      10h
 ```
-apply for dynamic jenkins from https://my.noip.com, with hostname as `homework-jenkins.ddns.net` and `homework-app.ddns.net` and ip as what you get from checking ing, i.e, `54.151.84.97`, in this case.
+Apply for dynamic dns from https://my.noip.com, with hostname as `homework-jenkins.ddns.net` and `homework-app.ddns.net` and ip as what you get from checking ing, i.e, `54.151.84.97`, in this case.
 * open browser and access jenkins: https://homework-jenkins.ddns.net:30036
-in order to build docker image from jenkins pod, change permission on all nodes, eg:
+In order to build docker image from jenkins pod, change permission on all nodes, in this case:
 ```hcl
-ssh -i "homework.pem" ec2-user@ec2-13-57-13-46.us-west-1.compute.amazonaws.com "sudo chmod 777 /var/run/docker.sock"
+ssh -i "homework.pem" ec2-user@ec2-54-151-84-97.us-west-1.compute.amazonaws.com "sudo chmod 777 /var/run/docker.sock"
+ssh -i "homework.pem" ec2-user@ec2-13-57-10-17.us-west-1.compute.amazonaws.com "sudo chmod 777 /var/run/docker.sock"
+ssh -i "homework.pem" ec2-user@ec2-54-215-192-233.us-west-1.compute.amazonaws.com "sudo chmod 777 /var/run/docker.sock"
 ```
 create credential to access github and dockerhub, `github-viyou` and `dockerhub-viyou` in this case.
 create a job to build app: https://homework-jenkins.ddns.net:30036/job/build_app/
 ## Prepare resources for app
-this will create secret, role, rolebinding for deploying app in this namespace.
+This will create secret, role, rolebinding for deploying app in this namespace.
 ```hcl
 cd deploy/app
 ek create ns homework
 terraform apply
 '''
-create a job to deploy app https://homework-jenkins.ddns.net:30036/job/deploy_app/ and undeploy app: https://homework-jenkins.ddns.net:30036/job/undeploy_app/
-check encrypted ca.crt and token for helm to access homework resources
+Label a node with enough resources, in this case:
+```hcl
+k label no ip-10-0-4-146.us-west-1.compute.internal role=testvnf
+```
+Create a jenkins job to deploy app: https://homework-jenkins.ddns.net:30036/job/deploy_app/ and undeploy app: https://homework-jenkins.ddns.net:30036/job/undeploy_app/
+Check encrypted ca.crt and token for helm to access homework resources
 ```hcl
 ekh get secret app-token-s5c5l -o jsonpath='{.data.ca\.crt}'
 ekh get secret app-token-s5c5l -o jsonpath='{.data.token}' | base64 --decode
 ```
 ## Deploy app
-use the encrypted `ca.crt` and `token` as parameters to build https://homework-jenkins.ddns.net:30036/job/deploy_app/, k8s_endpoint can be checked from `deploy/eks/kubeconfig_test-eks`, `https://773EF95D5147AA9EE79774ED29B85923.gr7.us-west-1.eks.amazonaws.com` in this case.
-then try accessing app with curl
+Use the encrypted `ca.crt` and `token` as parameters to build https://homework-jenkins.ddns.net:30036/job/deploy_app/, k8s_endpoint can be checked from file `deploy/eks/kubeconfig_test-eks`, i.e, `https://773EF95D5147AA9EE79774ED29B85923.gr7.us-west-1.eks.amazonaws.com` in this case.
+Then try accessing app with curl
 ```hcl
 curl -f -k -X POST https://homework-app.ddns.net:30036/testvnf/v1/connectTests/123456          # {"result":"OK"}
 ```
