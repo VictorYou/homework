@@ -36,7 +36,7 @@ node {
 $helmcmd install ${app_name} --set certificate=${certificate} --set private_key=${private_key} --set appImage=${app_docker_image} --set appVersion=${app_version} --set appHost=${app_host} app_chart
 """
     sh """
-timeout 900 bash -c "until curl --noproxy '*' -f -k -X POST https://${app_host}:${app_port}/testvnf/v1/connectTests/123456; do echo waiting for certificate to be effective; sleep 10; done"
+timeout 900 bash -c "until curl --noproxy '*' -f -k -X POST https://${app_host}:${app_port}/app/v1/connectTests/123456; do echo waiting for certificate to be effective; sleep 10; done"
 """
   }
 }
