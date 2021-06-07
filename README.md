@@ -1,5 +1,5 @@
 # Overview
-This homework deploys a dummy web app to eks, and when you curl it, it should return OK.
+This homework deploys a dummy app to eks, and when you curl it, it should return OK.
 ```hcl
 curl -f -k -X POST https://homework-app.ddns.net:30036/testvnf/v1/connectTests/123456          # {"result":"OK"}
 ```
@@ -99,8 +99,9 @@ ssh -i "homework.pem" ec2-user@ec2-54-151-84-97.us-west-1.compute.amazonaws.com 
 ssh -i "homework.pem" ec2-user@ec2-13-57-10-17.us-west-1.compute.amazonaws.com "sudo chmod 777 /var/run/docker.sock"
 ssh -i "homework.pem" ec2-user@ec2-54-215-192-233.us-west-1.compute.amazonaws.com "sudo chmod 777 /var/run/docker.sock"
 ```
-create credential to access github and dockerhub, `github-viyou` and `dockerhub-viyou` in this case.
-create a job to build app: https://homework-jenkins.ddns.net:30036/job/build_app/ .
+Create credentials to access github and dockerhub, `github-viyou` and `dockerhub-viyou` in this case.
+
+Create a job to build app: https://homework-jenkins.ddns.net:30036/job/build_app/ .
 ## Prepare resources for app
 This will create secret, role, rolebinding for deploying app in this namespace.
 ```hcl
