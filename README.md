@@ -94,6 +94,7 @@ ek get ing jenkins-ingress    # jenkins-ingress   <none>   homework-jenkins.ddns
 ```
 Apply for dynamic dns from https://my.noip.com, with hostname as `homework-jenkins.ddns.net` and `homework-app.ddns.net` and ip as what you get from checking ing, i.e, `54.151.84.97`, in this case.
 * configure build from jenkins
+
 In order to build docker image from jenkins pod, change permission on all nodes, in this case:
 ```hcl
 ssh -i "homework.pem" ec2-user@ec2-54-151-84-97.us-west-1.compute.amazonaws.com "sudo chmod 777 /var/run/docker.sock"
