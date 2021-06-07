@@ -7,7 +7,7 @@ To deploy the app, you can build https://homework-jenkins.ddns.net:30036/job/dep
 
 To undeploy the app, you can build https://homework-jenkins.ddns.net:30036/job/undeploy_app/
 
-If you update the codebase, and would like to build new docker image for the app, you can build https://homework-jenkins.ddns.net:30036/job/build_app/
+If you update the codebase, and would like to build a new docker image for the app, you can build https://homework-jenkins.ddns.net:30036/job/build_app/
 # Deployment
 Below are the steps to set up necessary tooling and deploy app.
 ## Prepare eks
@@ -29,6 +29,7 @@ this may take 10 ~ 15 minutes.
 ```hcl
 alias eh='/snap/bin/helm --kubeconfig <codebase folder>/deploy/eks/kubeconfig_test-eks'
 alias ek='kubectl --kubeconfig <codebase folder>/deploy/eks/kubeconfig_test-eks'
+alias ekh='kubectl --kubeconfig <codebase folder>/deploy/eks/kubeconfig_test-eks --namespace homework'
 ```
 * verify eks is up
 ```hcl
@@ -92,13 +93,15 @@ wait for 1 minute or 2 and check ingress is effective.
 ek get ing jenkins-ingress    # jenkins-ingress   <none>   homework-jenkins.ddns.net   54.151.84.97   80      10h
 ```
 Apply for dynamic dns from https://my.noip.com, with hostname as `homework-jenkins.ddns.net` and `homework-app.ddns.net` and ip as what you get from checking ing, i.e, `54.151.84.97`, in this case.
-* open browser and access jenkins: https://homework-jenkins.ddns.net:30036 .
+* configure build from jenkins
 In order to build docker image from jenkins pod, change permission on all nodes, in this case:
 ```hcl
 ssh -i "homework.pem" ec2-user@ec2-54-151-84-97.us-west-1.compute.amazonaws.com "sudo chmod 777 /var/run/docker.sock"
 ssh -i "homework.pem" ec2-user@ec2-13-57-10-17.us-west-1.compute.amazonaws.com "sudo chmod 777 /var/run/docker.sock"
 ssh -i "homework.pem" ec2-user@ec2-54-215-192-233.us-west-1.compute.amazonaws.com "sudo chmod 777 /var/run/docker.sock"
 ```
+Open browser and access jenkins: https://homework-jenkins.ddns.net:30036 .
+
 Create credentials to access github and dockerhub, `github-viyou` and `dockerhub-viyou` in this case.
 
 Create a job to build app: https://homework-jenkins.ddns.net:30036/job/build_app/ .
@@ -116,6 +119,7 @@ k label no ip-10-0-4-146.us-west-1.compute.internal role=app
 Create a jenkins job to deploy and undeploy the app, namely, https://homework-jenkins.ddns.net:30036/job/deploy_app/ and https://homework-jenkins.ddns.net:30036/job/undeploy_app/ respectively.
 Check encrypted `ca.crt` and `token` for helm to access homework resources:
 ```hcl
+ekh get secret                                               # app-token-s5c5l       kubernetes.io/service-account-token   3      2d20h
 ekh get secret app-token-s5c5l -o jsonpath='{.data.ca\.crt}'
 ekh get secret app-token-s5c5l -o jsonpath='{.data.token}'
 ```
